@@ -12,7 +12,7 @@ module.exports = mongoose.model('Project', new mongoose.Schema({
     type: String
   },
   content :{
-    type: String
+    type: []
   },
   image:{
     type:String
