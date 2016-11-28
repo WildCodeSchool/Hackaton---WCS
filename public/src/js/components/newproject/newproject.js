@@ -2,7 +2,7 @@
   'use strict'
   app.component('newarticle', {
     templateUrl:'src/js/components/newarticle/newarticle.html',
-    controller:['blogsService', function(blogsService){
+    controller:['projectsService', function(projectsService){
 
       this.date = new Date();
       this.blogs = []
@@ -10,7 +10,7 @@
 
           this.blog.PublishedAt = Math.round(this.date.getTime() / 1000)
 
-              blogsService.add(this.blog).then((res) => {
+              projectsService.add(this.blog).then((res) => {
                 this.blogs.push(res.data)
                 this.blog = {}
               })

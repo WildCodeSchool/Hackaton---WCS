@@ -5,7 +5,7 @@
             blog: '<'
          },
         templateUrl: 'src/js/components/article/article.html',
-        controller: ['blogsService', '$stateParams', function(blogsService, $stateParams) {
+        controller: ['projectsService', '$stateParams', function(projectsService, $stateParams) {
             angular.extend(this, {
                 $onInit() {
 
@@ -13,7 +13,7 @@
 
                   this.date = new Date();
 
-                    blogsService.get().then((res) => {
+                    projectsService.get().then((res) => {
                         this.blog = res.data
 
                         // Extraction de l'id passé en paramètre
@@ -33,7 +33,7 @@
                         if (blog.editMode) {
                             blog.PublishedAt =  Math.round(this.date.getTime() / 1000)
 
-                            blogsService.edit(blog).then((res) => {
+                            projectsService.edit(blog).then((res) => {
                                 this.blog = res.config.data
                                 blog.editMode = false
                             })
@@ -57,7 +57,7 @@
                 },
                 delete (blog){
                   alert("Sur?")
-                    blogsService.delete(blog).then((res) => {
+                    projectsService.delete(blog).then((res) => {
                         this.blog = {}
                     })
                 }

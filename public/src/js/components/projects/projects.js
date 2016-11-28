@@ -1,11 +1,11 @@
 ((app) => {
 
-    app.component('projects', {
+    app.component('projets', {
         bindings: {
             blogs: '<'
         },
-        templateUrl: 'src/js/components/projects/projects.html',
-        controller: ['blogsService', function(blogsService) {
+        templateUrl: 'src/js/components/projets/projets.html',
+        controller: ['projectsService', function(projectsService) {
             angular.extend(this, {
                 $onInit() {
 
@@ -13,7 +13,7 @@
                     this.limit = 3;
                     this.title = "Blog"
 
-                    blogsService.get().then((res) => {
+                    projectsService.get().then((res) => {
                         this.blogs = res.data
                         console.log(this.blogs)
                     })
@@ -34,4 +34,4 @@
         }]
     })
 
-})(angular.module('app.projects'))
+})(angular.module('app.projets'))

@@ -5,12 +5,12 @@
             authors: '<'
         },
         templateUrl: 'src/js/components/student/student.html',
-        controller: ['authorsService', '$stateParams', function(authorsService, $stateParams) {
+        controller: ['studentsService', '$stateParams', function(studentsService, $stateParams) {
             angular.extend(this, {
                 $onInit() {
 
 
-                    authorsService.getPopulate($stateParams).then((res) => {
+                    studentsService.getPopulate($stateParams).then((res) => {
                         this.author = res.data
                         console.log(this.author)
                     })
