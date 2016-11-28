@@ -1,7 +1,7 @@
 ((app)=>{
   'use strict'
-  app.component('newarticle', {
-    templateUrl:'src/js/components/newarticle/newarticle.html',
+  app.component('newproject', {
+    templateUrl:'src/js/components/newproject/newproject.html',
     controller:['projectsService', function(projectsService){
 
       this.date = new Date();
@@ -23,4 +23,4 @@
 
     }]
   })
-})(angular.module('app.newarticle'))
+})(angular.module('app.newproject'))

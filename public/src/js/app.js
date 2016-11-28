@@ -6,7 +6,7 @@
     'app.services',
     'app.project',
     'app.projects',
-    'app.newarticle',
+    'app.newproject',
     'app.student',
     'app.newstudent'
 ]))

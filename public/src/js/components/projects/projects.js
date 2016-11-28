@@ -1,10 +1,10 @@
 ((app) => {
 
-    app.component('projets', {
+    app.component('projects', {
         bindings: {
             blogs: '<'
         },
-        templateUrl: 'src/js/components/projets/projets.html',
+        templateUrl: 'src/js/components/projects/projects.html',
         controller: ['projectsService', function(projectsService) {
             angular.extend(this, {
                 $onInit() {
@@ -34,4 +34,4 @@
         }]
     })
 
-})(angular.module('app.projets'))
+})(angular.module('app.projects'))

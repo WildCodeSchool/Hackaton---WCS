@@ -1,10 +1,10 @@
 ((app) => {
 
-    app.component('article', {
+    app.component('project', {
          bindings: {
             blog: '<'
          },
-        templateUrl: 'src/js/components/article/article.html',
+        templateUrl: 'src/js/components/project/project.html',
         controller: ['projectsService', '$stateParams', function(projectsService, $stateParams) {
             angular.extend(this, {
                 $onInit() {
@@ -51,7 +51,7 @@
 
                     }
 
-                    // Delete an article
+                    // Delete an project
                     this.dele = '';
 
                 },
@@ -64,4 +64,4 @@
             })
         }]
     })
-})(angular.module('app.article'))
+})(angular.module('app.project'))

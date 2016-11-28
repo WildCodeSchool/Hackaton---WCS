@@ -1,9 +1,9 @@
 ((app)=>{
 
   app.config(['$stateProvider', ($stateProvider)=>{
-    $stateProvider.state('app.newarticle', {
-      url:'/newarticle',
-      template:'<newarticle/>'
+    $stateProvider.state('app.newproject', {
+      url:'/newproject',
+      template:'<newproject/>'
     })
   }])
-})(angular.module('app.newarticle', ['ui.router']))
+})(angular.module('app.newproject', ['ui.router']))

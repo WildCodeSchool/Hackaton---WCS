@@ -21,15 +21,15 @@
                     <hr class="divider">
                     <p class="card-text" ng-if="!blog.editMode">{{blog.content | limitTo:250}}...</p>
                 </div>
-                <a ui-sref="app.article({blogId : blog._id})">Read more...
+                <a ui-sref="app.project({blogId : blog._id})">Read more...
                     <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
             </div>
         </div>
-
+        
 
     </div>
     <div class="row text-center">
-        <button class="btn btn-primary addArticle" ui-sref="app.newarticle">+ Add article </button>
+        <button class="btn btn-primary addArticle" ui-sref="app.newproject">+ Add project </button>
     </div>
 
 </div>
