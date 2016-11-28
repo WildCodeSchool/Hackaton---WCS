@@ -8,5 +8,6 @@
     'app.projects',
     'app.newproject',
     'app.student',
-    'app.newstudent'
+    'app.newstudent',
+    'app.navbar'
 ]))

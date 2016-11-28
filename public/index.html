@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/project.css">
-    <link rel="stylesheet" href="css/student.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/project.css">
+        <link rel="stylesheet" href="css/student.css">
 
-    <title>Project'Me</title>
-</head>
+        <title>Project'Me</title>
+    </head>
 
-<body>
+    <body>
+        <navbar></navbar>
+        <ui-view></ui-view>
 
-  <ui-view></ui-view>
+    </body>
 
-</body>
+    <script src="libs/angular.min.js"></script>
+    <script src="libs/angular-ui-router.min.js"></script>
 
-<script src="libs/angular.min.js"></script>
-<script src="libs/angular-ui-router.min.js"></script>
+    <script src="src/js/components/projects/projects.md.js"></script>
+    <script src="src/js/components/projects/projects.js"></script>
 
-<script src="src/js/components/projects/projects.md.js"></script>
-<script src="src/js/components/projects/projects.js"></script>
+    <script src="src/js/components/project/project.md.js"></script>
+    <script src="src/js/components/project/project.js"></script>
 
-<script src="src/js/components/project/project.md.js"></script>
-<script src="src/js/components/project/project.js"></script>
+    <script src="src/js/components/newproject/newproject.md.js"></script>
+    <script src="src/js/components/newproject/newproject.js"></script>
 
-<script src="src/js/components/newproject/newproject.md.js"></script>
-<script src="src/js/components/newproject/newproject.js"></script>
+    <script src="src/js/components/student/student.md.js"></script>
+    <script src="src/js/components/student/student.js"></script>
 
-<script src="src/js/components/student/student.md.js"></script>
-<script src="src/js/components/student/student.js"></script>
+    <script src="src/js/components/newstudent/newstudent.md.js"></script>
+    <script src="src/js/components/newstudent/newstudent.js"></script>
 
-<script src="src/js/components/newstudent/newstudent.md.js"></script>
-<script src="src/js/components/newstudent/newstudent.js"></script>
+    <script src="src/js/components/navbar/navbar.md.js"></script>
+    <script src="src/js/components/navbar/navbar.js"></script>
 
+    <script src="src/js/services/services.md.js"></script>
+    <script src="src/js/services/studentsServices.js"></script>
+    <script src="src/js/services/projectsServices.js"></script>
 
-<script src="src/js/services/services.md.js"></script>
-<script src="src/js/services/studentsServices.js"></script>
-<script src="src/js/services/projectsServices.js"></script>
+    <script src="src/js/config/config.md.js"></script>
+    <script src="src/js/config/router.js"></script>
 
-<script src="src/js/config/config.md.js"></script>
-<script src="src/js/config/router.js"></script>
-
-
-<script src="src/js/app.js"> </script>
+    <script src="src/js/app.js"></script>
 
 </html>
