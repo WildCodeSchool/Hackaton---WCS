@@ -9,7 +9,7 @@ module.exports = mongoose.model('Student', new mongoose.Schema({
         unique: true
     },
     avatar:{
-      type: []
+      type: String
     },
     github: {
         type: String
