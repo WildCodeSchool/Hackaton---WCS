@@ -33,20 +33,23 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-#id {
+#techno {
   position: relative;
 
 }
 .btnPrev {
   float: left;
   font-size: 30px;
-  /*color: #FFFFFF;*/
+  color: #FFFFFF;
   vertical-align: middle;
+  padding-top: 7em;
+  padding-left: 1em;
 }
 .btnNext {
   float: right;
   font-size: 30px;
   display: inline-block;
   color: #FFFFFF;
-
+  padding-top: 7em;
+  padding-right: 1em;
 }

@@ -4,7 +4,7 @@
         <h1 ng-if="!$ctrl.editMode"> {{$ctrl.projects.title}}</h1>
         <label ng-if="$ctrl.editMode"> Title du project </label>
         <input ng-if="$ctrl.editMode" class="form-control input-sm" type="text" ng-model="$ctrl.projects.title">
-        <time><p ng-if="!$ctrl.editMode" > Le {{$ctrl.projects.updatedAt | date:'dd-MM-yyyy à HH:mm:ss'}} </p></time>
+        <!-- <time><p ng-if="!$ctrl.editMode" > Le {{$ctrl.projects.updatedAt | date:'dd-MM-yyyy à HH:mm:ss'}} </p></time> -->
 
         <!-- Récupération des images du projet -->
 
@@ -15,11 +15,12 @@
         <div class="row">
 
             <div class="" ng-repeat="image in $ctrl.projects.image | limitTo:$ctrl.limit : $ctrl.begin">
-                <p ng-if="!$ctrl.editMode" id="techno">{{$ctrl.projects.techno}} </p>
                 <div style="background-image: url({{image}})" ng-if="$ctrl.projects.image" class="projectimage" ng-click="$ctrl.next()">
-                  <p ng-click="$ctrl.prev()" class="btnPrev"> < </p>
+                  <p ng-if="!$ctrl.editMode" id="techno">{{$ctrl.projects.techno}} </p>
 
-                  <p ng-click="$ctrl.next()" class="btnNext"> > </p>
+                  <a ng-click="$ctrl.prev()" class="btnPrev"> < </a>
+
+                  <a ng-click="$ctrl.next()" class="btnNext"> > </a>
 
                 </div>
             </div>
@@ -28,10 +29,10 @@
                 <!-- Récupération des avatars -->
                 <h1>Contributors </h1>
 
-                <div class="" ng-repeat="avatar in $ctrl.projects.student.avatar track by $index">
+                <div class="" ng-repeat="student in $ctrl.projects.student" >
                     <div class="col-xs-3">
-                        <label>{{$ctrl.projects.student.name}} </label>
-                        <img ng-src="{{avatar}}" class="img-responsive img-circle" ui-sref="app.student({studentId : $ctrl.projects.student._id})">
+                        <label>{{student.name}} </label>
+                        <img ng-src="{{student.avatar}}" class="img-responsive img-circle" ui-sref="app.student({studentId : $ctrl.projects.student._id})">
                     </div>
                 </div>
             </div>

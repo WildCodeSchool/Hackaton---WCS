@@ -17,10 +17,10 @@ module.exports = mongoose.model('Project', new mongoose.Schema({
   image:{
     type:[]
   },
-  student: {
+  student: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Student'
-  },
+  }],
   techno: {
       type:String
   }
