@@ -1,14 +1,14 @@
 ((app) => {
 
-    app.component('authors', {
+    app.component('student', {
         bindings: {
             authors: '<'
         },
-        templateUrl: 'src/js/components/authors/authors.html',
+        templateUrl: 'src/js/components/student/student.html',
         controller: ['authorsService', '$stateParams', function(authorsService, $stateParams) {
             angular.extend(this, {
                 $onInit() {
-                  
+
 
                     authorsService.getPopulate($stateParams).then((res) => {
                         this.author = res.data
@@ -21,4 +21,4 @@
         }]
     })
 
-})(angular.module('app.authors'))
+})(angular.module('app.student'))

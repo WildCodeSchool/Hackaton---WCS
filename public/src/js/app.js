@@ -4,8 +4,9 @@
     'ui.router',
     'app.config',
     'app.services',
-    'app.article',
-    'app.articles',
+    'app.project',
+    'app.projects',
     'app.newarticle',
-    'app.authors'
+    'app.student',
+    'app.newstudent'
 ]))
