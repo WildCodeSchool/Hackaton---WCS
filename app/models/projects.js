@@ -8,19 +8,22 @@ module.exports = mongoose.model('Project', new mongoose.Schema({
       type: String,
       unique: true
   },
+  school :{
+    type: String
+  },
   content :{
     type: String
   },
   image:{
     type:String
   },
-  author: {
+  student: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Student'
   },
-  PublishedAt: {
-    type:String
-  },
+  techno: {
+      type:String
+  }
 }, {
   timestamps: true
 }))

@@ -8,16 +8,22 @@ module.exports = mongoose.model('Student', new mongoose.Schema({
         type: String,
         unique: true
     },
-    age: {
-        type: Number
+    avatar:{
+      type: String
+    },
+    github: {
+        type: String
     },
     description: {
         type: String
     },
-    avatar:{
-      type: String
+    school: {
+        type: String
     },
-    articles: [{
+    techno: {
+        type: String
+    },
+    projects: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Project'
     }]
