@@ -1,38 +1,47 @@
 <!-- Window Learn more -->
 <section>
     <div class="container-fluid">
-        <h1 ng-if="!$ctrl.project.editMode"> {{$ctrl.projects.title}}</h1>
-        <label ng-if="$ctrl.project.editMode"> Title du project </label>
-        <input ng-if="$ctrl.project.editMode" class="form-control input-sm" type="text" ng-model="$ctrl.project.title">
-        <time><p ng-if="!$ctrl.project.editMode"> Le {{$ctrl.project.PublishedAt*1000 | date:'dd-MM-yyyy à HH:mm:ss'}} </p></time>
-        <time><p ng-if="$ctrl.project.editMode"> Modifié le {{$ctrl.project.PublishedAt*1000 | date:'dd-MM-yyyy à HH:mm:ss'}} </p></time>
+        <h1 ng-if="!$ctrl.editMode"> {{$ctrl.projects.title}}</h1>
+        <label ng-if="$ctrl.editMode"> Title du project </label>
+        <input ng-if="$ctrl.editMode" class="form-control input-sm" type="text" ng-model="$ctrl.projects.title">
+        <time><p ng-if="!$ctrl.editMode" > Le {{$ctrl.projects.updatedAt | date:'dd-MM-yyyy à HH:mm:ss'}} </p></time>
 
         <!-- Récupération des images du projet -->
-        <div class="row">
-            <p>{{$ctrl.projects.techno}} </p>
-            <div class="" ng-repeat="image in $ctrl.projects.image | limitTo:$ctrl.limit : $ctrl.begin">
-                <img ng-src="{{image}}" ng-if="$ctrl.projects.image" class="img-responsive">
-            </div>
-        </div>
+        <p ng-if="!$ctrl.editMode">{{$ctrl.projects.techno}} </p>
 
-        <div class="row dialog">
+        <label ng-if="$ctrl.editMode"> Language de Programmation </label>
+        <input ng-if="$ctrl.editMode" class="form-control input-sm" type="text" ng-model="$ctrl.projects.techno">
+
+
+        <div class="row">
+            <div class="" ng-repeat="image in $ctrl.projects.image | limitTo:$ctrl.limit : $ctrl.begin">
+                <img ng-src="{{image}}" ng-if="$ctrl.projects.image" class="projectimage img-responsive">
+            </div>
 
             <div class="col-xs-8 col-xs-offset-2">
                 <!-- Récupération des avatars -->
-                <div class="" ng-repeat="avatar in $ctrl.projects.student.avatar">
+                <h1>Contributors </h1>
+
+                <div class="" ng-repeat="avatar in $ctrl.projects.student.avatar track by $index">
                     <div class="col-xs-3">
-                        <img ng-src="{{avatar}}"  class="img-responsive">
+                        <label>{{$ctrl.projects.student.name}} </label>
+                        <img ng-src="{{avatar}}" class="img-responsive img-circle" ui-sref="app.student({studentId : $ctrl.projects.student._id})">
                     </div>
                 </div>
-                <p ng-if="!$ctrl.project.editMode">{{$ctrl.projects.content}}</p>
-                <label ng-if="$ctrl.project.editMode"> Description du projet </label>
-                <textarea ng-if="$ctrl.project.editMode" class="form-control input-sm" rows="6" cols="50" type="text" ng-model="$ctrl.project.content"></textarea>
+            </div>
+        </div>
 
-                <div class="exit">
-                    <a class="edit" ng-click="$ctrl.update($ctrl.project)">{{($ctrl.project.editMode ? 'Valider' : 'Edit')}} </a>
-                    <a type="button" ng-if="$ctrl.project.editMode" ng-click="$ctrl.cancel($ctrl.project)">Annuler</a>
-                    <a class="delete" ng-click="$ctrl.delete($ctrl.project)" ui-sref="app.projects">Delete {{}}</a>
-                </div>
+        <h1>Description du Projet </h1>
+
+        <div class="row dialog">
+            <p ng-if="!$ctrl.editMode">{{$ctrl.projects.content}}</p>
+            <label ng-if="$ctrl.editMode"> Description du projet </label>
+            <textarea ng-if="$ctrl.editMode" class="form-control input-sm" rows="6" cols="50" type="text" ng-model="$ctrl.projects.content"></textarea>
+
+            <div class="exit">
+                <a class="edit" ng-click="$ctrl.update($ctrl.projects)">{{($ctrl.editMode ? 'Valider' : 'Edit')}} </a>
+                <a type="button" ng-if="$ctrl.editMode" ng-click="$ctrl.cancel($ctrl.project)">Annuler</a>
+                <a class="delete" ng-click="$ctrl.delete($ctrl.project)" ui-sref="app.projects">Delete {{}}</a>
             </div>
         </div>
     </div>

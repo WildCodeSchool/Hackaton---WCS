@@ -13,6 +13,7 @@
 
                   this.limit = 1;
                   this.begin = 0;
+                  this.editMode
 
                   this.date = new Date();
                     projectsService.get().then((res) => {
@@ -32,24 +33,25 @@
 
                     // Update on Window Learn more
                     this.update = (project) => {
-                        if (project.editMode) {
-                            project.PublishedAt =  Math.round(this.date.getTime() / 1000)
+                        if (this.editMode) {
+                            this.projects.PublishedAt =  Math.round(this.date.getTime() / 1000)
 
                             projectsService.edit(project).then((res) => {
-                                this.project = res.config.data
-                                project.editMode = false
+                              debugger
+                                this.projects = res.config.data
+                                this.editMode = false
                             })
 
                         } else {
-                            _previous[project._id] = angular.copy(this.project)
-                            project.editMode = true
+                            _previous[this.projects._id] = angular.copy(this.projects)
+                            this.editMode = true
                         }
                     }
 
                     // Cancel edit of editMode
                     this.cancel = (project) => {
-                        this.project = _previous[project._id]
-                        project.editMode = false
+                        this.projects = _previous[this.projects._id]
+                        this.editMode = false
 
                     }
 

@@ -4,6 +4,11 @@ body {
 
 h1 {
     text-align: center;
+    padding: 0.5em 0 3em 0;
+}
+
+label {
+  text-align: center;
 }
 
 .interne {
