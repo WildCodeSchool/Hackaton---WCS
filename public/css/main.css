@@ -77,7 +77,6 @@ hr.divider:before {
 input {
     text-align: center;
     display: inline-block;
-    max-width: 20em !important;
 }
 
 .addArticle {
