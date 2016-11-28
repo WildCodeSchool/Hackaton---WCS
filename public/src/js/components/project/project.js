@@ -64,6 +64,13 @@
                     projectsService.delete(project).then((res) => {
                         this.project = {}
                     })
+                },
+                next (){
+                  
+                  this.begin ++
+                },
+                prev(){
+                  this.begin--
                 }
             })
         }]
