@@ -9,7 +9,7 @@
                             <div class="row">
                                 <div class="col-xs-6">
                                     <div ng-repeat="image in project.image | limitTo : 1">
-                                        <img ng-src="{{image}}" class="img-responsive">
+                                        <img ng-src="data:image/jpg;base64,{{image}}" class="img-responsive">
                                     </div>
                                 </div>
                                 <div class="col-xs-6">
@@ -29,32 +29,43 @@
             </div>
             <div class="col-xs-4 col-xs-push-8 fixed student">
                 <div class="auteur">
-                    <img ng-src="data:image/jpg;base64,{{$ctrl.student.avatar}}" class="img-responsive img-circle">
-                    <h2>{{$ctrl.student.name | uppercase}}
+                    <img ng-if="!$ctrl.editMode" ng-src="data:image/jpg;base64,{{$ctrl.student.avatar}}" class="img-responsive img-circle">
+                    <p ng-if="$ctrl.editMode">
+                        <input class="form-control input-m center-block" type="file" ng-model="$ctrl.student.avatar" base-sixty-four-input>
+                    </p>
+                    <h2 ng-if="!$ctrl.editMode">{{$ctrl.student.name | uppercase}}
                     </h2>
-                    <p>Techno : <span>{{$ctrl.student.techno}}</span>
+                    <p ng-if="$ctrl.editMode">Nom : </p>
+                    <p ng-if="$ctrl.editMode"><input type="text" value="Nom" ng-model="$ctrl.student.name"></p>
+                    <p>Techno : <span ng-if="!$ctrl.editMode">{{$ctrl.student.techno}}</span>
                     </p>
+                    <p ng-if="$ctrl.editMode"><input type="text" value="Techno" ng-model="$ctrl.student.techno"></p>
                     <p>GitHub :
-                        <span>
-                            <a href="http://www.github.com/{{$ctrl.student.github}}">@{{$ctrl.student.github}}</a>
-                        </span>
+                        <span ng-if="!$ctrl.editMode"><a href="http://www.github.com/{{$ctrl.student.github}}">@{{$ctrl.student.github}}</a></span>
                     </p>
+                    <p ng-if="$ctrl.editMode"><input type="text" value="Pseudo Github" ng-model="$ctrl.student.github"></p>
 
                     <hr>
                     <p>Description : </p>
-                    <p>{{$ctrl.student.description}}
+                    <p ng-if="!$ctrl.editMode">{{$ctrl.student.description}}
                     </p>
+                    <p ng-if="$ctrl.editMode"><input type="text" value="Description" ng-model="$ctrl.student.description"></p>
                     <p>Ville :
-                        <span>{{$ctrl.student.city}}</span>
+                        <span ng-if="!$ctrl.editMode">{{$ctrl.student.city}}</span>
                     </p>
+                    <p ng-if="$ctrl.editMode"><input type="text" value="Ville" ng-model="$ctrl.student.city"></p>
+                    <hr>
+                    <p><button class="btn btn-default" ng-click="$ctrl.edit($ctrl.student)">{{!$ctrl.editMode ? 'Editer' : 'Valider'}} les Infos</button></p>
+                    <p ng-if="$ctrl.editMode"><button class="btn btn-default" ng-click="$ctrl.cancel($ctrl.student)">Annuler</button></p>
+                    <p ng-if="$ctrl.editMode"><button class="btn btn-default" ng-click="$ctrl.delete($ctrl.student)">Supprimer</button></p>
                     <hr>
                     <p>
-                        <select ng-model="newProject.projects">
-                            <option value=" "></option>
+                        <select ng-model="$ctrl.newProject.projects">
+                            <!-- <option value=" "></option> -->
                             <option ng-repeat="project in $ctrl.projects">{{project.title}}</option>
                         </select>
                     </p>
-                    <p><button class="btn btn-default" role="group" ng-click="$ctrl.addProject($ctrl.student._id, newProject)">Add New Project</button></p>
+                    <p><button class="btn btn-default" ng-click="$ctrl.addProject($ctrl.student._id, [$ctrl.newProject.projects])">Add New Project</button></p>
                 </div>
             </div>
         </div>

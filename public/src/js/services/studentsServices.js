@@ -13,10 +13,10 @@
             add(student) {
                 return $http.post('/api/students', student)
             },
-            edit(student) {
-                return $http.put('/api/students/' + students._id, student)
+            edit(students) {
+                return $http.put('/api/students/' + students._id, students)
             },
-            delete(student) {
+            delete(students) {
                 return $http.delete('/api/students/' + students._id)
             }
         }

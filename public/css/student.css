@@ -33,6 +33,10 @@
     color: white;
 }
 
-#studentview a{
+#studentview a {
     color: white;
+}
+
+#studentview select, #studentview input {
+    color: black;
 }
