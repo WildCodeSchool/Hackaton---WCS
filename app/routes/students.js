@@ -1,10 +1,10 @@
 'use strict'
 
-let ProjectsController = require('../controllers/ProjectsController')
+let StudentsController = require('../controllers/StudentsController')
 
 module.exports = (app) => {
 
-    let ctrl = new ProjectsController()
+    let ctrl = new StudentsController()
 
     app.get('/students', (req, res, next) => {
         return ctrl.find(req, res, next)

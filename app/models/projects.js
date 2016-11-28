@@ -2,7 +2,7 @@
 
 let mongoose = require('mongoose')
 
-module.exports = mongoose.model('Blog', new mongoose.Schema({
+module.exports = mongoose.model('Project', new mongoose.Schema({
 
   title: {
       type: String,
@@ -16,7 +16,7 @@ module.exports = mongoose.model('Blog', new mongoose.Schema({
   },
   author: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Author'
+      ref: 'Student'
   },
   PublishedAt: {
     type:String
