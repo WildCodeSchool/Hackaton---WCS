@@ -2,7 +2,7 @@
 
     app.component('project', {
          bindings: {
-            blog: '<'
+            project: '<'
          },
         templateUrl: 'src/js/components/project/project.html',
         controller: ['projectsService', '$stateParams', function(projectsService, $stateParams) {
@@ -11,54 +11,58 @@
 
                   let _previous = {}
 
-                  this.date = new Date();
+                  this.limit = 1;
+                  this.begin = 0;
+                  this.editMode
 
+                  this.date = new Date();
                     projectsService.get().then((res) => {
-                        this.blog = res.data
+                        this.projects = res.data
 
                         // Extraction de l'id passé en paramètre
-                        let id = $stateParams.blogId
-                        this.blog.forEach((element) => {
+                        let id = $stateParams.projectId
+                        this.projects.forEach((element) => {
 
                             if (element._id === id) {
-                                this.blog = element
-
+                                this.projects = element
+                                console.log(this.projects)
                             }
                         })
                     })
 
 
                     // Update on Window Learn more
-                    this.update = (blog) => {
-                        if (blog.editMode) {
-                            blog.PublishedAt =  Math.round(this.date.getTime() / 1000)
+                    this.update = (project) => {
+                        if (this.editMode) {
+                            this.projects.PublishedAt =  Math.round(this.date.getTime() / 1000)
 
-                            projectsService.edit(blog).then((res) => {
-                                this.blog = res.config.data
-                                blog.editMode = false
+                            projectsService.edit(project).then((res) => {
+                              debugger
+                                this.projects = res.config.data
+                                this.editMode = false
                             })
 
                         } else {
-                            _previous[blog._id] = angular.copy(this.blog)
-                            blog.editMode = true
+                            _previous[this.projects._id] = angular.copy(this.projects)
+                            this.editMode = true
                         }
                     }
 
                     // Cancel edit of editMode
-                    this.cancel = (blog) => {
-                        this.blog = _previous[blog._id]
-                        blog.editMode = false
+                    this.cancel = (project) => {
+                        this.projects = _previous[this.projects._id]
+                        this.editMode = false
 
                     }
 
-                    // Delete an project
+                    // Delete a project
                     this.dele = '';
 
                 },
-                delete (blog){
+                delete (project){
                   alert("Sur?")
-                    projectsService.delete(blog).then((res) => {
-                        this.blog = {}
+                    projectsService.delete(project).then((res) => {
+                        this.project = {}
                     })
                 }
             })
