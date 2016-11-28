@@ -13,7 +13,6 @@
                     }
                     this.cancel = () => {
                         this.newStudent = {}
-                        console.log(this.newStudent);
                     }
                 }
             })

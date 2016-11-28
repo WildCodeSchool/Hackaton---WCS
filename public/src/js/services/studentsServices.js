@@ -8,7 +8,7 @@
                 return $http.get('/api/students')
             },
             getPopulate(students) {
-                return $http.get('/api/students/' + students.authorId)
+                return $http.get('/api/students/' + students.studentId)
             },
             add(student) {
                 return $http.post('/api/students', student)

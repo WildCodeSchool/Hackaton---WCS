@@ -21,3 +21,6 @@
   height: 14em;
   width: 41em;
 }
+.fixed{
+  position: fixed;
+}

@@ -1,20 +1,68 @@
 <section>
     <div class="container">
-
         <div class="row">
-            <div class="auteur">
-                <h1 class="name">{{$ctrl.author.name}} </h1>
-                <p>{{$ctrl.author.description}} </p>
+            <div class="col-xs-8">
+                <h1>Ses Projets</h1>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="thumbnail" ng-repeat="project in $ctrl.projects">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <img src="{{project.image}}">
+                                    <span>{{project.techno}}</span>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="caption">
+                                        <h3>{{project.title}}</h3>
+                                        <p>{{project.content}}</p>
+                                        <p>
+                                            <a href="/project/{{project._id}}" class="btn btn-primary" role="button">Voir le projet</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-4 col-xs-push-8 fixed">
+                <div class="auteur">
+                    <img src="{{$ctrl.student.avatar}}" class="img-responsive img-thumbnail">
+                    <h1 class="name">{{$ctrl.student.name}}
+                    </h1>
+                    <p>Description</p>
+                    <p>{{$ctrl.student.description}}
+                    </p>
+                    <p>Ville</p>
+                    <p>{{$ctrl.student.city}}
+                    </p>
+                    <p>GitHub :
+                        <span>
+                            <a href="http://www.github.com/{{$ctrl.student.github}}">@{{$ctrl.student.github}}</a>
+                        </span>
+                    </p>
+                    <p>Techno</p>
+                    <p>{{$ctrl.student.techno}}
+                    </p>
+                </div>
+
+                <div class="col-xs-7 col-xs-offset-2 summary" ng-repeat="article in $ctrl.student.articles">
+                    <p>
+                        {{$ctrl.student.name}}</p>
+                    <h3>{{article.title}}</h3>
+                    <em>
+                        <time>
+                            On
+                            {{article.createdAt | date}}</time>
+                    </em>
+                    <img class="imgview" ng-if="article.image" ng-src="{{article.image}}">
+                    <p>{{article.content | limitTo : 268}}...</p>
+                    <a ui-sref="app.student({studentId : article._id})">Read more...
+                    </a>
+                </div>
             </div>
 
-            <div class="col-xs-7 col-xs-offset-2 summary" ng-repeat="article in $ctrl.author.articles">
-                <p> {{$ctrl.author.name}}</p>
-                <h3>{{article.title}}</h3>
-                <em><time> On {{article.createdAt | date}}</time> </em>
-                <img class="imgview" ng-if="article.image" ng-src="{{article.image}}">
-                <p>{{article.content | limitTo : 268}}...</p>
-                <a ui-sref="app.student({studentId : article._id})">Read more... </a>
-            </div>
         </div>
 
     </div>
