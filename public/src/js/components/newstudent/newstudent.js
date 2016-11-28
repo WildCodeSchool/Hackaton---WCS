@@ -7,6 +7,7 @@
                 $onInit() {
 
                     this.add = () => {
+                        this.newStudent.avatar = this.newStudent.avatar.base64
                         studentsService.add(this.newStudent).then((res) => {
                             console.log(this.newStudent);
                         })
@@ -14,6 +15,7 @@
                     this.cancel = () => {
                         this.newStudent = {}
                     }
+
                 }
             })
         }]

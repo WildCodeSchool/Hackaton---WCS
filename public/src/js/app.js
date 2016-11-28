@@ -2,6 +2,7 @@
 
 })(angular.module('app', [
     'ui.router',
+    'naif.base64',
     'app.config',
     'app.services',
     'app.project',
