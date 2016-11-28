@@ -1,14 +1,16 @@
-<section>
+<section id="studentview">
     <div class="container">
         <div class="row">
             <div class="col-xs-8">
-                <h1>Ses Projets</h1>
+                <h1>Les projets de {{$ctrl.student.name}}</h1>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="thumbnail" ng-repeat="project in $ctrl.projects">
+                        <div class="thumbnail" ng-repeat="project in $ctrl.studentProjects">
                             <div class="row">
                                 <div class="col-xs-6">
-                                    <img src="{{project.image}}">
+                                    <div ng-repeat="image in project.image | limitTo : 1">
+                                        <img ng-src="{{image}}" class="img-responsive">
+                                    </div>
                                     <span>{{project.techno}}</span>
                                 </div>
                                 <div class="col-xs-6">
@@ -24,46 +26,37 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="col-xs-4 col-xs-push-8 fixed">
+            <div class="col-xs-4 col-xs-push-8 fixed student">
                 <div class="auteur">
-                    <img src="{{$ctrl.student.avatar}}" class="img-responsive img-thumbnail">
-                    <h1 class="name">{{$ctrl.student.name}}
+                    <img ng-src="{{$ctrl.student.avatar}}" class="img-responsive img-thumbnail">
+                    <h1>{{$ctrl.student.name | uppercase}}
                     </h1>
-                    <p>Description</p>
-                    <p>{{$ctrl.student.description}}
-                    </p>
-                    <p>Ville</p>
-                    <p>{{$ctrl.student.city}}
+                    <p>Techno : <span>{{$ctrl.student.techno}}</span>
                     </p>
                     <p>GitHub :
                         <span>
                             <a href="http://www.github.com/{{$ctrl.student.github}}">@{{$ctrl.student.github}}</a>
                         </span>
                     </p>
-                    <p>Techno</p>
-                    <p>{{$ctrl.student.techno}}
-                    </p>
-                </div>
 
-                <div class="col-xs-7 col-xs-offset-2 summary" ng-repeat="article in $ctrl.student.articles">
+                    <hr>
+                    <p>Description : </p>
+                    <p>{{$ctrl.student.description}}
+                    </p>
+                    <p>Ville :
+                        <span>{{$ctrl.student.city}}</span>
+                    </p>
+                    <hr>
                     <p>
-                        {{$ctrl.student.name}}</p>
-                    <h3>{{article.title}}</h3>
-                    <em>
-                        <time>
-                            On
-                            {{article.createdAt | date}}</time>
-                    </em>
-                    <img class="imgview" ng-if="article.image" ng-src="{{article.image}}">
-                    <p>{{article.content | limitTo : 268}}...</p>
-                    <a ui-sref="app.student({studentId : article._id})">Read more...
-                    </a>
+                        <select ng-model="newProject.projects">
+                            <option value=" "></option>
+                            <option ng-repeat="project in $ctrl.projects">{{project.title}}</option>
+                        </select>
+                    </p>
+                    <p><button class="btn btn-default" role="group" ng-click="$ctrl.addProject($ctrl.student._id, newProject)">Add New Project</button></p>
                 </div>
             </div>
-
         </div>
-
     </div>
 </section>

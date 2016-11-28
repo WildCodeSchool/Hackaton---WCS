@@ -1,26 +1,39 @@
+.auteur {
+    /*background-color: #FFFFFF;*/
+    margin: 3em;
+}
 
-.auteur{
-  background-color: #FFFFFF;
-  margin: 3em;
-}
 .name {
-  text-align: left;
-  margin: 1em;
+    text-align: left;
+    margin: 1em;
 }
-.summary{
+
+.summary {
     margin-bottom: 1em;
     background-color: #FFFFFF;
     margin-top: 1em;
     padding: 1em 4em 1em 4em;
     border-radius: 3px;
     min-height: 15.5em;
-    border: 1px solid rgba(0,0,0,.09);
+    border: 1px solid rgba(0, 0, 0, .09);
 }
 
 .imgview {
-  height: 14em;
-  width: 41em;
+    height: 14em;
+    width: 41em;
 }
-.fixed{
-  position: fixed;
+
+#studentview .fixed {
+    position: fixed;
+}
+
+#studentview .student {
+    height: 100vh;
+    background-color: #37474f;
+    color: white;
+}
+
+#studentview {
+    background-color: #eceff1;
+    min-height: 100vh;
 }
