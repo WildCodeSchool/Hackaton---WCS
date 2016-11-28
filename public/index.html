@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/article.css">
+    <link rel="stylesheet" href="css/author.css">
+
+    <title>Blog</title>
+</head>
+
+<body>
+
+  <ui-view></ui-view>
+
+</body>
+
+<script src="libs/angular.min.js"></script>
+<script src="libs/angular-ui-router.min.js"></script>
+
+<script src="src/js/components/articles/articles.md.js"></script>
+<script src="src/js/components/articles/articles.js"></script>
+
+<script src="src/js/components/article/article.md.js"></script>
+<script src="src/js/components/article/article.js"></script>
+
+<script src="src/js/components/newarticle/newarticle.md.js"></script>
+<script src="src/js/components/newarticle/newarticle.js"></script>
+
+<script src="src/js/components/authors/authors.md.js"> </script>
+<script src="src/js/components/authors/authors.js"> </script>
+
+<script src="src/js/services/services.md.js"></script>
+<script src="src/js/services/authorsServices.js"></script>
+<script src="src/js/services/blogsServices.js"></script>
+
+<script src="src/js/config/config.md.js"></script>
+<script src="src/js/config/router.js"></script>
+
+
+<script src="src/js/app.js"> </script>
+
+</html>

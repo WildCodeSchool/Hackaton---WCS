@@ -1,0 +1,102 @@
+body {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.interne {
+    margin: 1em;
+    background-color: #F8F9F9;
+}
+
+.add {
+    display: inline-block;
+    padding: 4em;
+    font-size: 1.6em;
+}
+
+small {
+    float: right;
+}
+
+a {
+    font-family: lato;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+p {
+    text-align: justify;
+    font-size: 18px;
+}
+
+.carte {
+    background-color: #FFFFFF;
+    margin-top: 2em;
+    margin-bottom: 0.7em;
+    padding: 1em 4em 0 4em;
+    border-radius: 3px;
+    min-height: 250px;
+    border: 1px solid rgba(0, 0, 0, .09);
+}
+
+.carte:hover {
+    box-shadow: 0.5px 0.5px 0.5px 0.5px #39CCCC;
+}
+
+hr {
+    text-align: center;
+    border-top: 0;
+}
+
+hr.divider:before {
+    font-weight: 400;
+    letter-spacing: 0.6em;
+    font-size: 18px;
+}
+
+hr.divider:before {
+    content: '...';
+    /*'• • •' */
+    display: inline-block;
+    margin-left: 0.6em;
+    position: relative;
+    color: rgba(0, 0, 0, .6);
+    top: -14px;
+}
+
+.changer {
+    display: inline-block;
+    padding: 14em 0 0 2em;
+}
+
+input {
+    text-align: center;
+    display: inline-block;
+    max-width: 20em !important;
+}
+
+.addArticle {
+    margin: 5em 0 5em 0;
+}
+
+.window {
+    text-align: center;
+}
+
+.edition {
+    margin: 5em 0 5em 0;
+}
+
+img {
+margin: 3em 0;
+}
+
+.imageview {
+  height: 14em;
+  width: 49em;
+}

@@ -1,0 +1,21 @@
+<section>
+    <div class="container">
+
+        <div class="row">
+            <div class="auteur">
+                <h1 class="name">{{$ctrl.author.name}} </h1>
+                <p>{{$ctrl.author.description}} </p>
+            </div>
+
+            <div class="col-xs-7 col-xs-offset-2 summary" ng-repeat="article in $ctrl.author.articles">
+                <p> {{$ctrl.author.name}}</p>
+                <h3>{{article.title}}</h3>
+                <em><time> On {{article.createdAt | date}}</time> </em>
+                <img class="imgview" ng-if="article.image" ng-src="{{article.image}}">
+                <p>{{article.content | limitTo : 268}}...</p>
+                <a ui-sref="app.article({blogId : article._id})">Read more... </a>
+            </div>
+        </div>
+
+    </div>
+</section>

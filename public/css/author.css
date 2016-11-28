@@ -1,0 +1,23 @@
+
+.auteur{
+  background-color: #FFFFFF;
+  margin: 3em;
+}
+.name {
+  text-align: left;
+  margin: 1em;
+}
+.summary{
+    margin-bottom: 1em;
+    background-color: #FFFFFF;
+    margin-top: 1em;
+    padding: 1em 4em 1em 4em;
+    border-radius: 3px;
+    min-height: 15.5em;
+    border: 1px solid rgba(0,0,0,.09);
+}
+
+.imgview {
+  height: 14em;
+  width: 41em;
+}

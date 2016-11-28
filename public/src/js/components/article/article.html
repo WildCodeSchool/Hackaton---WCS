@@ -1,0 +1,31 @@
+<!-- Window Learn more -->
+<section>
+  <div class="container">
+    <div class="row dialog">
+      <h1> Blog</h1>
+
+
+    <div class="col-xs-8 col-xs-offset-2">
+        <a  ui-sref="app.articles" class="exit"> X </a>
+
+        <h2 class="card-title" ng-if="!$ctrl.blog.editMode">{{$ctrl.blog.title}}</h2>
+        <label ng-if="$ctrl.blog.editMode">Title de L'article </label>
+        <input ng-if="$ctrl.blog.editMode" class="form-control input-sm" type="text" ng-model="$ctrl.blog.title">
+        <time><p ng-if="!$ctrl.blog.editMode"> Le {{$ctrl.blog.PublishedAt*1000 | date:'dd-MM-yyyy à HH:mm:ss'}} </p></time>
+        <time><p ng-if="$ctrl.blog.editMode"> Modifié le {{$ctrl.blog.PublishedAt*1000 | date:'dd-MM-yyyy à HH:mm:ss'}} </p></time>
+
+        <img class="img-responsive" ng-if="$ctrl.blog.image" ng-src="{{$ctrl.blog.image}}">
+        <p ng-if="!$ctrl.blog.editMode">{{$ctrl.blog.content}}</p>
+        <label ng-if="$ctrl.blog.editMode"> Description de l'article </label>
+        <textarea ng-if="$ctrl.blog.editMode" class="form-control input-sm" rows="6" cols="50" type="text" ng-model="$ctrl.blog.content"></textarea>
+
+        <div class="exit">
+            <a class="edit" ng-click="$ctrl.update($ctrl.blog)">{{($ctrl.blog.editMode ? 'Valider' : 'Edit')}} </a>
+            <a type="button" ng-if="$ctrl.blog.editMode" ng-click="$ctrl.cancel($ctrl.blog)">Annuler</a>
+            <a class="delete" ng-click="$ctrl.delete($ctrl.blog)" ui-sref="app.articles">Delete {{}}</a>
+
+        </div>
+    </div>
+</div>
+</div>
+<section>

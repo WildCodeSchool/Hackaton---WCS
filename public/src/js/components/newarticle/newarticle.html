@@ -1,0 +1,23 @@
+<section>
+  <div class="container">
+<div  class="row window">
+    <div class="col-xs-6 col-xs-offset-3">
+        <h1> New article </h1>
+        <label for="">Title </label>
+        <input class="form-control input-m center-block" type="text" ng-model="$ctrl.blog.title"><br>
+        <input ng-model="$ctrl.blog.PublishedAt" hidden>
+
+        <label for="">Author </label>
+        <input class="form-control input-m center-block" type="text" ng-model="$ctrl.blog.author"><br>
+
+        <label for=""> Description </label>
+        <textarea class="form-control input-sm" rows="6" cols="50" type="text" ng-model="$ctrl.blog.content"></textarea>
+
+        <div class="col-xs-6 col-xs-offset-6 edition center-block">
+            <button class="btn btn-success" ng-click="$ctrl.add()" ui-sref="app.articles">  Ajouter  </button>
+            <button class="btn btn-danger" ng-click="$ctrl.annuler(blog)" ui-sref="app.articles"> Annuler </button>
+        </div>
+    </div>
+</div>
+</div>
+<section>
