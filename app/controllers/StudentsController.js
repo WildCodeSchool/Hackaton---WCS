@@ -1,17 +1,17 @@
 'use strict'
 
 let Controller = require('./Controller')
-const AUTHOR = require('../models/authors')
+const STUDENT = require('../models/students')
 
-class AuthorsController extends Controller {
+class StudentsController extends Controller {
   constructor(){
-    super(AUTHOR)
+    super(STUDENT)
   }
 
   findById(req,res, next){
     this.model.findById(req.params.id).populate({
-      path: 'articles',
-      populate:({path: 'author', populate:{ path: 'articles'}})
+      path: 'projects',
+      populate:({path: 'student', populate:{ path: 'projects'}})
       }).exec((err, document)=>{
       if (err) next(err)
       else res.json(document)
@@ -19,4 +19,4 @@ class AuthorsController extends Controller {
   }
 
 }
-module.exports = AuthorsController
+module.exports = StudentsController
