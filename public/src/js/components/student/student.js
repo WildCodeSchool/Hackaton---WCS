@@ -15,24 +15,25 @@
                             this.studentProjects = this.student.projects
                         })
 
-
-                        //edit Mode
+                        //
+                        //Edit Mode
+                        //
                         let previous = {}
 
                         this.editMode = false
 
                         this.edit = (student) => {
-                            if (this.editMode == true) {
-                                student.avatar = student.avatar.base64
-                                studentsService.edit(student).then((res) => {
-                                    this.editMode = false
-                                })
-                            } else {
-                                previous[student] = angular.copy(student)
-                                this.editMode = true
+                                if (this.editMode == true) {
+                                    student.avatar = student.avatar.base64
+                                    studentsService.edit(student).then((res) => {
+                                        this.editMode = false
+                                    })
+                                } else {
+                                    previous[student] = angular.copy(student)
+                                    this.editMode = true
+                                }
                             }
-                        }
-                        // cancel
+                            // cancel
                         this.cancel = (student) => {
                             this.student = previous[student]
                             this.editMode = false
@@ -46,39 +47,45 @@
                             })
                         }
 
-
+                        //
                         /// Get all projects for select
+                        //
                         projectsService.get().then((res) => {
                             this.projects = res.data
                         })
+
+
+
+                        this.alreadyAddedValues = () => {
+                            let result =
+                            //faire un map pour return un result a chaque tour
+
+                            for (let i in this.student.projects){
+                                result = this.student.projects[i]._id
+                            }
+                            console.log(result);
+                            return result
+                        }
+
+                        this.filterAlreadyAdded = (item) => {
+                            return (this.alreadyAddedValues().indexOf(item) == -1);
+                        };
 
                         /// init new project
                         this.newProject = {
                             projects: []
                         }
 
-                        //push new project to all projects
+                        //push new project to all projects by student
                         this.addProject = (id, newProject) => {
-                            //get all students
-                            studentsService.getPopulate($stateParams).then((res) => {
-                                let student = res.data
-                                    //get all projects
-                                projectsService.get().then((res) => {
-                                    let projects = res.data
-                                        //je boucle sur chaque projet pour récupérer l'id correspondant au ngModel
-                                    for (let i in projects) {
-                                        if (newProject == projects[i].title) {
-                                            let myNewProject = [student.projects[0]._id, projects[i]._id]
-                                            let result = {}
-                                            result.projects = myNewProject
-                                            console.log(result)
-                                            return studentsService.edit(result).then((res) => {
+                            for (let i in this.projects) {
+                                if (newProject == this.projects[i].title) {
+                                    this.student.projects.push(this.projects[i])
+                                    return studentsService.edit(this.student).then((res) => {
 
-                                            })
-                                        }
-                                    }
-                                })
-                            })
+                                    })
+                                }
+                            }
                         }
                     }
                 })

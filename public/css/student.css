@@ -39,4 +39,8 @@
 
 #studentview select, #studentview input {
     color: black;
+    border-radius: 0px;
+}
+#studentview .thumbnail{
+  border-radius: 0px;
 }

@@ -18,7 +18,7 @@
                                         <p>{{project.content}}</p>
                                         <p>{{project.techno}}</p>
                                         <p>
-                                            <a href="/projects/{{project._id}}" class="btn btn-primary" role="button">Voir le projet</a>
+                                            <a href="#/projects/{{project._id}}" class="btn btn-primary" role="button">Voir le projet</a>
                                         </p>
                                     </div>
                                 </div>
@@ -31,6 +31,7 @@
                 <div class="auteur">
                     <img ng-if="!$ctrl.editMode" ng-src="data:image/jpg;base64,{{$ctrl.student.avatar}}" class="img-responsive img-circle">
                     <p ng-if="$ctrl.editMode">
+                        Image :
                         <input class="form-control input-m center-block" type="file" ng-model="$ctrl.student.avatar" base-sixty-four-input>
                     </p>
                     <h2 ng-if="!$ctrl.editMode">{{$ctrl.student.name | uppercase}}
@@ -58,14 +59,15 @@
                     <p><button class="btn btn-default" ng-click="$ctrl.edit($ctrl.student)">{{!$ctrl.editMode ? 'Editer' : 'Valider'}} les Infos</button></p>
                     <p ng-if="$ctrl.editMode"><button class="btn btn-default" ng-click="$ctrl.cancel($ctrl.student)">Annuler</button></p>
                     <p ng-if="$ctrl.editMode"><button class="btn btn-default" ng-click="$ctrl.delete($ctrl.student)">Supprimer</button></p>
-                    <hr>
-                    <p>
-                        <select ng-model="$ctrl.newProject.projects">
-                            <!-- <option value=" "></option> -->
-                            <option ng-repeat="project in $ctrl.projects">{{project.title}}</option>
-                        </select>
+                    <hr ng-if="$ctrl.editMode">
+                    <p ng-if="$ctrl.editMode">
+                            <select ng-model="$ctrl.newProject.projects">
+                                <option ng-repeat="project in $ctrl.projects | filter:$ctrl.filterAlreadyAdded ">{{project.title}}</option>
+                            </select>
                     </p>
-                    <p><button class="btn btn-default" ng-click="$ctrl.addProject($ctrl.student._id, [$ctrl.newProject.projects])">Add New Project</button></p>
+                    <p ng-if="$ctrl.editMode">
+                        <button class="btn btn-default" ng-click="$ctrl.addProject($ctrl.student._id, [$ctrl.newProject.projects])">Add New Project</button>
+                    </p>
                 </div>
             </div>
         </div>
