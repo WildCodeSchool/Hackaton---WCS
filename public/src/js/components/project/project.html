@@ -1,31 +1,39 @@
 <!-- Window Learn more -->
 <section>
-  <div class="container">
-    <div class="row dialog">
-      <h1> Blog</h1>
+    <div class="container-fluid">
+        <h1 ng-if="!$ctrl.project.editMode"> {{$ctrl.projects.title}}</h1>
+        <label ng-if="$ctrl.project.editMode"> Title du project </label>
+        <input ng-if="$ctrl.project.editMode" class="form-control input-sm" type="text" ng-model="$ctrl.project.title">
+        <time><p ng-if="!$ctrl.project.editMode"> Le {{$ctrl.project.PublishedAt*1000 | date:'dd-MM-yyyy à HH:mm:ss'}} </p></time>
+        <time><p ng-if="$ctrl.project.editMode"> Modifié le {{$ctrl.project.PublishedAt*1000 | date:'dd-MM-yyyy à HH:mm:ss'}} </p></time>
 
+        <!-- Récupération des images du projet -->
+        <div class="row">
+            <p>{{$ctrl.projects.techno}} </p>
+            <div class="" ng-repeat="image in $ctrl.projects.image | limitTo:$ctrl.limit : $ctrl.begin">
+                <img ng-src="{{image}}" ng-if="$ctrl.projects.image" class="img-responsive">
+            </div>
+        </div>
 
-    <div class="col-xs-8 col-xs-offset-2">
-        <a  ui-sref="app.projects" class="exit"> X </a>
+        <div class="row dialog">
 
-        <h2 class="card-title" ng-if="!$ctrl.blog.editMode">{{$ctrl.blog.title}}</h2>
-        <label ng-if="$ctrl.blog.editMode">Title du project </label>
-        <input ng-if="$ctrl.blog.editMode" class="form-control input-sm" type="text" ng-model="$ctrl.blog.title">
-        <time><p ng-if="!$ctrl.blog.editMode"> Le {{$ctrl.blog.PublishedAt*1000 | date:'dd-MM-yyyy à HH:mm:ss'}} </p></time>
-        <time><p ng-if="$ctrl.blog.editMode"> Modifié le {{$ctrl.blog.PublishedAt*1000 | date:'dd-MM-yyyy à HH:mm:ss'}} </p></time>
+            <div class="col-xs-8 col-xs-offset-2">
+                <!-- Récupération des avatars -->
+                <div class="" ng-repeat="avatar in $ctrl.projects.student.avatar">
+                    <div class="col-xs-3">
+                        <img ng-src="{{avatar}}"  class="img-responsive">
+                    </div>
+                </div>
+                <p ng-if="!$ctrl.project.editMode">{{$ctrl.projects.content}}</p>
+                <label ng-if="$ctrl.project.editMode"> Description du projet </label>
+                <textarea ng-if="$ctrl.project.editMode" class="form-control input-sm" rows="6" cols="50" type="text" ng-model="$ctrl.project.content"></textarea>
 
-        <img class="img-responsive" ng-if="$ctrl.blog.image" ng-src="{{$ctrl.blog.image}}">
-        <p ng-if="!$ctrl.blog.editMode">{{$ctrl.blog.content}}</p>
-        <label ng-if="$ctrl.blog.editMode"> Description de l'project </label>
-        <textarea ng-if="$ctrl.blog.editMode" class="form-control input-sm" rows="6" cols="50" type="text" ng-model="$ctrl.blog.content"></textarea>
-
-        <div class="exit">
-            <a class="edit" ng-click="$ctrl.update($ctrl.blog)">{{($ctrl.blog.editMode ? 'Valider' : 'Edit')}} </a>
-            <a type="button" ng-if="$ctrl.blog.editMode" ng-click="$ctrl.cancel($ctrl.blog)">Annuler</a>
-            <a class="delete" ng-click="$ctrl.delete($ctrl.blog)" ui-sref="app.projects">Delete {{}}</a>
-
+                <div class="exit">
+                    <a class="edit" ng-click="$ctrl.update($ctrl.project)">{{($ctrl.project.editMode ? 'Valider' : 'Edit')}} </a>
+                    <a type="button" ng-if="$ctrl.project.editMode" ng-click="$ctrl.cancel($ctrl.project)">Annuler</a>
+                    <a class="delete" ng-click="$ctrl.delete($ctrl.project)" ui-sref="app.projects">Delete {{}}</a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-</div>
-<section>
+</section>
