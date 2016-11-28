@@ -12,10 +12,10 @@ module.exports = mongoose.model('Project', new mongoose.Schema({
     type: String
   },
   content :{
-    type: []
+    type: String
   },
   image:{
-    type:String
+    type:[]
   },
   student: {
       type: mongoose.Schema.Types.ObjectId,

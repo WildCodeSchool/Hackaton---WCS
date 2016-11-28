@@ -85,10 +85,11 @@ input {
 
 .window {
     text-align: center;
+    margin: 5em 0 0 0;
 }
 
 .edition {
-    margin: 5em 0 5em 0;
+    margin-top: 5em;
 }
 
 img {
