@@ -1,18 +1,18 @@
 <section>
     <div class="container">
         <div class="row window">
-            <div class="col-xs-6 col-xs-offset-3">
-                <h1>New Student</h1>
-
+            <h1>New Student</h1>
+            <div class="col-xs-6">
                 <label>Name</label>
                 <input class="form-control input-m center-block" type="text" ng-model="$ctrl.newStudent.name" required><br>
 
                 <label>Avatar</label>
-                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.newStudent.avatar"><br>
+                <input class="form-control input-m center-block" type="file" ng-model="$ctrl.newStudent.avatar" base-sixty-four-input><br>
 
                 <label>Github</label>
                 <input class="form-control input-m center-block" type="text" ng-model="$ctrl.newStudent.github"><br>
-
+            </div>
+            <div class="col-xs-6">
                 <label>Description</label>
                 <input class="form-control input-m center-block" type="text" ng-model="$ctrl.newStudent.description"><br>
 
@@ -21,7 +21,8 @@
 
                 <label>Techno</label>
                 <input class="form-control input-m center-block" type="text" ng-model="$ctrl.newStudent.techno"><br>
-
+            </div>
+            <div class="col-xs-12">
                 <label>Projects</label>
                 <p>
                     <select ng-model="$ctrl.newStudent.projects">
@@ -31,9 +32,9 @@
                 </p>
             </div>
         </div>
-        <div class="row window">
-            <div class="col-xs-12 edition center-block">
-                <button class="btn btn-success" ng-click="$ctrl.add()">Ajouter</button>
+        <div class="row">
+            <div class="col-xs-12 edition text-center">
+                <button class="btn btn-success" ng-click="$ctrl.add($ctrl.newStudent)">Ajouter</button>
                 <button class="btn btn-danger" ng-click="$ctrl.cancel(newStudent)">Annuler</button>
             </div>
         </div>
