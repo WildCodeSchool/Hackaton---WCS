@@ -7,7 +7,7 @@ const PROJECT = require('../models/projects')
 
 class ProjectsController extends Controller {
   constructor(){
-    super(PROJET)
+    super(PROJECT)
   }
 
   find(req,res, next){
