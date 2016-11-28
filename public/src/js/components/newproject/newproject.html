@@ -1,23 +1,34 @@
 <section>
-  <div class="container">
-<div  class="row window">
-    <div class="col-xs-6 col-xs-offset-3">
-        <h1> New article </h1>
-        <label for="">Title </label>
-        <input class="form-control input-m center-block" type="text" ng-model="$ctrl.blog.title"><br>
-        <input ng-model="$ctrl.blog.PublishedAt" hidden>
+    <div class="container">
+        <h1> New Project </h1>
 
-        <label for="">Author </label>
-        <input class="form-control input-m center-block" type="text" ng-model="$ctrl.blog.author"><br>
+        <div class="row window">
+            <div class="col-xs-6">
+                <label for="">Title </label>
+                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.project.title"><br>
+                <input ng-model="$ctrl.blog.PublishedAt" hidden>
 
-        <label for=""> Description </label>
-        <textarea class="form-control input-sm" rows="6" cols="50" type="text" ng-model="$ctrl.blog.content"></textarea>
+                <label for=""> School </label>
+                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.project.school"><br>
+            </div>
 
-        <div class="col-xs-6 col-xs-offset-6 edition center-block">
-            <button class="btn btn-success" ng-click="$ctrl.add()" ui-sref="app.articles">  Ajouter  </button>
-            <button class="btn btn-danger" ng-click="$ctrl.annuler(blog)" ui-sref="app.articles"> Annuler </button>
+            <div class="col-xs-6">
+                <label for=""> Students </label>
+                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.project.student"><br>
+
+                <label for="">Project Language(s) </label>
+                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.project.techno">
+            </div>
+
+            <div class="col-xs-6 col-xs-offset-3">
+                <label for=""> Project description </label>
+                <textarea class="form-control input-sm" rows="6" cols="50" type="text" ng-model="$ctrl.project.content"></textarea>
+            </div>
+
+            <div class="col-xs-6 col-xs-offset-3 edition">
+                <button class="btn btn-success" ng-click="$ctrl.add()" >  Ajouter  </button>
+                <button class="btn btn-danger" ng-click="$ctrl.annuler(article)"> Annuler </button>
+            </div>
         </div>
     </div>
-</div>
-</div>
-<section>
+</section>

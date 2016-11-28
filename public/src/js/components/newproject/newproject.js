@@ -5,20 +5,20 @@
     controller:['projectsService', function(projectsService){
 
       this.date = new Date();
-      this.blogs = []
+      this.projects = []
       this.add = () => {
 
-          this.blog.PublishedAt = Math.round(this.date.getTime() / 1000)
+          this.project.PublishedAt = Math.round(this.date.getTime() / 1000)
 
-              projectsService.add(this.blog).then((res) => {
-                this.blogs.push(res.data)
-                this.blog = {}
+              projectsService.add(this.project).then((res) => {
+                this.projects.push(res.data)
+                this.project = {}
               })
       }
 
-      // Cancel of +Add article
-      this.annuler = (blog) => {
-          this.blog = {}
+      // Cancel
+      this.annuler = (project) => {
+          this.project = {}
       }
 
     }]
