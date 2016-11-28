@@ -1,8 +1,41 @@
 <section>
-    <div class="row">
-      <div class="col-xs-12">
-        <h1>Add a Student</h1>
+    <div class="container">
+        <div class="row window">
+            <div class="col-xs-6 col-xs-offset-3">
+                <h1>New Student</h1>
 
-      </div>
+                <label>Name</label>
+                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.newStudent.name"><br>
+
+                <label>Avatar</label>
+                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.newStudent.avatar"><br>
+
+                <label>Github</label>
+                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.newStudent.github"><br>
+
+                <label>Description</label>
+                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.newStudent.description"><br>
+
+                <label>City</label>
+                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.newStudent.city"><br>
+
+                <label>Techno</label>
+                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.newStudent.techno"><br>
+
+                <label>Projects</label>
+                <p>
+                    <select ng-model="$ctrl.newStudent.projects">
+                        <option></option>
+                        <option ng-repeat="project in $ctrl.projects">{{project.title}}</option>
+                    </select>
+                </p>
+            </div>
+        </div>
+        <div class="row window">
+            <div class="col-xs-12 edition center-block">
+                <button class="btn btn-success" ng-click="$ctrl.add()">Ajouter</button>
+                <button class="btn btn-danger" ng-click="$ctrl.cancel(newStudent)">Annuler</button>
+            </div>
+        </div>
     </div>
 </section>

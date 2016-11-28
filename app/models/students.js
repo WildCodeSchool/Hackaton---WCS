@@ -17,7 +17,7 @@ module.exports = mongoose.model('Student', new mongoose.Schema({
     description: {
         type: String
     },
-    school: {
+    city: {
         type: String
     },
     techno: {
