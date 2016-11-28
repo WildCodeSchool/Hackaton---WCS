@@ -11,6 +11,8 @@
 .exit {
     float: right;
     margin: 0.1em 0em 0 0;
+    display: inline-block;
+
 }
 .exit:hover {
   color: red;
@@ -27,4 +29,24 @@
 .projectimage {
   width: 100%;
   height: 35em;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#id {
+  position: relative;
+
+}
+.btnPrev {
+  float: left;
+  font-size: 30px;
+  /*color: #FFFFFF;*/
+  vertical-align: middle;
+}
+.btnNext {
+  float: right;
+  font-size: 30px;
+  display: inline-block;
+  color: #FFFFFF;
+
 }

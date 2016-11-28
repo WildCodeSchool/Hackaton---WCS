@@ -7,15 +7,21 @@
         <time><p ng-if="!$ctrl.editMode" > Le {{$ctrl.projects.updatedAt | date:'dd-MM-yyyy à HH:mm:ss'}} </p></time>
 
         <!-- Récupération des images du projet -->
-        <p ng-if="!$ctrl.editMode">{{$ctrl.projects.techno}} </p>
 
         <label ng-if="$ctrl.editMode"> Language de Programmation </label>
         <input ng-if="$ctrl.editMode" class="form-control input-sm" type="text" ng-model="$ctrl.projects.techno">
 
 
         <div class="row">
+
             <div class="" ng-repeat="image in $ctrl.projects.image | limitTo:$ctrl.limit : $ctrl.begin">
-                <img ng-src="{{image}}" ng-if="$ctrl.projects.image" class="projectimage img-responsive">
+                <p ng-if="!$ctrl.editMode" id="techno">{{$ctrl.projects.techno}} </p>
+                <div style="background-image: url({{image}})" ng-if="$ctrl.projects.image" class="projectimage" ng-click="$ctrl.next()">
+                  <p ng-click="$ctrl.prev()" class="btnPrev"> < </p>
+
+                  <p ng-click="$ctrl.next()" class="btnNext"> > </p>
+
+                </div>
             </div>
 
             <div class="col-xs-8 col-xs-offset-2">
@@ -37,12 +43,13 @@
             <p ng-if="!$ctrl.editMode">{{$ctrl.projects.content}}</p>
             <label ng-if="$ctrl.editMode"> Description du projet </label>
             <textarea ng-if="$ctrl.editMode" class="form-control input-sm" rows="6" cols="50" type="text" ng-model="$ctrl.projects.content"></textarea>
-
-            <div class="exit">
-                <a class="edit" ng-click="$ctrl.update($ctrl.projects)">{{($ctrl.editMode ? 'Valider' : 'Edit')}} </a>
-                <a type="button" ng-if="$ctrl.editMode" ng-click="$ctrl.cancel($ctrl.project)">Annuler</a>
-                <a class="delete" ng-click="$ctrl.delete($ctrl.project)" ui-sref="app.projects">Delete {{}}</a>
-            </div>
         </div>
+
+        <div class="row exit">
+            <a class="edit" ng-click="$ctrl.update($ctrl.projects)">{{($ctrl.editMode ? 'Valider' : 'Edit')}} </a>
+            <a type="button" ng-if="$ctrl.editMode" ng-click="$ctrl.cancel($ctrl.project)">Annuler</a>
+            <a class="delete" ng-click="$ctrl.delete($ctrl.project)" ui-sref="app.projects">Delete {{}}</a>
+        </div>
+
     </div>
 </section>
