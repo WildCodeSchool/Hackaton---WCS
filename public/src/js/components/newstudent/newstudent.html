@@ -1,69 +1,76 @@
 <section>
     <div class="container">
-        <div class="row window">
-            <h1>New Student</h1>
-            <div class="col-xs-6">
-                <div class="group">
-                    <input type="text" ng-model="$ctrl.newStudent.name" required><br>
-                    <span class="highlight"></span>
-                    <span class="bar"></span>
-                    <label>Name</label>
-                </div>
-                <div class="group">
-                    <input type="file" ng-model="$ctrl.newStudent.avatar" base-sixty-four-input required><br>
-                    <span class="highlight"></span>
-                    <span class="bar"></span>
-                    <label>Avatar</label>
-                </div>
-                <div class="group">
-                    <input type="text" ng-model="$ctrl.newStudent.github" required><br>
-                    <span class="highlight"></span>
-                    <span class="bar"></span>
-                    <label>Github</label>
-                </div>
-            </div>
-            <div class="col-xs-6">
-                <div class="group">
-                    <input type="text" ng-model="$ctrl.newStudent.description" required>
-                    <span class="highlight"></span>
-                    <span class="bar"></span>
-                    <label>Description</label>
-                </div>
-                <div class="group">
-                    <input type="text" ng-model="$ctrl.newStudent.city" required>
-                    <span class="highlight"></span>
-                    <span class="bar"></span>
-                    <label>City</label>
-                </div>
-                <div class="group">
-                    <input type="text" ng-model="$ctrl.newStudent.techno" required>
-                    <span class="highlight"></span>
-                    <span class="bar"></span>
-                    <label>Techno</label>
-                </div>
-            </div>
-            <div class="col-xs-12">
-                <p>
-                    <select ng-model="$ctrl.newStudent.projects">
-                        <option></option>
-                        <option ng-repeat="project in $ctrl.projects track by $index">{{project.title}}</option>
-                    </select>
-                    <span class="highlight"></span>
-                    <span class="bar"></span>
-                    <label>Projects</label>
+        <form name="newstudent">
+            <div class="row window">
+                <h1>New Student</h1>
+                <div class="col-xs-6">
+                    <div class="group">
+                        <input type="text" ng-model="$ctrl.newStudent.name" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Name</label>
+                    </div>
+                    <div class="group">
+                        <label class="labelInput">Avatar</label>
+                        <input class="fileinput" type="file" ng-model="$ctrl.newStudent.avatar" base-sixty-four-input required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
 
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-8 col-xs-offset-3 edition">
-                <div class="col-xs-4">
-                    <button class="btn" ng-click="$ctrl.add($ctrl.newStudent, [$ctrl.newStudent.projects])"><i class="fa fa-lg fa-cloud-download" aria-hidden="true"> Ajouter</i>  </button>
+                    </div>
+                    <div class="group">
+                        <input type="text" ng-model="$ctrl.newStudent.github" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Github</label>
+                    </div>
                 </div>
-                <div class="col-xs-4">
-                    <button class="btn" ng-click="$ctrl.cancel(newStudent)"><i class="fa fa-lg fa-undo" aria-hidden="true">Annuler</i>  </button>
+                <div class="col-xs-6">
+                    <div class="group">
+                        <input type="text" ng-model="$ctrl.newStudent.description" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Description</label>
+                    </div>
+                    <div class="group">
+                        <input type="text" ng-model="$ctrl.newStudent.city" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>City</label>
+                    </div>
+                    <div class="group">
+                        <input type="text" ng-model="$ctrl.newStudent.techno" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Techno</label>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="group">
+                        <label class="labelInput">Projects</label>
+                        <p>
+                            <select ng-model="$ctrl.newStudent.projects">
+                                <option></option>
+                                <option ng-repeat="project in $ctrl.projects track by $index">{{project.title}}</option>
+                            </select>
+                            <span class="caret selectcaret"></span>
+                        </p>
+
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="row">
+                <div class="col-xs-12 edition text-center">
+                    <button class="btn" ng-click="$ctrl.add($ctrl.newStudent, [$ctrl.newStudent.projects])" ng-disabled="newstudent.$invalid">
+                        <i class="fa fa-lg fa-cloud-download" aria-hidden="true">
+                            Ajouter</i>
+                    </button>
+                    <button class="btn" ng-click="$ctrl.cancel(newStudent)" ui-sref="app.projects">
+                        <i class="fa fa-lg fa-undo" aria-hidden="true">
+                            Annuler</i>
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
+</div>
 </section>

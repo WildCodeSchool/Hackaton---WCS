@@ -41,6 +41,20 @@
     color: black;
     border-radius: 0px;
 }
-#studentview .thumbnail{
-  border-radius: 0px;
+
+#studentview .thumbnail {
+    border-radius: 0px;
+}
+
+.fileinput {
+    background-color: white;
+}
+
+.labelInput {
+    margin-top: -35px;
+    position: absolute;
+}
+
+.selectcaret {
+    margin-left: -20px;
 }
