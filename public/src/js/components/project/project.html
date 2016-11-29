@@ -1,7 +1,7 @@
 <!-- Window Learn more -->
 <section>
     <div class="container-fluid">
-        <h1 ng-if="!$ctrl.editMode"> {{$ctrl.projects.title}}</h1>
+        <h1 ng-if="!$ctrl.editMode" class="projecttitle"> {{$ctrl.projects.title}}</h1>
         <label ng-if="$ctrl.editMode"> Title du project </label>
         <input ng-if="$ctrl.editMode" class="form-control input-sm" type="text" ng-model="$ctrl.projects.title">
         <!-- <time><p ng-if="!$ctrl.editMode" > Le {{$ctrl.projects.updatedAt | date:'dd-MM-yyyy à HH:mm:ss'}} </p></time> -->
