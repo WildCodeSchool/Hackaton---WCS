@@ -25,6 +25,7 @@
 
 #studentview .fixed {
     position: fixed;
+    overflow: auto;
 }
 
 #studentview .student {
@@ -57,4 +58,11 @@
 
 .selectcaret {
     margin-left: -20px;
+}
+
+#studentview .auteur label{
+  color: white;
+}
+#studentview .auteur input, #studentview .auteur .bar{
+  width: 100%;
 }

@@ -66,7 +66,11 @@
                                 if (newProject == this.projects[i].title) {
                                     this.student.projects.push(this.projects[i])
                                     return studentsService.edit(this.student).then((res) => {
+                                        this.projects[i].student.push(this.student._id)
+                                        debugger
+                                        projectsService.edit(this.projects[i]).then((res) => {
 
+                                        })
                                     })
                                 }
                             }

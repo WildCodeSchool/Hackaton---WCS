@@ -226,7 +226,6 @@ img {
 }
 
 .imageview {
-    height: 14em;
     width: 49em;
 }
 
@@ -238,7 +237,7 @@ navbar .form-control, navbar .btn {
 }
 
 .btn {
-    padding: 1em 3em 1em 3em;
+    padding: 1em 2em 1em 2em;
     background-color: rgba(255, 255, 255, 0.8);
     color: #5264AE;
     text-transform: uppercase;

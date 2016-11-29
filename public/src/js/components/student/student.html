@@ -29,33 +29,71 @@
             </div>
             <div class="col-xs-4 col-xs-push-8 fixed student">
                 <div class="auteur">
+                    <!-- Image -->
                     <img ng-if="!$ctrl.editMode" ng-src="data:image/jpg;base64,{{$ctrl.student.avatar}}" class="img-responsive img-circle">
-                    <p ng-if="$ctrl.editMode">
-                        Image :
+                    <div class="group" ng-if="$ctrl.editMode">
                         <input class="form-control input-m center-block" type="file" ng-model="$ctrl.student.avatar" base-sixty-four-input>
-                    </p>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Image</label>
+                    </div>
+                    <!-- Name -->
                     <h2 ng-if="!$ctrl.editMode">{{$ctrl.student.name | uppercase}}
                     </h2>
-                    <p ng-if="$ctrl.editMode">Nom : </p>
-                    <p ng-if="$ctrl.editMode"><input type="text" value="Nom" ng-model="$ctrl.student.name"></p>
-                    <p>Techno : <span ng-if="!$ctrl.editMode">{{$ctrl.student.techno}}</span>
+                    <div class="group" ng-if="$ctrl.editMode">
+                        <input type="text" value="Nom" ng-model="$ctrl.student.name">
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Nom</label>
+                    </div>
+                    <!-- Techno -->
+                    <p ng-if="!$ctrl.editMode">Techno : <span>{{$ctrl.student.techno}}</span>
                     </p>
-                    <p ng-if="$ctrl.editMode"><input type="text" value="Techno" ng-model="$ctrl.student.techno"></p>
-                    <p>GitHub :
-                        <span ng-if="!$ctrl.editMode"><a href="http://www.github.com/{{$ctrl.student.github}}">@{{$ctrl.student.github}}</a></span>
+                    <div class="group" ng-if="$ctrl.editMode">
+                        <input type="text" value="Techno" ng-model="$ctrl.student.techno">
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Techno</label>
+                    </div>
+                    <!-- Github -->
+                    <p ng-if="!$ctrl.editMode">GitHub :
+                        <span><a href="http://www.github.com/{{$ctrl.student.github}}">@{{$ctrl.student.github}}</a></span>
                     </p>
-                    <p ng-if="$ctrl.editMode"><input type="text" value="Pseudo Github" ng-model="$ctrl.student.github"></p>
+                    <div class="group" ng-if="$ctrl.editMode">
+                        <input type="text" value="Pseudo Github" ng-model="$ctrl.student.github">
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>GitHub</label>
+                    </div>
+
+                    <hr ng-if="!$ctrl.editMode">
+
+                    <!-- Description -->
+                    <div ng-if="!$ctrl.editMode">
+                        <p>Description : </p>
+                        <p>{{$ctrl.student.description}}
+                        </p>
+                    </div>
+                    <div class="group" ng-if="$ctrl.editMode">
+                        <input type="text" value="Description" ng-model="$ctrl.student.description">
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Description</label>
+                    </div>
+                    <!-- City -->
+                    <p ng-if="!$ctrl.editMode">Ville :
+                        <span>{{$ctrl.student.city}}</span>
+                    </p>
+                    <div class="group" ng-if="$ctrl.editMode">
+                        <input type="text" value="Ville" ng-model="$ctrl.student.city">
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Ville</label>
+                    </div>
 
                     <hr>
-                    <p>Description : </p>
-                    <p ng-if="!$ctrl.editMode">{{$ctrl.student.description}}
-                    </p>
-                    <p ng-if="$ctrl.editMode"><input type="text" value="Description" ng-model="$ctrl.student.description"></p>
-                    <p>Ville :
-                        <span ng-if="!$ctrl.editMode">{{$ctrl.student.city}}</span>
-                    </p>
-                    <p ng-if="$ctrl.editMode"><input type="text" value="Ville" ng-model="$ctrl.student.city"></p>
-                    <hr>
+
+                    <!-- Project -->
                     <p><button class="btn btn-default" ng-click="$ctrl.edit($ctrl.student)">{{!$ctrl.editMode ? 'Editer' : 'Valider'}} les Infos</button></p>
                     <p ng-if="$ctrl.editMode"><button class="btn btn-default" ng-click="$ctrl.cancel($ctrl.student)">Annuler</button></p>
                     <p ng-if="$ctrl.editMode"><button class="btn btn-default" ng-click="$ctrl.delete($ctrl.student)">Supprimer</button></p>
