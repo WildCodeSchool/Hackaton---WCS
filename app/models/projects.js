@@ -14,6 +14,10 @@ module.exports = mongoose.model('Project', new mongoose.Schema({
   content :{
     type: String
   },
+  likes :{
+    type: Number,
+    default: 0
+  },
   image:{
     type:[]
   },

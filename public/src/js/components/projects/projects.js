@@ -15,6 +15,13 @@
 
                     this.limit = 4
 
+                    this.likes = (project) => {
+                        project.likes++
+                        projectsService.edit(project).then((res) => {
+
+                        })
+                    }
+
                     this.loadmore = () => {
                         this.limit += 2
                     }
