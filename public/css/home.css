@@ -108,3 +108,15 @@ h3 {
 .usercardproject {
     margin-top: -100px;
 }
+
+.heart {
+    color: red;
+    font-size: 24px;
+    float: right;
+    margin: 10px;
+    top: 25px;
+    right: 10px;
+    background-color: #f8f9f9;
+    padding: 25px;
+    border-bottom-left-radius: 80%;
+}
