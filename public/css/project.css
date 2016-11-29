@@ -76,5 +76,15 @@
 }
 
 .contributors {
-  max-height: 8em;
+    max-height: 8em;
+}
+
+.editmode {
+    margin-top: 3em;
+}
+
+.caretproject {
+    left: 70%;
+    position: absolute;
+    top: 13px;
 }
