@@ -4,7 +4,9 @@
             <div class="row">
                 <div class="col-md-8 col-xs-12">
                     <div ng-repeat="project in $ctrl.projects | limitTo : $ctrl.limit | orderBy : '-likes'">
-                        <a class="heart" ng-click="$ctrl.likes(project)"><i class="fa fa-heart" aria-hidden="true"></i> {{project.likes}}</a>
+                        <a class="heart" ng-click="$ctrl.likes(project)">
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                            {{project.likes}}</a>
                         <div class="card carte interne card-block">
                             <p>{{project.student.name}}</p>
                             <div class="imageview" ng-repeat="image in project.image | limitTo: 1" ng-src="" style="background-image:url({{image}})"></div>
@@ -28,11 +30,22 @@
                                         </div>
                                     </a>
                                 </div>
-                                <a class="col-xs-12" ui-sref="app.project({projectId : project._id})">
-                                    <p class="right viewmore">Voir plus</p>
-                                </a>
+                                <p class="col-xs-6">
+                                    <a ui-sref="app.project({projectId : project._id})" class="viewmore">Comments ({{project.comment.length}})</a>
+                                </p>
+                                <p class="col-xs-6 right">
+                                    <a ng-click="$ctrl.viewComment()" class="viewmore">Voir plus</a>
+                                </p>
+                                <!-- Comments -->
+                                <div class="row" ng-if="$ctrl.viewComment">
+                                  <div class="col-xs-8">
+                                      <input type="text" placeholder="Écrivez votre commentaire" value="" ng-model="$ctrl.newComment">
+                                  </div>
+                                  <div class="col-xs-4">
+                                    <button class="btn" type="button" ng-click="$ctrl.addComment($ctrl.newComment)">Envoyer</button>
+                                  </div>
+                                </div>
                             </div>
-
                         </div>
                     </div>
                     <a class="btn loadmore col-xs-12" name="button" ng-click="$ctrl.loadmore()" ng-if="$ctrl.limit < $ctrl.projects.length">Charger plus de projets</a>
