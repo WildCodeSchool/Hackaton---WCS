@@ -64,7 +64,6 @@
                     })
                 },
                 next (){
-
                   this.begin ++
                 },
                 prev(){
