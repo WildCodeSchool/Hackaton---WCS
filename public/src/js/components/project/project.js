@@ -33,10 +33,9 @@
                     // Update on Window Learn more
                     this.update = (project) => {
                         if (this.editMode) {
-                            this.projects.PublishedAt =  Math.round(this.date.getTime() / 1000)
+                            // this.projects.PublishedAt =  Math.round(this.date.getTime() / 1000)
 
                             projectsService.edit(project).then((res) => {
-                              debugger
                                 this.projects = res.config.data
                                 this.editMode = false
                             })
