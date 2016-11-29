@@ -11,7 +11,7 @@ input {
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     display: block;
-    width: 300px;
+    width: 100%;
     border: none;
     /*border-bottom: 0.1px solid #757575;*/
 }
@@ -24,7 +24,7 @@ textarea {
     font-size: 18px;
     padding: 15px 10px 10px 5px;
     display: block;
-    width: 300px;
+    width: 100%;
     border: none;
     /*border-bottom: 1px solid #757575;*/
 }
@@ -70,7 +70,7 @@ textarea:focus~label, textarea:valid~label {
 .bar {
     position: relative;
     display: block;
-    width: 300px;
+    width: 100%;
 }
 
 .bar:before, .bar:after {
@@ -259,5 +259,4 @@ select {
     border: 0px;
     width: 70%;
     margin: 5px 0px;
-
 }
