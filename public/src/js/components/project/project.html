@@ -9,7 +9,7 @@
                 <span class="bar"></span>
                 <!-- <label class="label" ng-if="$ctrl.editMode">Titre </label> -->
             </div>
-<!-- <time><p ng-if="!$ctrl.editMode" > Le {{$ctrl.projects.updatedAt | date:'dd-MM-yyyy à HH:mm:ss'}} </p></time> -->
+            <!-- <time><p ng-if="!$ctrl.editMode" > Le {{$ctrl.projects.updatedAt | date:'dd-MM-yyyy à HH:mm:ss'}} </p></time> -->
             <!-- Récupération des images du projet -->
 
             <div class="" ng-repeat="image in $ctrl.projects.image | limitTo:$ctrl.limit : $ctrl.begin">
@@ -21,22 +21,18 @@
                         <span class="bar"></span>
                         <!-- <label class="label" ng-if="$ctrl.editMode"> Language de Programmation </label> -->
                     </div>
-                  </div>
-                  <a ng-click="$ctrl.prev()" class="btnPrev">
-                      < </a>
-                          <a ng-click="$ctrl.nexte()" class="btnNext"> > </a>
-              </div>
+                    <a ng-click="$ctrl.prev()" class="btnPrev">
+                        < </a>
+                            <a ng-click="$ctrl.next()" class="btnNext"> > </a>
+                </div>
 
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-
+            </div>
+            <div class="contributors">
+                <p class="text-center">By </p>
                 <!-- Récupération des contributeurs -->
-                <div class="contributors" ng-repeat="student in $ctrl.projects.student">
-                    <div class="col-xs-1 col-xs-offset-2">
-                        <img ng-src="data:image/jpg;base64,{{student.avatar}}" class="img-responsive img-circle" ui-sref="app.student({studentId : student._id})">
-                        <p>{{student.name}} </p>
-                    </div>
+                <div ng-repeat="student in $ctrl.projects.student" class="col-xs-2 col-xs-offset-2">
+                    <img class="ctbravatar" ng-src="data:image/jpg;base64,{{student.avatar}}" ui-sref="app.student({studentId : student._id})" class="testons">
+                    <em>{{student.name}} </em>
                 </div>
             </div>
         </div>
@@ -60,8 +56,8 @@
                     <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i> {{($ctrl.editMode ? 'Valider' : 'Edit')}} </a>
             </div>
             <div class="col-xs-2">
-                <a type="btn" ng-if="$ctrl.editMode" ng-click="$ctrl.cancel($ctrl.project)">
-                    <i class="fa fa-pencil-square-o " aria-hidden="true"></i> Annuler </a>
+                <a class="btn" ng-if="$ctrl.editMode" ng-click="$ctrl.cancel($ctrl.project)">
+                    <i class="fa fa-level-down fa-lg" aria-hidden="true"></i> Annuler </a>
             </div>
             <div class="col-xs-2">
                 <a class="btn" ng-click="$ctrl.delete($ctrl.project)" ui-sref="app.projects">
