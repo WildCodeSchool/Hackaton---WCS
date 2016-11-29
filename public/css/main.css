@@ -168,15 +168,19 @@ textarea:focus~.highlight {
 }
 
 body {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     padding-top: 50px;
     min-height: 100vh;
     background-color: #eceff1;
+    font-weight: lighter;
+
 }
 
 h1 {
     text-align: center;
     padding: 0.5em 0 1em 0;
+    font-weight: normal;
+
 }
 
 .interne {
@@ -219,10 +223,6 @@ p {
 .edition {
     margin-top: 5em;
     margin-bottom: 5em;
-}
-
-img {
-    margin: 3em 0;
 }
 
 .imageview {

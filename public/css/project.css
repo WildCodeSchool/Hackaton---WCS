@@ -70,13 +70,26 @@
     position: absolute;
     margin-top: 1.5em;
     width: 100%;
-    color: white;
+    color: #FFFFFF;
     font-size: 80px;
-    text-shadow: 2px 2px 5px black, 0px 0px 1px black;
+    font-weight: lighter;
+font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .contributors {
-    max-height: 8em;
+    /*max-height: 7em;
+    margin-bottom: 16em;*/
+    position: absolute;
+    top: 26.86em;
+    display: inline-block;
+    text-align: center;
+    background-color:rgba(0,31,63, 0.8);
+    margin: 79px 0em 0 42em;
+    border-radius: 10px;
+    color: white;
+    border: 1px solid rgb(67,73,102);
+    color: rgb(127,191,255) ;
+
 }
 
 .editmode {
@@ -106,4 +119,14 @@
 .slide.ng-hide-add,
 .slide.ng-hide-remove.ng-hide-remove-active {
   opacity: 1;
+}
+
+.ctbravatar {
+  width: 2em;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+
 }
