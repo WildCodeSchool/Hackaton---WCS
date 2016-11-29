@@ -3,7 +3,7 @@
         <div class="col-md-10 col-md-offset-1 col-xs-12">
             <div class="row">
                 <div class="col-md-8 col-xs-12">
-                    <div ng-repeat="project in $ctrl.projects | limitTo : $ctrl.limit ">
+                    <div ng-repeat="project in $ctrl.projects | limitTo : $ctrl.limit | orderBy : $ctrl.projects.likes">
                         <a class="heart" ng-click="$ctrl.likes(project)"><i class="fa fa-heart" aria-hidden="true"></i> {{project.likes}}</a>
                         <div class="card carte interne card-block">
                             <p>{{project.student.name}}</p>
@@ -28,10 +28,11 @@
                                         </div>
                                     </a>
                                 </div>
+                                <a class="col-xs-12" ui-sref="app.project({projectId : project._id})">
+                                    <p class="right">Voir plus</p>
+                                </a>
                             </div>
-                            <a class="" ui-sref="app.project({projectId : project._id})">
-                                <p class="btn center">Voir plus</p>
-                            </a>
+
                         </div>
                     </div>
                     <a class="btn loadmore col-xs-12" name="button" ng-click="$ctrl.loadmore()" ng-if="$ctrl.limit < $ctrl.projects.length">Charger plus de projets</a>
