@@ -32,7 +32,7 @@
                 <div class="" ng-repeat="student in $ctrl.projects.student" >
                     <div class="col-xs-3">
                         <label>{{student.name}} </label>
-                        <img ng-src="{{student.avatar}}" class="img-responsive img-circle" ui-sref="app.student({studentId : $ctrl.projects.student._id})">
+                        <img ng-src="{{student.avatar}}" class="img-responsive img-circle" ui-sref="app.student({studentId : student._id})">
                     </div>
                 </div>
             </div>
