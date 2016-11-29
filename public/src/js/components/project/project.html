@@ -2,50 +2,66 @@
 <section>
     <div class="container-fluid">
         <div class="row">
-            <h1 ng-if="!$ctrl.editMode" class="projecttitle"> {{$ctrl.projects.title}}</h1>
-            <div class="col-xs-5 col-xs-offset-2 group" ng-if="$ctrl.editMode">
+            <h1 ng-if="!$ctrl.editMode" class="projecttitle">
+                {{$ctrl.projects.title}}</h1>
+            <h1 class="col-xs-5 col-xs-offset-2 group" ng-if="$ctrl.editMode">
                 <input ng-if="$ctrl.editMode" class="projecttitle" type="text" ng-model="$ctrl.projects.title" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <!-- <label class="label" ng-if="$ctrl.editMode">Titre </label> -->
-            </div>
+            </h1>
             <!-- <time><p ng-if="!$ctrl.editMode" > Le {{$ctrl.projects.updatedAt | date:'dd-MM-yyyy à HH:mm:ss'}} </p></time> -->
             <!-- Récupération des images du projet -->
 
             <div class="" ng-repeat="image in $ctrl.projects.image | limitTo:$ctrl.limit : $ctrl.begin">
                 <div style="background-image: url({{image}})" class="projectimage">
-                    <p ng-if="!$ctrl.editMode" class="techno">{{$ctrl.projects.techno}} </p>
+                    <p ng-if="!$ctrl.editMode" class="techno">{{$ctrl.projects.techno}}
+                    </p>
                     <div class="col-xs-5 col-xs-offset-2 group" ng-if="$ctrl.editMode">
                         <input ng-if="$ctrl.editMode" class="techno" type="text" ng-model="$ctrl.projects.techno" required>
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <!-- <label class="label" ng-if="$ctrl.editMode"> Language de Programmation </label> -->
                     </div>
-                    <a ng-click="$ctrl.prev()" class="btnPrev">
-                        < </a>
-                            <a ng-click="$ctrl.next()" class="btnNext"> > </a>
+                    <a ng-click="$ctrl.prev()" class="btnPrev">< </a>
+                    <a ng-click="$ctrl.next()" class="btnNext">
+                        >
+                    </a>
                 </div>
 
             </div>
-            <div class="contributors">
-                <p class="text-center">By </p>
-                <!-- Récupération des contributeurs -->
-                <div ng-repeat="student in $ctrl.projects.student" class="col-xs-2 col-xs-offset-2">
-                    <img class="ctbravatar" ng-src="data:image/jpg;base64,{{student.avatar}}" ui-sref="app.student({studentId : student._id})" class="testons">
-                    <em>{{student.name}} </em>
+
+            <!-- Récupération des contributeurs -->
+            <div class="col-md-10 col-xs-12 col-md-offset-1 usercardproject">
+                <div ng-repeat="student in $ctrl.projects.student | limitTo : 3">
+                    <a href="#/student/{{student._id}}">
+                        <div class="littlecard littlecardproject col-md-4 col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="imageuser" style="background-image:url(data:image/jpg;base64,{{student.avatar}})"></div>
+                                </div>
+                                <div class="col-xs-8">
+                                    <h4>{{student.name}}</h4>
+                                    <h6>{{student.techno}}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
+
         </div>
 
         <div class="container">
-            <h1>Description du Projet </h1>
+            <!-- Description du Projet -->
             <div class="row dialog">
                 <p ng-if="!$ctrl.editMode">{{$ctrl.projects.content}}</p>
                 <div class="group">
                     <textarea ng-if="$ctrl.editMode" rows="6" cols="50" type="text" ng-model="$ctrl.projects.content" required></textarea>
                     <span class="highlight"></span>
                     <span class="bar"></span>
-                    <label ng-if="$ctrl.editMode">Description </label>
+                    <label ng-if="$ctrl.editMode">Description
+                    </label>
                 </div>
             </div>
         </div>
@@ -53,15 +69,21 @@
         <div class="row edition">
             <div class="col-xs-2 col-xs-offset-3">
                 <a class="btn" ng-click="$ctrl.update($ctrl.projects)">
-                    <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i> {{($ctrl.editMode ? 'Valider' : 'Edit')}} </a>
+                    <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i>
+                    {{($ctrl.editMode ? 'Valider' : 'Edit')}}
+                </a>
             </div>
             <div class="col-xs-2">
                 <a class="btn" ng-if="$ctrl.editMode" ng-click="$ctrl.cancel($ctrl.project)">
-                    <i class="fa fa-level-down fa-lg" aria-hidden="true"></i> Annuler </a>
+                    <i class="fa fa-level-down fa-lg" aria-hidden="true"></i>
+                    Annuler
+                </a>
             </div>
             <div class="col-xs-2">
                 <a class="btn" ng-click="$ctrl.delete($ctrl.project)" ui-sref="app.projects">
-                    <i class="fa fa-trash fa-lg" aria-hidden="true"></i> Delete {{}}</a>
+                    <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+                    Delete
+                    {{}}</a>
             </div>
         </div>
     </div>

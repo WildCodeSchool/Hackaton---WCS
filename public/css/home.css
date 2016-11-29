@@ -80,4 +80,31 @@ h3 {
     display: block;
     width: 25%;
     margin: auto;
+    min-width: 200px;
+}
+
+.littlecard {
+    margin-top: 2em;
+    margin: 1%;
+    margin-bottom: 0.7em;
+    padding: 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: 0px;
+    background-color: #f8f9f9;
+}
+
+@media (max-width:768px) {
+    .littlecardproject {
+        width: 48%;
+    }
+}
+
+@media (min-width:768px) {
+    .littlecardprojectdesk {
+        width: 31.3%;
+    }
+}
+
+.usercardproject {
+    margin-top: -100px;
 }
