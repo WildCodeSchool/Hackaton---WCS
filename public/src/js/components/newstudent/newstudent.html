@@ -46,7 +46,7 @@
                 <p>
                     <select ng-model="$ctrl.newStudent.projects">
                         <option></option>
-                        <option ng-repeat="project in $ctrl.projects">{{project.title}}</option>
+                        <option ng-repeat="project in $ctrl.projects track by $index">{{project.title}}</option>
                     </select>
                     <span class="highlight"></span>
                     <span class="bar"></span>
@@ -58,10 +58,10 @@
         <div class="row">
             <div class="col-xs-8 col-xs-offset-3 edition">
                 <div class="col-xs-4">
-                    <button class="btn"><i class="fa fa-lg fa-cloud-download" aria-hidden="true"> Ajouter</i>  </button>
+                    <button class="btn" ng-click="$ctrl.add($ctrl.newStudent, [$ctrl.newStudent.projects])"><i class="fa fa-lg fa-cloud-download" aria-hidden="true"> Ajouter</i>  </button>
                 </div>
                 <div class="col-xs-4">
-                    <button class="btn"><i class="fa fa-lg fa-undo" aria-hidden="true">Annuler</i>  </button>
+                    <button class="btn" ng-click="$ctrl.cancel(newStudent)"><i class="fa fa-lg fa-undo" aria-hidden="true">Annuler</i>  </button>
                 </div>
             </div>
         </div>
