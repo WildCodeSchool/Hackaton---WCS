@@ -23,12 +23,13 @@
                         <span class="bar"></span>
                         <!-- <label class="label" ng-if="$ctrl.editMode"> Language de Programmation </label> -->
                     </div>
-                    <a ng-click="$ctrl.prev()" class="btnPrev" ng-if="!$ctrl.editMode">< </a>
-                    <a ng-click="$ctrl.next()" class="btnNext" ng-if="!$ctrl.editMode">
+                    <a ng-click="$ctrl.prev()" class="btnPrev" ng-if="!$ctrl.editMode">
+                        < </a>
+                            <a ng-click="$ctrl.next()" class="btnNext" ng-if="!$ctrl.editMode">
                         >
                     </a>
                 </div>
-
+                
             </div>
 
             <!-- Récupération des contributeurs -->
@@ -47,6 +48,7 @@
                             </div>
                         </div>
                     </a>
+
                 </div>
             </div>
 
@@ -69,21 +71,18 @@
         <div class="row edition">
             <div class="col-xs-2 col-xs-offset-3">
                 <a class="btn" ng-click="$ctrl.update($ctrl.projects)">
-                    <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i>
-                    {{($ctrl.editMode ? 'Valider' : 'Edit')}}
+                    <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i> {{($ctrl.editMode ? 'Valider' : 'Edit')}}
                 </a>
             </div>
             <div class="col-xs-2">
                 <a class="btn" ng-if="$ctrl.editMode" ng-click="$ctrl.cancel($ctrl.project)">
-                    <i class="fa fa-level-down fa-lg" aria-hidden="true"></i>
-                    Annuler
+                    <i class="fa fa-level-down fa-lg" aria-hidden="true"></i> Annuler
                 </a>
             </div>
             <div class="col-xs-2">
                 <a class="btn" ng-click="$ctrl.delete($ctrl.project)" ui-sref="app.projects">
-                    <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
-                    Delete
-                    {{}}</a>
+                    <i class="fa fa-trash fa-lg" aria-hidden="true"></i> Delete {{}}
+                </a>
             </div>
         </div>
     </div>

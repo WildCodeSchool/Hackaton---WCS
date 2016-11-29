@@ -9,22 +9,26 @@
       </button>
             <a class="navbar-brand" href="#">Project'Me</a>
         </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <form class="navbar-form navbar-left">
-                <div class="form-group">
-                    <input id="increase" ng-model="$ctrl.search" ng-change="$ctrl.show()" type="text" class="form-control" placeholder="Search">
-                    <i id="search" class="fa fa-search" aria-hidden="true"></i>
-                </div>
-                <div id="result" ng-if="$ctrl.search" class="col-xs-3 col-xs-offset-3">
-                    <a ui-sref="app.project({projectId : $ctrl.results._id})">{{$ctrl.results.title}} </a><br>
-                    <em>Dévéloppé avec {{$ctrl.results.techno}} </em>
+        <!-- Hide on leave house -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-mouseleave="$ctrl.search = null">
+            <form class="navbar-form navbar-right">
+                <div >
+                    <input class="form-control" id="increase" ng-model="$ctrl.search" ng-change="$ctrl.show()" type="text" placeholder="Search">
+                    <i id="search" class="fa fa-search fa-lg" aria-hidden="true"></i>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
                 </div>
             </form>
-
+            <div id="result" ng-if="$ctrl.search" class="col-xs-4 col-xs-offset-3">
+                <a ui-sref="app.project({projectId : $ctrl.results._id})">{{$ctrl.results.title}} </a><br>
+                <img ng-repeat="image in $ctrl.results.image" ng-src="{{image}}" class="resultimage">
+                <br><em>Dévéloppé avec {{$ctrl.results.techno}} </em>
+            </div>
             <ul class="nav navbar-nav navbar-right">
-              
+
                 <li><a ui-sref="app.edit">Edit</a></li>
 
             </ul>
         </div>
+    </div>
 </nav>
