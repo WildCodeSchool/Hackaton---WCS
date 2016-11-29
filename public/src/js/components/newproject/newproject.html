@@ -1,48 +1,78 @@
 <section>
     <div class="container">
         <h1> New Project </h1>
+        <form>
+            <div class="row">
+                <div class="col-xs-3 col-xs-offset-2">
+                    <div class="group">
+                        <input type="text" ng-model="$ctrl.project.title" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Title </label>
+                    </div>
+                    <div class="group">
+                        <input type="text" ng-model="$ctrl.project.school" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label> School </label>
+                    </div>
+                </div>
 
-        <div class="row window">
-            <div class="col-xs-6">
-                <label for="">Title </label>
-                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.project.title"><br>
-                <input ng-model="$ctrl.blog.PublishedAt" hidden>
-
-                <label for=""> School </label>
-                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.project.school"><br>
-            </div>
-
-            <div class="col-xs-6">
-                <label for=""> Contributor(s) </label>
-                <div class="select-editable">
-                    <select onchange="this.nextElementSibling.value=this.value">
+                <div class="col-xs-3 col-xs-offset-2">
+                    <div class="select-editable">
+                        <div class="group">
+                            <select onchange="this.nextElementSibling.value=this.value">
                         <option value=""></option>
                         <option ng-repeat="student in $ctrl.students">{{student.name}}</option>
                       </select>
-                    <input type="text" name="format" placeholder="Contributor's names" ng-model="$ctrl.project.student" class="form-control input-m center-block" />
+                            <input type="text" name="format" ng-model="$ctrl.project.student" required />
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label> Contributor(s) </label>
+
+                        </div>
+                    </div>
+
+
+                    <div class="group">
+                        <input type="text" ng-model="$ctrl.project.techno" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Language(s) </label>
+                    </div>
                 </div>
-                <br>
 
-                <label for="">Language(s) </label>
-                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.project.techno">
+
+                <div class="col-xs-8 col-xs-offset-4">
+                    <div class="group">
+                        <textarea type="text" ng-model="$ctrl.project.content" required></textarea>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label> Description </label>
+                    </div>
+                </div>
+
+                <div class="col-xs-8 col-xs-offset-4">
+                    <div class="group">
+                        <input type="text" ng-model="$ctrl.project.image" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label> Picture(s) </label>
+                    </div>
+                </div>
+
+
+                <div class="col-xs-8 col-xs-offset-3 edition">
+                    <div class="col-xs-4">
+                        <button class="btn" ng-click="$ctrl.add()">
+                          <i class="fa fa-lg fa-cloud-download" aria-hidden="true"> Ajouter</i>  </button>
+                    </div>
+                    <div class="col-xs-4">
+                        <button class="btn" ng-click="$ctrl.annuler(article)">
+                           <i class="fa fa-lg fa-undo" aria-hidden="true">Annuler</i>  </button>
+                    </div>
+                </div>
             </div>
-
-
-            <div class="col-xs-6 col-xs-offset-3">
-                <label for=""> Description </label>
-                <textarea class="form-control input-sm" rows="6" cols="50" type="text" ng-model="$ctrl.project.content"></textarea>
-            </div>
-
-            <div class="col-xs-6 col-xs-offset-3">
-                <label for=""> Picture(s) </label>
-                <input class="form-control input-sm" rows="6" cols="50" type="text" ng-model="$ctrl.project.image">
-            </div>
-
-
-            <div class="col-xs-6 col-xs-offset-3 edition">
-                <button class="btn btn-success" ng-click="$ctrl.add()">  Ajouter  </button>
-                <button class="btn btn-danger" ng-click="$ctrl.annuler(article)"> Annuler </button>
-            </div>
-        </div>
+        </form>
     </div>
 </section>

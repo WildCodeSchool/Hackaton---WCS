@@ -1,3 +1,169 @@
+* {
+    box-sizing: border-box;
+}
+
+.group {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 300px;
+    border: none;
+    /*border-bottom: 0.1px solid #757575;*/
+}
+
+input:focus {
+    outline: none;
+}
+
+textarea {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 300px;
+    border: none;
+    /*border-bottom: 1px solid #757575;*/
+}
+
+textarea:focus {
+    outline: none;
+
+}
+
+
+/* LABEL ======================================= */
+
+label {
+    color: #999 ;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+
+/* active state */
+
+input:focus~label, input:valid~label {
+    top: -20px;
+    font-size: 14px;
+    color: #5264AE;
+}
+
+textarea:focus~label, textarea:valid~label {
+    top: -20px;
+    font-size: 14px;
+    color: #5264AE;
+
+}
+
+
+/* BOTTOM BARS ================================= */
+
+.bar {
+    position: relative;
+    display: block;
+    width: 300px;
+}
+
+.bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #5264AE;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+
+/* active state */
+
+input:focus~.bar:before, input:focus~.bar:after {
+    width: 50%;
+}
+textarea:focus~.bar:before, textarea:focus~.bar:after {
+    width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+
+/*.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}*/
+
+
+/* active state */
+
+input:focus~.highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+textarea:focus~.highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+    width: 300px;
+}
+
+/* ANIMATIONS ================ */
+
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
 body {
     font-family: Georgia, Cambria, "Times New Roman", Times, serif;
     padding-top: 50px;
@@ -10,9 +176,6 @@ h1 {
     padding: 0.5em 0 1em 0;
 }
 
-label {
-    text-align: center;
-}
 
 .interne {
     margin: 1em;
@@ -28,9 +191,11 @@ label {
 small {
     float: right;
 }
+
 a {
-  color: #999;
+    color: #999;
 }
+
 a:hover {
     text-decoration: none;
 }
@@ -40,29 +205,20 @@ p {
     font-size: 18px;
 }
 
-
 .changer {
     display: inline-block;
     padding: 14em 0 0 2em;
-}
-
-input {
-    text-align: center;
-    display: inline-block;
 }
 
 .addArticle {
     margin: 5em 0 5em 0;
 }
 
-.window {
-    text-align: center;
-    margin: 5em 0 0 0;
-}
-
 .edition {
     margin-top: 5em;
+    margin-bottom: 5em;
 }
+
 
 img {
     margin: 3em 0;
@@ -79,6 +235,22 @@ navbar .form-control, navbar .btn {
     box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075);
     height: 34px;
 }
-.btn{
-  border-radius: 0px;
+
+.btn {
+    padding: 1em 3em 1em 3em;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #5264AE;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    border: none;
+    width: 100%;
+
 }

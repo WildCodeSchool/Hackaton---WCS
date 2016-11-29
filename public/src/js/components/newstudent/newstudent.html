@@ -3,38 +3,66 @@
         <div class="row window">
             <h1>New Student</h1>
             <div class="col-xs-6">
-                <label>Name</label>
-                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.newStudent.name" required><br>
-
-                <label>Avatar</label>
-                <input class="form-control input-m center-block" type="file" ng-model="$ctrl.newStudent.avatar" base-sixty-four-input><br>
-
-                <label>Github</label>
-                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.newStudent.github"><br>
+                <div class="group">
+                    <input type="text" ng-model="$ctrl.newStudent.name" required><br>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Name</label>
+                </div>
+                <div class="group">
+                    <input type="file" ng-model="$ctrl.newStudent.avatar" base-sixty-four-input required><br>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Avatar</label>
+                </div>
+                <div class="group">
+                    <input type="text" ng-model="$ctrl.newStudent.github" required><br>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Github</label>
+                </div>
             </div>
             <div class="col-xs-6">
-                <label>Description</label>
-                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.newStudent.description"><br>
-
-                <label>City</label>
-                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.newStudent.city"><br>
-
-                <label>Techno</label>
-                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.newStudent.techno"><br>
+                <div class="group">
+                    <input type="text" ng-model="$ctrl.newStudent.description" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Description</label>
+                </div>
+                <div class="group">
+                    <input type="text" ng-model="$ctrl.newStudent.city" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>City</label>
+                </div>
+                <div class="group">
+                    <input type="text" ng-model="$ctrl.newStudent.techno" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Techno</label>
+                </div>
             </div>
             <div class="col-xs-12">
-                <label>Projects</label>
-                <p class="text-center">
+                <p>
                     <select ng-model="$ctrl.newStudent.projects">
-                        <option ng-repeat="project in $ctrl.projects track by $index">{{project.title}}</option>
+                        <option></option>
+                        <option ng-repeat="project in $ctrl.projects">{{project.title}}</option>
                     </select>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Projects</label>
+
                 </p>
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12 edition text-center">
-                <button class="btn btn-success" ng-click="$ctrl.add($ctrl.newStudent, [$ctrl.newStudent.projects])">Ajouter</button>
-                <button class="btn btn-danger" ng-click="$ctrl.cancel(newStudent)">Annuler</button>
+            <div class="col-xs-8 col-xs-offset-3 edition">
+                <div class="col-xs-4">
+                    <button class="btn"><i class="fa fa-lg fa-cloud-download" aria-hidden="true"> Ajouter</i>  </button>
+                </div>
+                <div class="col-xs-4">
+                    <button class="btn"><i class="fa fa-lg fa-undo" aria-hidden="true">Annuler</i>  </button>
+                </div>
             </div>
         </div>
     </div>
