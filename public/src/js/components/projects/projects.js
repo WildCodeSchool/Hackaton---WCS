@@ -29,6 +29,17 @@
                     studentsService.get().then((res) => {
                         this.students = res.data
                     })
+
+                    this.showComment = false
+
+                    this.viewComment = () => {
+                      if (this.showComment == true){
+                        this.showComment = false
+                      } else {
+                        this.showComment = true
+                      }
+
+                    }
                 }
             })
         }]

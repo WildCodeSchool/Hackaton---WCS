@@ -31,13 +31,18 @@
                                     </a>
                                 </div>
                                 <p class="col-xs-6">
-                                    <a ui-sref="app.project({projectId : project._id})" class="viewmore">Comments ({{project.comment.length}})</a>
+                                    <a ng-click="$ctrl.viewComment()" class="viewmore">Comments ({{project.comments.length}})</a>
                                 </p>
                                 <p class="col-xs-6 right">
-                                    <a ng-click="$ctrl.viewComment()" class="viewmore">Voir plus</a>
+                                    <a ui-sref="app.project({projectId : project._id})" class="viewmore">Voir plus</a>
                                 </p>
                                 <!-- Comments -->
-                                <div class="row" ng-if="$ctrl.viewComment">
+                                <div class="row" ng-if="$ctrl.showComment">
+                                    <div class="col-xs-12">
+                                        <div class="" ng-repeat="comment in project.comments">
+                                            <p>{{comment}}</p>
+                                        </div>
+                                    </div>
                                   <div class="col-xs-8">
                                       <input type="text" placeholder="Écrivez votre commentaire" value="" ng-model="$ctrl.newComment">
                                   </div>
