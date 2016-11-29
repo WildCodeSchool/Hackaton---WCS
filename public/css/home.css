@@ -4,5 +4,51 @@
 #result:hover {
   z-index: 99999999;
   box-shadow: 0.5px 0.5px 0.5px 0.5px #39CCCC;
+  padding: 3em 0 6em 0;
 
+}
+.carte {
+    margin-top: 2em;
+    margin-bottom: 0.7em;
+    border-radius: 3px;
+}
+
+.carte:hover {
+    box-shadow: 0.5px 0.5px 0.5px 0.5px #39CCCC;
+}
+h3 {
+  text-align: center;
+}
+#search {
+    position: relative;
+    z-index: 1;
+    left: -25px;
+    top: 1px;
+    color: #7B7B7B;
+    cursor:pointer;
+    width: 0;
+}
+#increase {
+
+    height: 32px;
+    padding: 0 30px 0 35px;
+    font-size: 12px;
+    color: #111;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    outline: none;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    -webkit-appearance: none;
+}
+
+#increase:focus {
+  width: 500px;
+}
+.navbar-form {
+  margin-left: 20em;
+}
+.navbar-default {
+  background-color: rgba(255, 255, 255, 0.95);
 }

@@ -23,15 +23,21 @@
                 </div>
                 <br>
 
-                <label for="">Project Language(s) </label>
+                <label for="">Language(s) </label>
                 <input class="form-control input-m center-block" type="text" ng-model="$ctrl.project.techno">
             </div>
 
 
             <div class="col-xs-6 col-xs-offset-3">
-                <label for=""> Project description </label>
+                <label for=""> Description </label>
                 <textarea class="form-control input-sm" rows="6" cols="50" type="text" ng-model="$ctrl.project.content"></textarea>
             </div>
+
+            <div class="col-xs-6 col-xs-offset-3">
+                <label for=""> Picture(s) </label>
+                <input class="form-control input-sm" rows="6" cols="50" type="text" ng-model="$ctrl.project.image">
+            </div>
+
 
             <div class="col-xs-6 col-xs-offset-3 edition">
                 <button class="btn btn-success" ng-click="$ctrl.add()">  Ajouter  </button>
