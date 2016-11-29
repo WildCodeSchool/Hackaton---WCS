@@ -10,7 +10,7 @@
 @media (max-width: 768px) {
     .dialog {
         padding: 1em;
-        padding-top: 10em;
+        padding-top: 5em;
     }
 }
 
@@ -43,19 +43,19 @@
 }
 
 .techno {
-    position: absolute;
-    top: 24em;
-    font-size: 20px;
-    right: 1em;
-    background-color: #909090;
-    padding: 10px;
-    border-radius: 10px;
-    color: white;
+    float: right;
+    padding: 30px;
+    border-bottom-left-radius: 80%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: -5em;
 }
 
 @media (max-width:768px) {
     .techno {
-        top: 3em;
+        margin-top: -5em;
+        margin-right: -1em;
     }
 }
 
@@ -154,6 +154,7 @@
     font-weight: lighter;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
+
 .technoedit {
     top: 24em;
     font-size: 20px;

@@ -15,21 +15,19 @@
 
             <div class="" ng-repeat="image in $ctrl.projects.image | limitTo:$ctrl.limit : $ctrl.begin">
                 <div style="background-image: url({{image}})" class="projectimage">
-                    <p ng-if="!$ctrl.editMode" class="techno">{{$ctrl.projects.techno}}
-                    </p>
-                    <div class="col-xs-5 col-xs-offset-2 group" ng-if="$ctrl.editMode">
+                    <!-- Old Techno Edit Mode-->
+                    <!-- <div class="col-xs-5 col-xs-offset-2 group" ng-if="$ctrl.editMode">
                         <input ng-if="$ctrl.editMode" class="technoedit" type="text" ng-model="$ctrl.projects.techno" required>
                         <span class="highlight"></span>
                         <span class="bar"></span>
-                        <!-- <label class="label" ng-if="$ctrl.editMode"> Language de Programmation </label> -->
-                    </div>
+                    </div> -->
                     <a ng-click="$ctrl.prev()" class="btnPrev" ng-if="!$ctrl.editMode">
                         < </a>
                             <a ng-click="$ctrl.next()" class="btnNext" ng-if="!$ctrl.editMode">
                         >
                     </a>
                 </div>
-                
+
             </div>
 
             <!-- Récupération des contributeurs -->
@@ -57,6 +55,7 @@
         <div class="container">
             <!-- Description du Projet -->
             <div class="row dialog">
+                <div ng-if="!$ctrl.editMode" class="techno" style="background-image:url(/img/{{$ctrl.projects.techno}}.jpg)"></div>
                 <p ng-if="!$ctrl.editMode">{{$ctrl.projects.content}}</p>
                 <div class="group">
                     <textarea ng-if="$ctrl.editMode" rows="6" cols="50" type="text" ng-model="$ctrl.projects.content" required></textarea>
