@@ -8,7 +8,7 @@
         controller: ['projectsService', function(projectsService) {
             angular.extend(this, {
                 $onInit() {
-
+                  
                     projectsService.get().then((res) => {
                         this.projects = res.data
                         console.log(this.project)

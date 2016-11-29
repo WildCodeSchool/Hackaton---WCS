@@ -10,5 +10,6 @@
     'app.newproject',
     'app.student',
     'app.newstudent',
-    'app.navbar'
+    'app.navbar',
+    'app.edit'
 ]))
