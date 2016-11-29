@@ -15,7 +15,7 @@
                     </div>
 
                     <div class="group">
-                        <input type="text" ng-model="$ctrl.project.image" required>
+                        <input type="text" ng-model="$ctrl.project.image" >
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label>
@@ -76,7 +76,7 @@
                             <i class="fa fa-lg fa-cloud-download" aria-hidden="true">
                                 Ajouter</i>
                         </button>
-                        <button class="btn" ng-click="$ctrl.annuler(article)">
+                        <button class="btn" ng-click="$ctrl.annuler(article)" ui-sref="app.projects">
                             <i class="fa fa-lg fa-undo" aria-hidden="true">Annuler</i>
                         </button>
                 </div>

@@ -11,5 +11,6 @@
     'app.student',
     'app.newstudent',
     'app.navbar',
-    'app.edit'
+    'app.edit',
+    'ngAnimate'
 ]))
