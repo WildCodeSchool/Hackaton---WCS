@@ -4,12 +4,12 @@
         <div class="row">
             <h1 ng-if="!$ctrl.editMode" class="projecttitle">
                 {{$ctrl.projects.title}}</h1>
-            <h1 class="col-xs-5 col-xs-offset-2 group" ng-if="$ctrl.editMode">
-                <input ng-if="$ctrl.editMode" class="projecttitle" type="text" ng-model="$ctrl.projects.title" required>
+            <div class="col-xs-5 col-xs-offset-2 group" ng-if="$ctrl.editMode">
+                <input ng-if="$ctrl.editMode" class="titleedit" type="text" ng-model="$ctrl.projects.title" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <!-- <label class="label" ng-if="$ctrl.editMode">Titre </label> -->
-            </h1>
+            </div>
             <!-- <time><p ng-if="!$ctrl.editMode" > Le {{$ctrl.projects.updatedAt | date:'dd-MM-yyyy à HH:mm:ss'}} </p></time> -->
             <!-- Récupération des images du projet -->
 
@@ -18,13 +18,13 @@
                     <p ng-if="!$ctrl.editMode" class="techno">{{$ctrl.projects.techno}}
                     </p>
                     <div class="col-xs-5 col-xs-offset-2 group" ng-if="$ctrl.editMode">
-                        <input ng-if="$ctrl.editMode" class="techno" type="text" ng-model="$ctrl.projects.techno" required>
+                        <input ng-if="$ctrl.editMode" class="technoedit" type="text" ng-model="$ctrl.projects.techno" required>
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <!-- <label class="label" ng-if="$ctrl.editMode"> Language de Programmation </label> -->
                     </div>
-                    <a ng-click="$ctrl.prev()" class="btnPrev">< </a>
-                    <a ng-click="$ctrl.next()" class="btnNext">
+                    <a ng-click="$ctrl.prev()" class="btnPrev" ng-if="!$ctrl.editMode">< </a>
+                    <a ng-click="$ctrl.next()" class="btnNext" ng-if="!$ctrl.editMode">
                         >
                     </a>
                 </div>

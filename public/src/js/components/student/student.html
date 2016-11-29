@@ -16,7 +16,7 @@
                                     <div class="caption">
                                         <h3>{{project.title}}</h3>
                                         <p>{{project.content | limitTo : 200}}...</p>
-                                        <p><span class="label label-default">{{project.techno}}</span></p>
+                                        <p><span class="technochip">{{project.techno}}</span></p>
                                         <p>
                                             <a href="#/projects/{{project._id}}" class="btn btn-primary" role="button">Voir le projet</a>
                                         </p>
@@ -94,7 +94,7 @@
                     <hr>
 
                     <!-- Project -->
-                    <p><button class="btn btn-default" ng-click="$ctrl.edit($ctrl.student)">{{!$ctrl.editMode ? 'Editer' : 'Valider'}} les Infos</button></p>
+                    <p><button class="btn btn-default" ng-click="$ctrl.edit($ctrl.student)"><i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i> {{!$ctrl.editMode ? 'Editer' : 'Valider'}} les Infos</button></p>
                     <p ng-if="$ctrl.editMode"><button class="btn btn-default" ng-click="$ctrl.cancel($ctrl.student)">Annuler</button></p>
                     <p ng-if="$ctrl.editMode"><button class="btn btn-default" ng-click="$ctrl.delete($ctrl.student)">Supprimer</button></p>
                     <hr ng-if="$ctrl.editMode">
