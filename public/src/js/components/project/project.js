@@ -15,7 +15,6 @@
                   this.begin = 0;
                   this.editMode
 
-                  this.date = new Date();
                     projectsService.get().then((res) => {
                         this.projects = res.data
 
@@ -66,7 +65,7 @@
                     })
                 },
                 next (){
-                  
+
                   this.begin ++
                 },
                 prev(){

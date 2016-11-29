@@ -23,7 +23,6 @@ class ProjectsController extends Controller {
     }
 
     findOne(req,res, next){
-      console.log(req.params.title)
       let data =  new RegExp('^'+req.params.title, "i")
       this.model.findOne({"title": data },(err,document)=>{
         if (err) next(err)
