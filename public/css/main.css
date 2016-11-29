@@ -179,7 +179,12 @@ body {
 h1 {
     text-align: center;
     padding: 0.5em 0 1em 0;
-    font-weight: normal;
+    font-weight: 200;
+
+}
+h2 {
+
+    font-weight: 300;
 
 }
 
@@ -245,7 +250,6 @@ navbar .form-control, navbar .btn {
     background-color: rgba(255, 255, 255, 0.8);
     color: #5264AE;
     text-transform: uppercase;
-    font-weight: 700;
     text-align: center;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
