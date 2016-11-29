@@ -1,10 +1,10 @@
 <section id="studentview">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-xs-8">
                 <h1>Les projets de {{$ctrl.student.name}}</h1>
                 <div class="row userprojects">
-                    <div class="col-md-12" ng-repeat="project in $ctrl.studentProjects">
+                    <div class="col-md-12 dialog3" ng-repeat="project in $ctrl.studentProjects">
                         <div class="col-xs-6">
                             <div ng-repeat="image in project.image | limitTo : 1">
                                 <img ng-src="{{image}}" class="img-responsive">

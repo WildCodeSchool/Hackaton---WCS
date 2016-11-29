@@ -1,5 +1,14 @@
+.dialog3 {
+    background-color: #FFFFFF;
+    padding: 2em;
+    text-align: center;
+    border-radius: 0px;
+    min-height: 250px;
+    border: 1px solid rgba(0, 0, 0, .09);
+    margin-bottom: 3em;
+}
+
 .auteur {
-    /*background-color: #FFFFFF;*/
     margin: 3em;
 }
 
@@ -100,7 +109,7 @@
 
 .btn1 {
     padding: 0.5em 1em 0.5em 1em;
-    background-color: rgb(236, 239, 241);
+    background-color: #FFFFFF;
     color: #5264AE;
     text-transform: uppercase;
     text-align: center;
