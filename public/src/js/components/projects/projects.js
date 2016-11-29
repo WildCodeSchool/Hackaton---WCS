@@ -5,15 +5,23 @@
             blogs: '<'
         },
         templateUrl: 'src/js/components/projects/projects.html',
-        controller: ['projectsService', function(projectsService) {
+        controller: ['projectsService', 'studentsService', function(projectsService, studentsService) {
             angular.extend(this, {
                 $onInit() {
-                  
+
                     projectsService.get().then((res) => {
                         this.projects = res.data
-                        console.log(this.project)
                     })
 
+                    this.limit = 4
+
+                    this.loadmore = () => {
+                        this.limit += 2
+                    }
+
+                    studentsService.get().then((res) => {
+                        this.students = res.data
+                    })
                 }
             })
         }]
