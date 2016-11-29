@@ -31,7 +31,7 @@
                 <p class="text-center">By </p>
                 <!-- Récupération des contributeurs -->
                 <div ng-repeat="student in $ctrl.projects.student" class="col-xs-2 col-xs-offset-2">
-                    <img class="ctbravatar" ng-src="data:image/jpg;base64,{{student.avatar}}" ui-sref="app.student({studentId : student._id})" class="testons">
+                    <img class="ctbravatar" ng-src="data:image/jpg;base64,{{student.avatar}}" ui-sref="app.student({studentId : student._id})">
                     <em>{{student.name}} </em>
                 </div>
             </div>
