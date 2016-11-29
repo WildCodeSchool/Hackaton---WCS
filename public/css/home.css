@@ -1,35 +1,40 @@
 #result {
-  height:auto;
+    height: auto;
 }
-#result:hover {
-  z-index: 99999999;
-  box-shadow: 0.5px 0.5px 0.5px 0.5px #39CCCC;
-  padding: 3em 0 6em 0;
 
+#result:hover {
+    z-index: 99999999;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px #39CCCC;
+    padding: 3em 0 6em 0;
 }
+
 .carte {
     margin-top: 2em;
     margin-bottom: 0.7em;
-    border-radius: 3px;
+    padding: 20px;
+    border: 1px solid #e6e6e6;
+    border-radius: 0px;
 }
 
 .carte:hover {
     box-shadow: 0.5px 0.5px 0.5px 0.5px #39CCCC;
 }
+
 h3 {
-  text-align: center;
+    text-align: center;
 }
+
 #search {
     position: relative;
     z-index: 1;
     left: -25px;
     top: 1px;
     color: #7B7B7B;
-    cursor:pointer;
+    cursor: pointer;
     width: 0;
 }
-#increase {
 
+#increase {
     padding: 0 30px 0 35px;
     color: #111;
     background-color: #fefefe;
@@ -42,9 +47,37 @@ h3 {
 }
 
 #increase:focus {
-  width: 500px;
+    width: 500px;
 }
 
 .navbar-default {
-  background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.card-content {
+    color: grey;
+    font-size: 14px;
+}
+
+.right {
+    text-align: right;
+}
+
+.imageuser {
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.no-pad {
+    padding: 0px;
+    margin-left: 5%;
+}
+
+.center {
+    display: block;
+    width: 25%;
+    margin: auto;
 }

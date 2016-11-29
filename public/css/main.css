@@ -226,7 +226,11 @@ img {
 }
 
 .imageview {
-    width: 49em;
+    width: 100%;
+    height: 35vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 navbar .form-control, navbar .btn {
