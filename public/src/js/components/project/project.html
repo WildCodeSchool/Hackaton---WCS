@@ -15,15 +15,8 @@
 
             <div class="" ng-repeat="image in $ctrl.projects.image | limitTo:$ctrl.limit : $ctrl.begin">
                 <div style="background-image: url({{image}})" class="projectimage">
-                    <!-- Old Techno Edit Mode-->
-                    <!-- <div class="col-xs-5 col-xs-offset-2 group" ng-if="$ctrl.editMode">
-                        <input ng-if="$ctrl.editMode" class="technoedit" type="text" ng-model="$ctrl.projects.techno" required>
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                    </div> -->
-                    <a ng-click="$ctrl.prev()" class="btnPrev" ng-if="!$ctrl.editMode">
-                        < </a>
-                            <a ng-click="$ctrl.next()" class="btnNext" ng-if="!$ctrl.editMode">
+                    <a ng-click="$ctrl.prev()" class="btnPrev" ng-if="!$ctrl.editMode">< </a>
+                    <a ng-click="$ctrl.next()" class="btnNext" ng-if="!$ctrl.editMode">
                         >
                     </a>
                 </div>
@@ -56,6 +49,23 @@
             <!-- Description du Projet -->
             <div class="row dialog">
                 <div ng-if="!$ctrl.editMode" class="techno" style="background-image:url(/img/{{$ctrl.projects.techno}}.jpg)"></div>
+                <!-- editMode Techno -->
+                <div ng-if="$ctrl.editMode" class="group">
+                    <label class="labelInput">Langage</label>
+                    <p class="techno">
+                        <select ng-model="$ctrl.projects.techno">
+                            <option></option>
+                            <option>Javascript</option>
+                            <option>Php</option>
+                            <option>Ruby</option>
+                            <option>Java</option>
+                            <option>Android</option>
+                            <option>iOS</option>
+                        </select>
+                        <span class="caret selectcaret"></span>
+                    </p>
+
+                </div>
                 <p ng-if="!$ctrl.editMode">{{$ctrl.projects.content}}</p>
                 <div class="group">
                     <textarea ng-if="$ctrl.editMode" rows="6" cols="50" type="text" ng-model="$ctrl.projects.content" required></textarea>
@@ -70,17 +80,21 @@
         <div class="row edition">
             <div class="col-xs-2 col-xs-offset-3">
                 <a class="btn" ng-click="$ctrl.update($ctrl.projects)">
-                    <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i> {{($ctrl.editMode ? 'Valider' : 'Edit')}}
+                    <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i>
+                    {{($ctrl.editMode ? 'Valider' : 'Edit')}}
                 </a>
             </div>
             <div class="col-xs-2">
                 <a class="btn" ng-if="$ctrl.editMode" ng-click="$ctrl.cancel($ctrl.project)">
-                    <i class="fa fa-level-down fa-lg" aria-hidden="true"></i> Annuler
+                    <i class="fa fa-level-down fa-lg" aria-hidden="true"></i>
+                    Annuler
                 </a>
             </div>
             <div class="col-xs-2">
                 <a class="btn" ng-click="$ctrl.delete($ctrl.project)" ui-sref="app.projects">
-                    <i class="fa fa-trash fa-lg" aria-hidden="true"></i> Delete {{}}
+                    <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+                    Delete
+                    {{}}
                 </a>
             </div>
         </div>
