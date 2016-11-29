@@ -9,27 +9,12 @@
             angular.extend(this, {
                 $onInit() {
 
-                    this.begin = 0;
-                    this.limit = 3;
-                    this.title = "Blog"
-
                     projectsService.get().then((res) => {
-                        this.blogs = res.data
-                        console.log(this.blogs)
+                        this.projects = res.data
+                        console.log(this.project)
                     })
 
-                },
-                // Pagination
-                next() {
-
-                  this.limit ++
-                     (this.begin < this.blogs.length -1 ? this.begin ++ : this.begin = 0)
                 }
-
-                // prev() {
-                //     if (this.begin < this.blogs.length - 1) this.begin--;
-                //     else this.begin == this.blogs.length;
-                // }
             })
         }]
     })

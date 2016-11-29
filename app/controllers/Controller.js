@@ -21,9 +21,9 @@ class Controller {
   }
 
   create(req,res,next){
-    this.model.create(req.body, (err, blog)=>{
+    this.model.create(req.body, (err, article)=>{
       if(err) next(err)
-      else res.json(blog)
+      else res.json(article)
     })
   }
 
