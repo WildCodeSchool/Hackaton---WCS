@@ -1,0 +1,8 @@
+#result {
+  height:auto;
+}
+#result:hover {
+  z-index: 99999999;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px #39CCCC;
+
+}

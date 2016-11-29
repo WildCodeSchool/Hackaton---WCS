@@ -13,12 +13,20 @@
             </div>
 
             <div class="col-xs-6">
-                <label for=""> Students </label>
-                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.project.student"><br>
-                
+                <label for=""> Contributor(s) </label>
+                <div class="select-editable">
+                    <select onchange="this.nextElementSibling.value=this.value">
+                        <option value=""></option>
+                        <option ng-repeat="student in $ctrl.students">{{student.name}}</option>
+                      </select>
+                    <input type="text" name="format" placeholder="Contributor's names" ng-model="$ctrl.project.student" class="form-control input-m center-block" />
+                </div>
+                <br>
+
                 <label for="">Project Language(s) </label>
                 <input class="form-control input-m center-block" type="text" ng-model="$ctrl.project.techno">
             </div>
+
 
             <div class="col-xs-6 col-xs-offset-3">
                 <label for=""> Project description </label>
