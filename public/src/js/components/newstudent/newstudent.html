@@ -24,17 +24,16 @@
             </div>
             <div class="col-xs-12">
                 <label>Projects</label>
-                <p>
+                <p class="text-center">
                     <select ng-model="$ctrl.newStudent.projects">
-                        <option></option>
-                        <option ng-repeat="project in $ctrl.projects">{{project.title}}</option>
+                        <option ng-repeat="project in $ctrl.projects track by $index">{{project.title}}</option>
                     </select>
                 </p>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 edition text-center">
-                <button class="btn btn-success" ng-click="$ctrl.add($ctrl.newStudent)">Ajouter</button>
+                <button class="btn btn-success" ng-click="$ctrl.add($ctrl.newStudent, [$ctrl.newStudent.projects])">Ajouter</button>
                 <button class="btn btn-danger" ng-click="$ctrl.cancel(newStudent)">Annuler</button>
             </div>
         </div>
