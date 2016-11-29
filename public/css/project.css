@@ -37,7 +37,7 @@
     background-position: center;
 }
 
-#techno {
+.techno {
     position: absolute;
     top: 24em;
     font-size: 20px;
@@ -74,6 +74,7 @@
     font-size: 80px;
     text-shadow: 2px 2px 5px black, 0px 0px 1px black;
 }
-.editmode {
-  margin-top: 3em;
+
+.contributors {
+  max-height: 8em;
 }
