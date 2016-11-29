@@ -21,6 +21,9 @@ module.exports = mongoose.model('Project', new mongoose.Schema({
   image:{
     type:[]
   },
+  comments:{
+    type:[]
+  },
   student: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Student'
