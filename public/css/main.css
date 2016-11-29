@@ -22,7 +22,7 @@ input:focus {
 
 textarea {
     font-size: 18px;
-    padding: 10px 10px 10px 5px;
+    padding: 15px 10px 10px 5px;
     display: block;
     width: 300px;
     border: none;
@@ -31,14 +31,13 @@ textarea {
 
 textarea:focus {
     outline: none;
-
 }
 
 
 /* LABEL ======================================= */
 
 label {
-    color: #999 ;
+    color: #999;
     font-size: 18px;
     font-weight: normal;
     position: absolute;
@@ -63,7 +62,6 @@ textarea:focus~label, textarea:valid~label {
     top: -20px;
     font-size: 14px;
     color: #5264AE;
-
 }
 
 
@@ -101,11 +99,14 @@ textarea:focus~label, textarea:valid~label {
 input:focus~.bar:before, input:focus~.bar:after {
     width: 50%;
 }
+
 textarea:focus~.bar:before, textarea:focus~.bar:after {
     width: 50%;
 }
 
+
 /* HIGHLIGHTER ================================== */
+
 
 /*.highlight {
     position: absolute;
@@ -125,12 +126,14 @@ input:focus~.highlight {
     -moz-animation: inputHighlighter 0.3s ease;
     animation: inputHighlighter 0.3s ease;
 }
+
 textarea:focus~.highlight {
     -webkit-animation: inputHighlighter 0.3s ease;
     -moz-animation: inputHighlighter 0.3s ease;
     animation: inputHighlighter 0.3s ease;
     width: 300px;
 }
+
 
 /* ANIMATIONS ================ */
 
@@ -176,7 +179,6 @@ h1 {
     padding: 0.5em 0 1em 0;
 }
 
-
 .interne {
     margin: 1em;
     background-color: #F8F9F9;
@@ -219,7 +221,6 @@ p {
     margin-bottom: 5em;
 }
 
-
 img {
     margin: 3em 0;
 }
@@ -251,6 +252,13 @@ navbar .form-control, navbar .btn {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     border: none;
-    width: 100%;
+}
+
+select {
+    -webkit-appearance: none;
+    border-radius: 0px;
+    border: 0px;
+    width: 70%;
+    margin: 5px 0px;
 
 }
