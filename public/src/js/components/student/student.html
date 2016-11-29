@@ -62,7 +62,7 @@
                     <hr ng-if="$ctrl.editMode">
                     <p ng-if="$ctrl.editMode">
                             <select ng-model="$ctrl.newProject.projects">
-                                <option ng-repeat="project in $ctrl.projects | filter:$ctrl.filterAlreadyAdded ">{{project.title}}</option>
+                                <option ng-repeat="project in $ctrl.projects ">{{project.title}}</option>
                             </select>
                     </p>
                     <p ng-if="$ctrl.editMode">

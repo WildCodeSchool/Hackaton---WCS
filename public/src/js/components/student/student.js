@@ -55,22 +55,6 @@
                         })
 
 
-
-                        this.alreadyAddedValues = () => {
-                            let result =
-                            //faire un map pour return un result a chaque tour
-
-                            for (let i in this.student.projects){
-                                result = this.student.projects[i]._id
-                            }
-                            console.log(result);
-                            return result
-                        }
-
-                        this.filterAlreadyAdded = (item) => {
-                            return (this.alreadyAddedValues().indexOf(item) == -1);
-                        };
-
                         /// init new project
                         this.newProject = {
                             projects: []
