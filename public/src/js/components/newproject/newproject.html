@@ -55,12 +55,12 @@
 
                     <div class="select-editable">
                         <div class="group">
-                            <select onchange="this.nextElementSibling.value=this.value">
+                            <span class="caret selectcaret"></span>
+                            <select onchange="this.nextElementSibling.value=this.value" ng-model="$ctrl.project.student">
                                 <option value=""></option>
                                 <option ng-repeat="student in $ctrl.students">{{student.name}}</option>
                             </select>
-                            <span class="caret selectcaret"></span>
-                            <input type="text" name="format" ng-model="$ctrl.project.student" required/>
+                            <input type="text" name="format">
                             <span class="highlight"></span>
                             <span class="bar"></span>
                             <label class="labelInput">
