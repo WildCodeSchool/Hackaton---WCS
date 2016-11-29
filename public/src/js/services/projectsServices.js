@@ -7,6 +7,9 @@
             get() {
                 return $http.get('/api/projects')
             },
+            getOne(title){
+              return $http.get('/api/search/'+ title)
+            },
             getPopulate(data){
               return $http.get('/api/projects/'+ data._id )
             },
