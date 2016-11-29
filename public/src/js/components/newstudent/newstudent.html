@@ -38,11 +38,21 @@
                         <label>City</label>
                     </div>
                     <div class="group">
-                        <input type="text" ng-model="$ctrl.newStudent.techno" required>
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                        <label>Techno</label>
-                    </div>
+                                  <label class="labelInput">Langage</label>
+                                  <p>
+                                      <select ng-model="$ctrl.newStudent.techno">
+                                          <option></option>
+                                          <option>Javascript</option>
+                                          <option>Php</option>
+                                          <option>Ruby</option>
+                                          <option>Java</option>
+                                          <option>Android</option>
+                                          <option>iOS</option>
+                                      </select>
+                                      <span class="caret selectcaret"></span>
+                                  </p>
+
+                              </div>
                 </div>
                 <div class="col-xs-6">
                     <div class="group">

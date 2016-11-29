@@ -3,7 +3,7 @@
         <div class="col-md-10 col-md-offset-1 col-xs-12">
             <div class="row">
                 <div class="col-md-8 col-xs-12">
-                    <div ng-repeat="project in $ctrl.projects | limitTo : $ctrl.limit | orderBy : $ctrl.projects.likes">
+                    <div ng-repeat="project in $ctrl.projects | limitTo : $ctrl.limit | orderBy : '-likes'">
                         <a class="heart" ng-click="$ctrl.likes(project)"><i class="fa fa-heart" aria-hidden="true"></i> {{project.likes}}</a>
                         <div class="card carte interne card-block">
                             <p>{{project.student.name}}</p>

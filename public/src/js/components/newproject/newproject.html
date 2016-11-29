@@ -44,13 +44,21 @@
                             School
                         </label>
                     </div>
-
                     <div class="group">
-                        <input type="text" ng-model="$ctrl.project.techno" required>
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                        <label>Language(s)
-                        </label>
+                        <label class="labelInput">Langage</label>
+                        <p>
+                            <select ng-model="$ctrl.project.techno">
+                                <option></option>
+                                <option>Javascript</option>
+                                <option>Php</option>
+                                <option>Ruby</option>
+                                <option>Java</option>
+                                <option>Android</option>
+                                <option>iOS</option>
+                            </select>
+                            <span class="caret selectcaret"></span>
+                        </p>
+
                     </div>
 
                     <div class="select-editable">
@@ -61,9 +69,7 @@
                                 <option ng-repeat="student in $ctrl.students">{{student.name}}</option>
                             </select>
                             <input type="text" name="format">
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label class="labelInput">
+                            <label>
                                 Contributor(s)
                             </label>
                         </div>
