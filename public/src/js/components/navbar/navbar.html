@@ -1,16 +1,17 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+            <button type="button" class="navbar-toggle collapsed" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand" href="#">Project'Me</a>
         </div>
+
         <!-- Hide on leave house -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-mouseleave="$ctrl.search = null">
+        <div class="navbar-collapse" ng-class="{collapse: isCollapsed}" id="bs-example-navbar-collapse-1" ng-mouseleave="$ctrl.search = null">
             <form class="navbar-form navbar-right">
                 <div >
                     <input class="form-control" id="increase" ng-model="$ctrl.search" ng-change="$ctrl.show()" type="text" placeholder="Recherche">
@@ -20,13 +21,19 @@
                 </div>
             </form>
             <div id="result" ng-if="$ctrl.search" class="col-xs-4 col-xs-offset-3">
-                <a ui-sref="app.project({projectId : $ctrl.results._id})">{{$ctrl.results.title}} </a><br>
+                <a ui-sref="app.project({projectId : $ctrl.results._id})">{{$ctrl.results.title}}
+                </a><br>
                 <img ng-repeat="image in $ctrl.results.image" ng-src="{{image}}" class="resultimage">
-                <br><em>Dévéloppé avec {{$ctrl.results.techno}} </em>
+                <br>
+                <em>Dévéloppé avec
+                    {{$ctrl.results.techno}}
+                </em>
             </div>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
 
-                <li><a ui-sref="app.edit">Ajouter</a></li>
+                <li>
+                    <a ui-sref="app.edit">Ajouter</a>
+                </li>
 
             </ul>
         </div>
