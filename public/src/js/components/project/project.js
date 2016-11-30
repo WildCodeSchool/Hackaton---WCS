@@ -40,10 +40,10 @@
                     sliderFunc();
 
                     // Update on Window Learn more
-                    this.update = (project) => {
+                    this.update = (project, images) => {
                         if (this.editMode) {
-                            // this.projects.PublishedAt =  Math.round(this.date.getTime() / 1000)
-
+                            images = images.split(';')
+                            project.image = images
                             projectsService.edit(project).then((res) => {
                                 this.projects = res.config.data
                                 this.editMode = false

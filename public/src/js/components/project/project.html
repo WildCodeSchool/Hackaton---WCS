@@ -11,10 +11,14 @@
             </div>
 
             <!-- Récupération des images du projet -->
-
             <div class="" ng-repeat="image in $ctrl.projects.image | limitTo:$ctrl.limit : $ctrl.begin">
-                <div style="background-image: url({{image}})" class="projectimage">
-                </div>
+                <div style="background-image: url({{image}})" class="projectimage"></div>
+            </div>
+            <div class="group imageprojectedit" ng-if="$ctrl.editMode">
+                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.projects.image">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Image</label>
             </div>
 
             <!-- Pagination -->
@@ -104,7 +108,7 @@
         <!-- Edition -->
         <div class="row edition">
             <div class="col-xs-2 col-xs-offset-3">
-                <a class="btn" ng-click="$ctrl.update($ctrl.projects)">
+                <a class="btn" ng-click="$ctrl.update($ctrl.projects, $ctrl.projects.image)">
                     <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i>
                     {{($ctrl.editMode ? 'Valider' : 'Edit')}}
                 </a>
