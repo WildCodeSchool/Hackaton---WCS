@@ -11,6 +11,7 @@
 
                     let _previous = {}
 
+
                     this.limit = 1;
                     this.begin = 0;
                     this.editMode
@@ -28,16 +29,21 @@
                         })
                     })
 
-
+                    // Auto Slider - Pictures's project
                     var timer;
                     var sliderFunc = () => {
                         timer = $timeout(() => {
                             this.nexte();
+                            this.suivant();
                             timer = $timeout(sliderFunc, 3000);
                         }, 3000);
                     };
 
                     sliderFunc();
+
+                    // Auto Slider - usercardproject
+                    this.view = 3
+                    this.start = 0
 
                     // Update on Window Learn more
                     this.update = (project, images) => {
@@ -86,6 +92,9 @@
                 },
                 prev() {
                     this.begin > 0 ? this.begin-- : this.begin = this.projects.image.length - 1;
+                },
+                suivant(){
+                  this.start <this.projects.student.length - 3 ? this.start++ : this.start = 0;
                 }
             })
         }]
