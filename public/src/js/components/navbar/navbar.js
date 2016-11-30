@@ -8,12 +8,12 @@
 
                   //Search if project exist
                   this.show = () => {
+                    if(this.search.length > 0) {
                       projectsService.getOne(this.search).then((res) => {
                           this.results = res.data
-                          console.log(this.results)
                       })
                   }
-
+                }
 
                 }
             })

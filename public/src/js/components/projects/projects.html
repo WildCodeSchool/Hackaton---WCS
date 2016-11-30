@@ -9,7 +9,7 @@
                             {{project.likes}}</a>
                         <div class="card carte interne card-block">
                             <p>{{project.student.name}}</p>
-                            <div class="imageview" ng-repeat="image in project.image | limitTo: 1" ng-src="" style="background-image:url({{image}})"></div>
+                            <div class="imageview" ng-repeat="image in project.image | limitTo: 1" ng-src="" style="background-image:url({{image}})" ui-sref="app.project({projectId : project._id})"></div>
                             <h2 class="card-title">{{project.title}}</h2>
                             <p class="card-content">{{project.content | limitTo : 150}}
                                 <span ng-if="project.content.length > 150 ">...</span>

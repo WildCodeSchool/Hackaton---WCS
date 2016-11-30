@@ -7,6 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+
             <a class="navbar-brand" href="#">Project'Me</a>
         </div>
 
@@ -19,22 +20,17 @@
                     <span class="highlight"></span>
                     <span class="bar"></span>
                 </div>
-            </form>
-            <div id="result" ng-if="$ctrl.search" class="col-xs-4 col-xs-offset-3">
-                <a ui-sref="app.project({projectId : $ctrl.results._id})">{{$ctrl.results.title}}
-                </a><br>
-                <img ng-repeat="image in $ctrl.results.image" ng-src="{{image}}" class="resultimage">
-                <br>
-                <em>Dévéloppé avec
-                    {{$ctrl.results.techno}}
-                </em>
+
+              </form>
+              <div id="resultcontain" ng-if="$ctrl.search">
+            <div id="result" class="col-xs-3" ng-repeat="result in $ctrl.results">
+                <a ui-sref="app.project({projectId : $ctrl.results._id})">{{result.title}} </a><br>
+                <img ng-repeat="image in result.image" ng-src="{{image}}" class="resultimage">
+                <br><em>Dévéloppé avec {{result.techno}} </em>
             </div>
-            <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
-
-                <li>
-                    <a ui-sref="app.edit">Ajouter</a>
-                </li>
-
+          </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ui-sref="app.edit">Ajouter</a></li>
             </ul>
         </div>
     </div>
