@@ -40,6 +40,15 @@
                       }
 
                     }
+
+                    this.addComment = (project,comment)=>{
+                      project.comments.push(comment)
+                      projectsService.edit(project).then((res)=>{
+                        debugger
+
+                      })
+                    }
+
                 }
             })
         }]

@@ -44,10 +44,10 @@
                                         </div>
                                     </div>
                                   <div class="col-xs-8">
-                                      <input type="text" placeholder="Écrivez votre commentaire" value="" ng-model="$ctrl.newComment">
+                                      <input type="text" placeholder="Écrivez votre commentaire" value="" ng-model="comment">
                                   </div>
                                   <div class="col-xs-4">
-                                    <button class="btn" type="button" ng-click="$ctrl.addComment($ctrl.newComment)">Envoyer</button>
+                                    <button class="btn" type="button" ng-click="$ctrl.addComment(project, comment)">Envoyer</button>
                                   </div>
                                 </div>
                             </div>

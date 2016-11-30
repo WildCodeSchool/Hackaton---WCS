@@ -12,6 +12,7 @@
                         /// Get student
                         studentsService.getPopulate($stateParams).then((res) => {
                             this.student = res.data
+                            console.log(this.student)
                             this.studentProjects = this.student.projects
                         })
 
@@ -66,9 +67,10 @@
                                 if (newProject == this.projects[i].title) {
                                     this.student.projects.push(this.projects[i])
                                     return studentsService.edit(this.student).then((res) => {
+                                      debugger
                                         this.projects[i].student.push(this.student._id)
                                         projectsService.edit(this.projects[i]).then((res) => {
-
+                                          debugger
                                         })
                                     })
                                 }
