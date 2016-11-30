@@ -12,6 +12,5 @@
     'app.newstudent',
     'app.navbar',
     'app.edit',
-    'ngAnimate',
-    "td.easySocialShare"
+    'ngAnimate'
 ]))
