@@ -13,8 +13,14 @@
                         this.projects = res.data
                     })
 
+                    //pagination loadmore
                     this.limit = 4
 
+                    this.loadmore = () => {
+                        this.limit += 2
+                    }
+
+                    //Add likes
                     this.likes = (project) => {
                         project.likes++
                         projectsService.edit(project).then((res) => {
@@ -22,14 +28,13 @@
                         })
                     }
 
-                    this.loadmore = () => {
-                        this.limit += 2
-                    }
 
+                    // Get all students
                     studentsService.get().then((res) => {
                         this.students = res.data
                     })
 
+                    //show all comment
                     this.showComment = false
 
                     this.viewComment = () => {
@@ -38,15 +43,21 @@
                       } else {
                         this.showComment = true
                       }
-
                     }
 
+                    // add new comment
                     this.addComment = (project,comment)=>{
                       project.comments.push(comment)
                       projectsService.edit(project).then((res)=>{
-                        debugger
-
+                          this.comment = ""
                       })
+                    }
+
+                    // limit comment
+                    this.limitComment = 2
+
+                    this.loadMoreComment = () => {
+                        this.limitComment += 2
                     }
 
                 }

@@ -8,9 +8,10 @@
     box-shadow: 0.5px 0.5px 0.5px 0.5px #39CCCC;
     padding: 1em 0 0 0;
 }
+
 .resultimage {
-  width: 3em;
-  height: auto;
+    width: 3em;
+    height: auto;
 }
 
 .carte {
@@ -29,7 +30,6 @@ h3 {
     text-align: center;
     font-weight: lighter;
 }
-
 
 #search {
     position: relative;
@@ -126,6 +126,17 @@ h3 {
     padding: 25px;
     border-bottom-left-radius: 80%;
 }
-.viewmore{
+
+.viewmore {
     font-size: 25px;
+}
+
+.comment {
+    background-color: #fefefe;
+    padding: 10px 20px 0px 20px;
+}
+.loadmorecomment{
+    font-size: 14px;
+    line-height: 35px;
+    margin-bottom: 2px;
 }
