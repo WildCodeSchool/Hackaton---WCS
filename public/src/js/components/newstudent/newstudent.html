@@ -12,7 +12,7 @@
                     </div>
                     <div class="group">
                         <label class="labelInput">Avatar</label>
-                        <input class="fileinput" type="file" ng-model="$ctrl.newStudent.avatar" base-sixty-four-input required>
+                        <input class="fileinput" type="text" ng-model="$ctrl.newStudent.avatar" required>
                         <span class="highlight"></span>
                         <span class="bar"></span>
 
@@ -26,10 +26,10 @@
                 </div>
                 <div class="col-xs-6">
                     <div class="group">
-                        <input type="text" ng-model="$ctrl.newStudent.description" required>
+                        <input type="number" ng-model="$ctrl.newStudent.description" required>
                         <span class="highlight"></span>
                         <span class="bar"></span>
-                        <label>Description</label>
+                        <label>Age</label>
                     </div>
                     <div class="group">
                         <input type="text" ng-model="$ctrl.newStudent.city" required>
@@ -38,21 +38,20 @@
                         <label>City</label>
                     </div>
                     <div class="group">
-                                  <label class="labelInput">Langage</label>
-                                  <p>
-                                      <select ng-model="$ctrl.newStudent.techno">
-                                          <option></option>
-                                          <option>Javascript</option>
-                                          <option>Php</option>
-                                          <option>Ruby</option>
-                                          <option>Java</option>
-                                          <option>Android</option>
-                                          <option>iOS</option>
-                                      </select>
-                                      <span class="caret selectcaret"></span>
-                                  </p>
-
-                              </div>
+                        <label class="labelInput">Langage</label>
+                        <p>
+                            <select ng-model="$ctrl.newStudent.techno">
+                                <option></option>
+                                <option>Javascript</option>
+                                <option>Php</option>
+                                <option>Ruby</option>
+                                <option>Java</option>
+                                <option>Android</option>
+                                <option>iOS</option>
+                            </select>
+                            <span class="caret selectcaret"></span>
+                        </p>
+                    </div>
                 </div>
                 <div class="col-xs-6">
                     <div class="group">

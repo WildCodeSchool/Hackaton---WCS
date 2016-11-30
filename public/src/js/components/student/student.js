@@ -24,7 +24,7 @@
 
                         this.edit = (student) => {
                                 if (this.editMode == true) {
-                                    student.avatar = student.avatar.base64
+                                    //student.avatar = student.avatar.base64
                                     studentsService.edit(student).then((res) => {
                                         this.editMode = false
                                     })

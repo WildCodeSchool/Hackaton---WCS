@@ -12,7 +12,7 @@
 
                     this.add = (newStudent, newProject) => {
                         //encode avatar in base64
-                        newStudent.avatar = newStudent.avatar.base64
+                        //newStudent.avatar = newStudent.avatar.base64
                         if (newProject[0] = undefined) {
                             for (let i in this.projects) {
                                 if (newProject == this.projects[i].title) {
