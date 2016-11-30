@@ -37,7 +37,7 @@
                     //show all comment
                     this.showComment = false
 
-                    this.viewComment = () => {
+                    this.viewComment = (id) => {
                       if (this.showComment == true){
                         this.showComment = false
                       } else {

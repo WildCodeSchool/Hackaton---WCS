@@ -9,7 +9,7 @@
                             {{project.likes}}</a>
                         <div class="card carte interne card-block">
                             <p>{{project.student.name}}</p>
-                            <div class="imageview" ng-repeat="image in project.image | limitTo: 1" ng-src="" style="background-image:url({{image}})" ui-sref="app.project({projectId : project._id})"></div>
+                            <div class="imageview" ng-repeat="image in project.image | limitTo: 1 track by $index" ng-src="" style="background-image:url({{image}})" ui-sref="app.project({projectId : project._id})"></div>
                             <h2 class="card-title">{{project.title}}</h2>
                             <p class="card-content">{{project.content | limitTo : 150}}
                                 <span ng-if="project.content.length > 150 ">...</span>
@@ -33,7 +33,7 @@
                             </div>
                             <div class="row">
                                 <p class="col-md-6 col-xs-7">
-                                    <a ng-click="$ctrl.viewComment()" class="viewmore">Comments ({{project.comments.length}})</a>
+                                    <a ng-click="$ctrl.viewComment($index)" class="viewmore">Comments ({{project.comments.length}})</a>
                                 </p>
                                 <p class="col-md-6 col-xs-5 right">
                                     <a ui-sref="app.project({projectId : project._id})" class="viewmore">Voir plus</a>
@@ -42,7 +42,7 @@
                             <!-- Comments -->
                             <div class="row" ng-if="$ctrl.showComment">
                                 <div class="col-xs-12 comment">
-                                    <div class="" ng-repeat="comment in project.comments | orderBy : '-' | limitTo : $ctrl.limitComment ">
+                                    <div class="" ng-repeat="comment in project.comments | orderBy : '-' | limitTo : $ctrl.limitComment">
                                         <div class="col-xs-12">
                                             <p><i class="fa fa-comments-o" aria-hidden="true"></i> {{comment}}</p>
                                         </div>
