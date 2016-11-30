@@ -37,10 +37,12 @@
                     //show all comment
                     this.showComment = false
 
-                    this.viewComment = (id) => {
+                    this.viewComment = (project) => {
                       if (this.showComment == true){
                         this.showComment = false
                       } else {
+                        this.newones = project
+debugger
                         this.showComment = true
                       }
                     }

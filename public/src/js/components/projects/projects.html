@@ -33,18 +33,18 @@
                             </div>
                             <div class="row">
                                 <p class="col-md-6 col-xs-7">
-                                    <a ng-click="$ctrl.viewComment($index)" class="viewmore">Comments ({{project.comments.length}})</a>
+                                    <a ng-click="$ctrl.viewComment(project)" class="viewmore">Comments ({{project.comments.length}})</a>
                                 </p>
                                 <p class="col-md-6 col-xs-5 right">
                                     <a ui-sref="app.project({projectId : project._id})" class="viewmore">Voir plus</a>
                                 </p>
                             </div>
                             <!-- Comments -->
-                            <div class="row" ng-if="$ctrl.showComment">
+                            <div class="row" ng-if="$ctrl.showComment && (project._id == $ctrl.newones._id)">
                                 <div class="col-xs-12 comment">
-                                    <div class="" ng-repeat="comment in project.comments | orderBy : '-' | limitTo : $ctrl.limitComment">
+                                    <div class="" ng-repeat="newone in $ctrl.newones.comments | orderBy : '-' | limitTo : $ctrl.limitComment">
                                         <div class="col-xs-12">
-                                            <p><i class="fa fa-comments-o" aria-hidden="true"></i> {{comment}}</p>
+                                            <p><i class="fa fa-comments-o" aria-hidden="true"></i> {{newone}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@
                                 </a>
                             </div>
                             <hr ng-if="$ctrl.showComment">
-                            <div class="row" ng-if="$ctrl.showComment">
+                            <div class="row" ng-if="$ctrl.showComment && (project._id == $ctrl.newones._id)">
                                 <div class="col-md-8 col-xs-7">
                                     <input type="text" placeholder="Écrivez votre commentaire" value="" ng-model="$ctrl.comment">
                                 </div>
