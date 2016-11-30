@@ -1,27 +1,9 @@
 <section id="studentview">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-8">
-                <h1>Les projets de {{$ctrl.student.name}}</h1>
-                <div class="row userprojects">
-                    <div class="col-md-12 dialog3" ng-repeat="project in $ctrl.studentProjects">
-                        <div class="col-xs-6">
-                            <div ng-repeat="image in project.image | limitTo : 1">
-                                <img ng-src="{{image}}" class="img-responsive">
-                            </div>
-                        </div>
-                        <div class="col-xs-6">
-                            <h3>{{project.title}}</h3>
-                            <p>{{project.content | limitTo : 200}}...</p>
-                            <img src="/img/{{project.techno}}.jpg" alt="techno" class="technochip">
-                        </div>
-                        <button ui-sref="app.project({projectId : project._id})" class="btn1">Voir le projet</button>
-                    </div>
-                </div>
-            </div>
             <!-- Name -->
 
-            <div class="col-xs-4 col-xs-push-8 fixed student userfa">
+            <div class="col-xs-12 col-sm-4 col-sm-push-8 fixed student userfa">
                 <h2 ng-if="!$ctrl.editMode">{{$ctrl.student.name | uppercase}} </h2>
 
                 <div class="auteur">
@@ -117,6 +99,24 @@
                     <p ng-if="$ctrl.editMode">
                         <button class="btn btn-default" ng-click="$ctrl.addProject($ctrl.student._id, [$ctrl.newProject.projects])">Add New Project</button>
                     </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-8">
+                <h1>Les projets de {{$ctrl.student.name}}</h1>
+                <div class="row userprojects">
+                    <div class="col-sm-12 dialog3" ng-repeat="project in $ctrl.studentProjects">
+                        <div class="col-xs-12 col-sm-6">
+                            <div ng-repeat="image in project.image | limitTo : 1">
+                                <img ng-src="{{image}}" class="img-responsive">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <h3>{{project.title}}</h3>
+                            <p>{{project.content | limitTo : 200}}...</p>
+                            <img src="/img/{{project.techno}}.jpg" alt="techno" class="technochip">
+                        </div>
+                        <button ui-sref="app.project({projectId : project._id})" class="btn1">Voir le projet</button>
+                    </div>
                 </div>
             </div>
         </div>
