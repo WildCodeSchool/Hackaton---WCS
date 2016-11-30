@@ -1,11 +1,12 @@
 {
   "name": "blog_paul",
   "version": "1.0.0",
-  "description": "Blog",
+  "description": "Hackathon---WCS",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "echo 'DEBUG' && nodemon server.js"
+    "dev": "nodemon server.js"
   },
   "author": "paul de barthez",
   "license": "ISC",
