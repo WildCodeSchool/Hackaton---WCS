@@ -23,9 +23,9 @@
                     //Add likes
                     this.likes = (project) => {
                         project.likes++
-                        projectsService.edit(project).then((res) => {
+                            projectsService.edit(project).then((res) => {
 
-                        })
+                            })
                     }
 
 
@@ -38,21 +38,20 @@
                     this.showComment = false
 
                     this.viewComment = (project) => {
-                      if (this.showComment == true){
-                        this.showComment = false
-                      } else {
-                        this.newones = project
-debugger
-                        this.showComment = true
-                      }
+                        if (this.showComment == true) {
+                            this.showComment = false
+                        } else {
+                            this.newones = project
+                            this.showComment = true
+                        }
                     }
 
                     // add new comment
-                    this.addComment = (project,comment)=>{
-                      project.comments.push(comment)
-                      projectsService.edit(project).then((res)=>{
-                          this.comment = ""
-                      })
+                    this.addComment = (project, comment) => {
+                        project.comments.push(comment)
+                        projectsService.edit(project).then((res) => {
+                            this.comment = ""
+                        })
                     }
 
                     // limit comment
