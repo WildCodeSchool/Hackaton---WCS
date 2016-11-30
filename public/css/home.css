@@ -1,12 +1,13 @@
 #result {
     height: auto;
     text-align: center;
+    padding: 1em 0 0 0;
+
 }
 
 #result:hover {
     z-index: 99999999;
     box-shadow: 0.5px 0.5px 0.5px 0.5px #39CCCC;
-    padding: 1em 0 0 0;
 }
 .resultimage {
   width: 3em;
@@ -128,4 +129,10 @@ h3 {
 }
 .viewmore{
     font-size: 25px;
+}
+
+#resultcontain {
+  width: 500px;
+  height: auto;
+  display: inline-block;
 }
