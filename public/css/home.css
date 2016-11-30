@@ -131,11 +131,26 @@ h3 {
     font-size: 25px;
 }
 
-.comment {
-    background-color: #fefefe;
-    padding: 10px 20px 0px 20px;
-    margin: 0px 1.5%;
-    width: 97%;
+.comment div:nth-child(odd) {
+    padding: 0px 10px;
+    margin: 5px 0px;
+    background-color: #eaeaea;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    width: 70%;
+    float: left;
+}
+
+.comment div:nth-child(2n) {
+    float: right;
+    background-color: #eaeaea;
+    color: black;
+    padding: 0px 10px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+    width: 70%;
 }
 
 .loadmorecomment {

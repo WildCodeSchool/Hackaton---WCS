@@ -43,7 +43,9 @@
                             <div class="row" ng-if="$ctrl.showComment">
                                 <div class="col-xs-12 comment">
                                     <div class="" ng-repeat="comment in project.comments | orderBy : '-' | limitTo : $ctrl.limitComment ">
-                                        <p><i class="fa fa-comments-o" aria-hidden="true"></i> {{comment}}</p>
+                                        <div class="col-xs-12">
+                                            <p><i class="fa fa-comments-o" aria-hidden="true"></i> {{comment}}</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <a ng-click="$ctrl.loadMoreComment()" ng-if="$ctrl.limitComment < project.comments.length">
