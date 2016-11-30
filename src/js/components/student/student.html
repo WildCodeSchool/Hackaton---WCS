@@ -4,7 +4,8 @@
             <!-- Name -->
 
             <div class="col-xs-12 col-sm-4 col-sm-push-8 fixed student userfa">
-                <h2 ng-if="!$ctrl.editMode">{{$ctrl.student.name | uppercase}} </h2>
+                <h2 ng-if="!$ctrl.editMode">{{$ctrl.student.name | uppercase}}
+                </h2>
 
                 <div class="auteur">
                     <div class="group" ng-if="$ctrl.editMode">
@@ -22,87 +23,101 @@
                         <label>Image</label>
                     </div>
 
-
-
                     <hr ng-if="!$ctrl.editMode">
                     <i class="fa fa-user-circle-o fa-3x" aria-hidden="true"></i>
                     <div class="row Description">
-                    <div class="col-xs-6">
-                        <!-- Description -->
-                        <div ng-if="!$ctrl.editMode">
-                            <p>Âge {{$ctrl.student.description}} ans
+                        <div class="col-xs-6">
+                            <!-- Description -->
+                            <div ng-if="!$ctrl.editMode">
+                                <p>Âge
+                                    {{$ctrl.student.description}}
+                                    ans
+                                </p>
+                            </div>
+                            <div class="group" ng-if="$ctrl.editMode">
+                                <input type="number" value="Description" ng-model="$ctrl.student.description">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Description</label>
+                            </div>
+                            <!-- City -->
+                            <p ng-if="!$ctrl.editMode">
+                                <span>Habite
+                                    {{$ctrl.student.city}}</span>
                             </p>
+                            <div class="group" ng-if="$ctrl.editMode">
+                                <input type="text" value="Ville" ng-model="$ctrl.student.city">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Ville</label>
+                            </div>
                         </div>
-                        <div class="group" ng-if="$ctrl.editMode">
-                            <input type="number" value="Description" ng-model="$ctrl.student.description">
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Description</label>
-                        </div>
-                        <!-- City -->
-                        <p ng-if="!$ctrl.editMode">
-                            <span>Habite {{$ctrl.student.city}}</span>
-                        </p>
-                        <div class="group" ng-if="$ctrl.editMode">
-                            <input type="text" value="Ville" ng-model="$ctrl.student.city">
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Ville</label>
-                        </div>
-                    </div>
-                    <div class="col-xs-6">
-                        <!-- Techno -->
-                        <p ng-if="!$ctrl.editMode">
-                            <i class="fa fa-laptop fa-lg" aria-hidden="true"></i>
-                            <span>{{$ctrl.student.techno}}</span>
-                        </p>
-                        <div class="group" ng-if="$ctrl.editMode">
-                            <label class="labelInput">Techno</label>
-                            <p>
-                                <select ng-model="$ctrl.student.techno">
-                                    <option></option>
-                                    <option>Javascript</option>
-                                    <option>Php</option>
-                                    <option>Ruby</option>
-                                    <option>Java</option>
-                                    <option>Android</option>
-                                    <option>iOS</option>
-                                </select>
-                                <span class="caret selectcaret"></span>
+                        <div class="col-xs-6">
+                            <!-- Techno -->
+                            <p ng-if="!$ctrl.editMode">
+                                <i class="fa fa-laptop fa-lg" aria-hidden="true"></i>
+                                <span>{{$ctrl.student.techno}}</span>
                             </p>
+                            <div class="group" ng-if="$ctrl.editMode">
+                                <label class="labelInput">Techno</label>
+                                <p>
+                                    <select ng-model="$ctrl.student.techno">
+                                        <option></option>
+                                        <option>Javascript</option>
+                                        <option>Php</option>
+                                        <option>Ruby</option>
+                                        <option>Java</option>
+                                        <option>Android</option>
+                                        <option>iOS</option>
+                                    </select>
+                                    <span class="caret selectcaret"></span>
+                                </p>
 
+                            </div>
+                            <!-- Github -->
+                            <p ng-if="!$ctrl.editMode">
+                                <i class="fa fa-github fa-lg" aria-hidden="true"></i>
+                                <span>
+                                    <a href="http://www.github.com/{{$ctrl.student.github}}">@{{$ctrl.student.github}}</a>
+                                </span>
+                            </p>
+                            <div class="group" ng-if="$ctrl.editMode">
+                                <input type="text" value="Pseudo Github" ng-model="$ctrl.student.github">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>GitHub</label>
+                            </div>
                         </div>
-                        <!-- Github -->
-                        <p ng-if="!$ctrl.editMode">
-                            <i class="fa fa-github fa-lg" aria-hidden="true"></i>
-                            <span><a href="http://www.github.com/{{$ctrl.student.github}}">@{{$ctrl.student.github}}</a></span>
-                        </p>
-                        <div class="group" ng-if="$ctrl.editMode">
-                            <input type="text" value="Pseudo Github" ng-model="$ctrl.student.github">
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>GitHub</label>
-                        </div>
-                      </div>
                     </div>
-                        <hr>
-                    <!-- Project -->
-                    <p><button class="btnEdit" ng-click="$ctrl.edit($ctrl.student)"><i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i> {{!$ctrl.editMode ? 'Editer' : 'Valider'}}</button></p>
-                    <p ng-if="$ctrl.editMode"><button class="btn btn-default" ng-click="$ctrl.cancel($ctrl.student)">Annuler</button></p>
-                    <p ng-if="$ctrl.editMode"><button class="btn btn-default" ng-click="$ctrl.delete($ctrl.student)">Supprimer</button></p>
+                    <hr>
+                    <!-- Edit mode button -->
+                    <p class="hidden-xs hidden-sm">
+                        <button class="btnEdit" ng-click="$ctrl.edit($ctrl.student)">
+                            <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i>
+                            {{!$ctrl.editMode ? 'Editer' : 'Valider'}}</button>
+                    </p>
+                    <p ng-if="$ctrl.editMode">
+                        <button class="btn btn-default" ng-click="$ctrl.cancel($ctrl.student)">Annuler</button>
+                    </p>
+                    <p ng-if="$ctrl.editMode">
+                        <button class="btn btn-default" ng-click="$ctrl.delete($ctrl.student)">Supprimer</button>
+                    </p>
                     <hr ng-if="$ctrl.editMode">
+                    <!-- Project -->
                     <p ng-if="$ctrl.editMode">
                         <select ng-model="$ctrl.newProject.projects">
-                                <option ng-repeat="project in $ctrl.projects ">{{project.title}}</option>
-                            </select>
+                            <option ng-repeat="project in $ctrl.projects ">{{project.title}}</option>
+                        </select>
                     </p>
+
                     <p ng-if="$ctrl.editMode">
                         <button class="btn btn-default" ng-click="$ctrl.addProject($ctrl.student._id, [$ctrl.newProject.projects])">Add New Project</button>
                     </p>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-8">
-                <h1>Les projets de {{$ctrl.student.name}}</h1>
+                <h1>Les projets de
+                    {{$ctrl.student.name}}</h1>
                 <div class="row userprojects">
                     <div class="col-sm-12 dialog3" ng-repeat="project in $ctrl.studentProjects">
                         <div class="col-xs-12 col-sm-6">

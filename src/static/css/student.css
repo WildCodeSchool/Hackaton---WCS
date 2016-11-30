@@ -132,7 +132,7 @@
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     border: none;
-    margin: 3em 14em 0 20em;
+    margin: 2em 14em 0px 15em;
 }
 
 @media(max-width:768px) {
@@ -150,7 +150,8 @@
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
         border: none;
-        margin: 2em 14em 0px 15em;
+        margin: 2em 0em 0px 0em;
+
     }
 }
 
