@@ -14,9 +14,14 @@
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
     "express": "^4.14.0",
+    "express-jwt": "^5.1.0",
+    "jsonwebtoken": "^7.1.9",
     "method-override": "^2.3.6",
     "mongoose": "^4.6.8",
     "morgan": "^1.7.0",
+    "nodemon": "^1.11.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
     "ui-select": "^0.19.6"
   }
 }

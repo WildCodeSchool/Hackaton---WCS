@@ -178,3 +178,27 @@
     top: 26em;
     left: 8em;
 }
+
+.social {
+    font-size: 2em;
+}
+
+.fa-facebook-square:before {
+    content: "\f082";
+    color: #45619D;
+    margin: 0.5em;
+}
+
+.fa-twitter-square:before {
+    content: "\f081";
+    color: #1DA1F2;
+    margin: 0.5em;
+
+}
+
+.fa-google-plus-square:before {
+    content: "\f0d4";
+    color: #DB4437;
+    margin: 0.5em;
+
+}

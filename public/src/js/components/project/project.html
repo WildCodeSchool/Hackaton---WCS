@@ -32,7 +32,7 @@
 
             <!-- Récupération des contributeurs -->
             <div class="col-md-10 col-xs-12 col-md-offset-1 usercardproject">
-                <div ng-repeat="student in $ctrl.projects.student ">
+                <div ng-repeat="student in $ctrl.projects.student | limitTo: $ctrl.view: $ctrl.start">
                     <a href="#/student/{{student._id}}">
                         <div class="littlecard littlecardproject col-md-4 col-xs-6">
                             <div class="row">
@@ -80,6 +80,8 @@
                     <label ng-if="$ctrl.editMode">Description
                     </label>
                 </div>
+                <div share-square="true" share-links="Facebook, Twitter, Google-Plus" share-title="Article Title" class="social"></div>
+
             </div>
         </div>
 
