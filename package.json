@@ -4,8 +4,8 @@
   "description": "Hackathon---WCS",
   "main": "index.js",
   "scripts": {
+    "prestart": "brunch build",
     "start": "node server.js",
-    "prestart": "brunch build --production",
     "watch": "brunch watch",
     "dev": "brunch watch --server"
   },

@@ -58,7 +58,7 @@ exports.config = {
     },
     overrides: {
         production: {
-            sourceMaps: false,
+            sourceMaps: true,
             plugins: {
                 autoReload: {
                     enabled: false
