@@ -23,7 +23,7 @@ class ProjectsController extends Controller {
     }
 
     findOne(req,res, next){
-      let data =  new RegExp("("+req.params.title+")(\\d+)", "igm")
+      let data =  new RegExp("("+req.params.title+")", "igm")
       console.log(data)
       this.model.find( { $or:[ {'title':data}, {'techno':data}]},(err,document)=>{
         if (err) next(err)
