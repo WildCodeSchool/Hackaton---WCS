@@ -1,0 +1,204 @@
+.dialog {
+    background-color: #FFFFFF;
+    padding: 5em;
+    text-align: center;
+    border-radius: 0px;
+    min-height: 250px;
+    border: 1px solid rgba(0, 0, 0, .09);
+}
+
+@media (max-width: 768px) {
+    .dialog {
+        padding: 1em;
+        padding-top: 5em;
+    }
+}
+
+.exit {
+    float: right;
+    margin: 0.1em 0em 0 0;
+    display: inline-block;
+}
+
+.exit:hover {
+    color: red;
+}
+
+.edit:hover {
+    color: #02B875;
+    font-size: 20px;
+}
+
+.delete:hover {
+    color: red;
+    font-size: 20px;
+}
+
+.projectimage {
+    width: 100%;
+    height: 35em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.techno {
+    float: right;
+    padding: 30px;
+    border-bottom-left-radius: 80%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: -5em;
+}
+
+@media (max-width:768px) {
+    .techno {
+        margin-top: -5em;
+        margin-right: -1em;
+    }
+}
+
+.btnPrev {
+    font-size: 40px;
+    color: #FFFFFF;
+    margin-top: -8em;
+    left: 1em;
+    position: absolute;
+}
+
+.btnNext {
+    font-size: 40px;
+    color: #FFFFFF;
+    margin-top: -8em;
+    right: 1em;
+    position: absolute;
+}
+
+@media (max-width:768px) {
+    .btnPrev {
+        left: 0.2em;
+    }
+    .btnNext {
+        right: 0.2em;
+    }
+}
+
+.projecttitle {
+    position: absolute;
+    margin-top: 1.5em;
+    width: 100%;
+    color: #FFFFFF;
+    font-size: 80px;
+    font-weight: lighter;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.contributors {
+    /*max-height: 7em;
+    margin-bottom: 16em;*/
+    position: absolute;
+    top: 26.86em;
+    display: inline-block;
+    text-align: center;
+    background-color: rgba(0, 31, 63, 0.8);
+    margin: 79px 0em 0 42em;
+    border-radius: 10px;
+    color: white;
+    border: 1px solid rgb(67, 73, 102);
+    color: rgb(127, 191, 255);
+}
+
+.editmode {
+    margin-top: 3em;
+}
+
+.caretproject {
+    left: 70%;
+    position: absolute;
+    top: 13px;
+}
+
+
+/*Counter ngAnimate */
+
+.slide.ng-hide-add, .slide.ng-hide-remove {
+    -webkit-transition: all linear 0.5s;
+    -moz-transition: all linear 0.5s;
+    -o-transition: all linear 0.5s;
+    transition: all linear 0.5s;
+    display: block!important;
+}
+
+.slide.ng-hide-add.ng-hide-add-active, .slide.ng-hide-remove {
+    opacity: 0.5;
+}
+
+.slide.ng-hide-add, .slide.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
+}
+
+.ctbravatar {
+    width: 2em;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+}
+
+@media (min-width:768px) {
+    .usercardproject .col-md-4 {
+        width: 31.3%
+    }
+}
+
+.titleedit {
+    margin-top: 1.5em;
+    width: 100%;
+    color: black;
+    font-size: 80px;
+    font-weight: lighter;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.technoedit {
+    top: 24em;
+    font-size: 20px;
+    right: 1em;
+    background-color: #909090;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+.imageprojectedit {
+    position: absolute;
+    width: 80%;
+    top: 26em;
+    left: 8em;
+}
+
+.social {
+    font-size: 2em;
+}
+
+.fa-facebook-square:before {
+    content: "\f082";
+    color: #45619D;
+    margin: 0.5em;
+}
+
+.fa-twitter-square:before {
+    content: "\f081";
+    color: #1DA1F2;
+    margin: 0.5em;
+
+}
+
+.fa-google-plus-square:before {
+    content: "\f0d4";
+    color: #DB4437;
+    margin: 0.5em;
+
+}

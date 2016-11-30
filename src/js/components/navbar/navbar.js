@@ -1,7 +1,7 @@
 ((app) => {
     'use strict'
     app.component('navbar', {
-        templateUrl: "/src/js/components/navbar/navbar.html",
+        templateUrl: "js/components/navbar/navbar.html",
         controller: ["projectsService", function(projectsService, FacebookService) {
             angular.extend(this, {
                 $onInit() {

@@ -1,7 +1,7 @@
 ((app) => {
 
     app.component('student', {
-        templateUrl: 'src/js/components/student/student.html',
+        templateUrl: 'js/components/student/student.html',
         controller: ['studentsService',
             '$stateParams',
             'projectsService',

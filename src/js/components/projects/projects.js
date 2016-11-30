@@ -4,7 +4,7 @@
         bindings: {
             blogs: '<'
         },
-        templateUrl: 'src/js/components/projects/projects.html',
+        templateUrl: 'js/components/projects/projects.html',
         controller: ['projectsService', 'studentsService', function(projectsService, studentsService) {
             angular.extend(this, {
                 $onInit() {

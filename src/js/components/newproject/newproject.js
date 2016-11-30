@@ -1,7 +1,7 @@
 ((app) => {
     'use strict'
     app.component('newproject', {
-        templateUrl: 'src/js/components/newproject/newproject.html',
+        templateUrl: 'js/components/newproject/newproject.html',
         controller: ['projectsService', "studentsService", function(projectsService, studentsService) {
             // let student = _.find(this.students, (student) => {
             //     return(student.name === this.project.student)

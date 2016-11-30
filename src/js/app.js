@@ -2,8 +2,8 @@
 
 })(angular.module('app', [
     'ui.router',
-    'naif.base64',
     'app.config',
+    'app.views',
     'app.services',
     'app.project',
     'app.projects',

@@ -1,7 +1,7 @@
 ((app) => {
 
     app.component('edit', {
-        templateUrl: 'src/js/components/edit/edit.html',
+        templateUrl: 'js/components/edit/edit.html',
         controller: function() {
             angular.extend(this, {
 

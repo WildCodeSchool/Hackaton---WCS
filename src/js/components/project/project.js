@@ -4,7 +4,7 @@
         bindings: {
             project: '<'
         },
-        templateUrl: 'src/js/components/project/project.html',
+        templateUrl: 'js/components/project/project.html',
         controller: ['projectsService', '$stateParams', '$timeout', '$animate', function(projectsService, $stateParams, $timeout, $animate) {
             angular.extend(this, {
                 $onInit() {

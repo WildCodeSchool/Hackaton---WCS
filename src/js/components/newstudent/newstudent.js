@@ -1,7 +1,7 @@
 ((app) => {
     'use strict'
     app.component('newstudent', {
-        templateUrl: '/src/js/components/newstudent/newstudent.html',
+        templateUrl: 'js/components/newstudent/newstudent.html',
         controller: ['studentsService', 'projectsService', function(studentsService, projectsService) {
             angular.extend(this, {
                 $onInit() {
