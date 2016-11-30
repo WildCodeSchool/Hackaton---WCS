@@ -38,3 +38,11 @@ Divers
 Cohésion du groupe  
 Répartition du travail  
 Autonomie  
+
+##Développement
+```
+$ npm run dev
+```
+
+##Deployé sur Heroku :  
+(Project'Me)[https://meproject.herokuapp.com/#/]
