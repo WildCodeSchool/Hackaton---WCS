@@ -24,9 +24,10 @@
               </form>
               <div id="resultcontain" ng-if="$ctrl.search">
             <div id="result" class="col-xs-3" ng-repeat="result in $ctrl.results">
-                <a ui-sref="app.project({projectId : $ctrl.results._id})">{{result.title}} </a><br>
+                <a ui-sref="app.project({projectId : result._id})">{{result.title}}<br>
                 <img ng-repeat="image in result.image" ng-src="{{image}}" class="resultimage">
                 <br><em>Dévéloppé avec {{result.techno}} </em>
+                </a>
             </div>
           </div>
             <ul class="nav navbar-nav navbar-right hidden-xs">
