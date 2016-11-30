@@ -51,8 +51,9 @@
                                 <a ng-click="$ctrl.loadMoreComment()" ng-if="$ctrl.limitComment < project.comments.length">
                                     <p class="text-center loadmorecomment">Charger plus de commentaires</p>
                                 </a>
+                                <hr ng-if="$ctrl.showComment">
+
                             </div>
-                            <hr ng-if="$ctrl.showComment">
                             <div class="row" ng-if="$ctrl.showComment && (project._id == $ctrl.newones._id)">
                                 <div class="col-md-8 col-xs-7">
                                     <input type="text" placeholder="Écrivez votre commentaire" value="" ng-model="$ctrl.comment">
