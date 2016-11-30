@@ -13,13 +13,14 @@
             <!-- Récupération des images du projet -->
             <div class="" ng-repeat="image in $ctrl.projects.image | limitTo:$ctrl.limit : $ctrl.begin">
                 <div style="background-image: url({{image}})" class="projectimage"></div>
+                <div class="group imageprojectedit" ng-if="$ctrl.editMode">
+                    <input class="form-control input-m center-block" type="text" ng-model="$ctrl.projects.image">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Image</label>
+                </div>
             </div>
-            <div class="group imageprojectedit" ng-if="$ctrl.editMode">
-                <input class="form-control input-m center-block" type="text" ng-model="$ctrl.projects.image">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Image</label>
-            </div>
+
 
             <!-- Pagination -->
             <a ng-click="$ctrl.prev()" class="btnPrev" ng-if="!$ctrl.editMode">

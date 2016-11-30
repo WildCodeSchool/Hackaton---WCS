@@ -42,8 +42,8 @@
                     // Update on Window Learn more
                     this.update = (project, images) => {
                         if (this.editMode) {
-                            images = images.split(';')
-                            project.image = images
+                            //images = images.split(';')
+                            //project.image = images
                             projectsService.edit(project).then((res) => {
                                 this.projects = res.config.data
                                 this.editMode = false
