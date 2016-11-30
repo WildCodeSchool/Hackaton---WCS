@@ -40,7 +40,7 @@ exports.config = {
     },
     plugins: {
         copycat: {
-            "js": ['node_modules/angular/angular.min.js', 'node_modules/angular-ui-router/release/angular-ui-router.min.js'],
+            "js": ['node_modules/angular/angular.min.js', 'node_modules/angular-ui-router/release/angular-ui-router.min.js', 'node_modules/angular-animate/angular-animate.min.js'],
             verbose: true,
             onlyChanged: true
         },
