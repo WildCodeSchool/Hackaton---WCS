@@ -79,14 +79,12 @@
 }
 
 .technochip {
-    /*position: absolute;
-    top: 24em;*/
-    font-size: 20px;
-    right: 1em;
-    background-color: #909090;
-    padding: 10px;
-    border-radius: 10px;
-    color: white;
+    width: 15%;
+    float: right;
+    bottom: 0px;
+    position: absolute;
+    right: -10px;
+    top: -10px;
 }
 
 .userfa i {
