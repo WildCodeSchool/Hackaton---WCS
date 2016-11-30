@@ -32,10 +32,10 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <p class="col-xs-6">
+                                <p class="col-md-6 col-xs-7">
                                     <a ng-click="$ctrl.viewComment()" class="viewmore">Comments ({{project.comments.length}})</a>
                                 </p>
-                                <p class="col-xs-6 right">
+                                <p class="col-md-6 col-xs-5 right">
                                     <a ui-sref="app.project({projectId : project._id})" class="viewmore">Voir plus</a>
                                 </p>
                             </div>
@@ -52,10 +52,10 @@
                             </div>
                             <hr ng-if="$ctrl.showComment">
                             <div class="row" ng-if="$ctrl.showComment">
-                                <div class="col-xs-8">
+                                <div class="col-md-8 col-xs-7">
                                     <input type="text" placeholder="Écrivez votre commentaire" value="" ng-model="$ctrl.comment">
                                 </div>
-                                <div class="col-xs-4">
+                                <div class="col-md-4 col-xs-5">
                                     <button class="btn" type="button" ng-click="$ctrl.addComment(project, $ctrl.comment)">Envoyer</button>
                                 </div>
                             </div>

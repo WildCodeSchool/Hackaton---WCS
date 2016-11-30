@@ -8,24 +8,26 @@
                 <input ng-if="$ctrl.editMode" class="titleedit" type="text" ng-model="$ctrl.projects.title" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
-                <!-- <label class="label" ng-if="$ctrl.editMode">Titre </label> -->
             </div>
-            <!-- <time><p ng-if="!$ctrl.editMode" > Le {{$ctrl.projects.updatedAt | date:'dd-MM-yyyy à HH:mm:ss'}} </p></time> -->
+
             <!-- Récupération des images du projet -->
 
             <div class="" ng-repeat="image in $ctrl.projects.image | limitTo:$ctrl.limit : $ctrl.begin">
                 <div style="background-image: url({{image}})" class="projectimage">
-                    <a ng-click="$ctrl.prev()" class="btnPrev" ng-if="!$ctrl.editMode">< </a>
-                    <a ng-click="$ctrl.next()" class="btnNext" ng-if="!$ctrl.editMode">
-                        >
-                    </a>
                 </div>
-
             </div>
+
+            <!-- Pagination -->
+            <a ng-click="$ctrl.prev()" class="btnPrev" ng-if="!$ctrl.editMode">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </a>
+            <a ng-click="$ctrl.next()" class="btnNext" ng-if="!$ctrl.editMode">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </a>
 
             <!-- Récupération des contributeurs -->
             <div class="col-md-10 col-xs-12 col-md-offset-1 usercardproject">
-                <div ng-repeat="student in $ctrl.projects.student | limitTo : 3">
+                <div ng-repeat="student in $ctrl.projects.student ">
                     <a href="#/student/{{student._id}}">
                         <div class="littlecard littlecardproject col-md-4 col-xs-6">
                             <div class="row">
@@ -79,10 +81,10 @@
         <!-- Comment -->
         <div class="container carte interne">
             <div class="row">
-                <div class="col-xs-8">
+                <div class="col-md-8 col-xs-7">
                     <input type="text" placeholder="Écrivez votre commentaire" value="" ng-model="$ctrl.comment">
                 </div>
-                <div class="col-xs-4">
+                <div class="col-md-4 col-xs-5">
                     <button class="btn" type="button" ng-click="$ctrl.addComment($ctrl.projects, $ctrl.comment)">Envoyer</button>
                 </div>
             </div>

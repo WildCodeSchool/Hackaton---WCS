@@ -60,21 +60,28 @@
 }
 
 .btnPrev {
-    float: left;
-    font-size: 30px;
+    font-size: 40px;
     color: #FFFFFF;
-    vertical-align: middle;
-    padding-top: 6em;
-    padding-left: 1em;
+    margin-top: -8em;
+    left: 1em;
+    position: absolute;
 }
 
 .btnNext {
-    float: right;
-    font-size: 30px;
-    display: inline-block;
+    font-size: 40px;
     color: #FFFFFF;
-    padding-top: 6em;
-    padding-right: 1em;
+    margin-top: -8em;
+    right: 1em;
+    position: absolute;
+}
+
+@media (max-width:768px) {
+    .btnPrev {
+        left: 0.2em;
+    }
+    .btnNext {
+        right: 0.2em;
+    }
 }
 
 .projecttitle {
