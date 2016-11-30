@@ -5,7 +5,7 @@
             project: '<'
         },
         templateUrl: 'src/js/components/project/project.html',
-        controller: ['projectsService', '$stateParams', '$timeout','$animate', function(projectsService, $stateParams, $timeout, $animate) {
+        controller: ['projectsService', '$stateParams', '$timeout', '$animate', function(projectsService, $stateParams, $timeout, $animate) {
             angular.extend(this, {
                 $onInit() {
 
@@ -23,15 +23,15 @@
                         this.projects.forEach((element) => {
                             if (element._id === id) {
                                 this.projects = element
-                                console.log(this.projects)
+                                    //console.log(this.projects)
                             }
                         })
                     })
 
 
                     var timer;
-                    var sliderFunc = ()=> {
-                        timer = $timeout(() =>{
+                    var sliderFunc = () => {
+                        timer = $timeout(() => {
                             this.nexte();
                             timer = $timeout(sliderFunc, 3000);
                         }, 3000);
@@ -65,6 +65,14 @@
                     // Delete a project
                     this.dele = '';
 
+                    // add new comment
+                    this.addComment = (project, comment) => {
+                        project.comments.push(comment)
+                        projectsService.edit(project).then((res) => {
+                            this.comment = ""
+                        })
+                    }
+
                 },
                 delete(project) {
                     alert("Sur?")
@@ -73,7 +81,7 @@
                     })
                 },
                 nexte() {
-                  this.begin < this.projects.image.length - 1 ? this.begin++ : this.begin =0;
+                    this.begin < this.projects.image.length - 1 ? this.begin++ : this.begin = 0;
 
                 },
                 prev() {

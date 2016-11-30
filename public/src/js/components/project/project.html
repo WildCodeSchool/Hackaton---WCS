@@ -76,6 +76,30 @@
             </div>
         </div>
 
+        <!-- Comment -->
+        <div class="container carte interne">
+            <div class="row">
+                <div class="col-xs-8">
+                    <input type="text" placeholder="Écrivez votre commentaire" value="" ng-model="$ctrl.comment">
+                </div>
+                <div class="col-xs-4">
+                    <button class="btn" type="button" ng-click="$ctrl.addComment($ctrl.projects, $ctrl.comment)">Envoyer</button>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-12 comment">
+                    <div class="" ng-repeat="comment in $ctrl.projects.comments">
+                        <p>
+                            <i class="fa fa-comments-o" aria-hidden="true"></i>
+                            {{comment}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edition -->
         <div class="row edition">
             <div class="col-xs-2 col-xs-offset-3">
                 <a class="btn" ng-click="$ctrl.update($ctrl.projects)">
@@ -98,5 +122,4 @@
             </div>
         </div>
     </div>
-
 </section>
