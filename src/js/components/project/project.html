@@ -23,10 +23,10 @@
 
 
             <!-- Pagination -->
-            <a ng-click="$ctrl.prev()" class="btnPrev" ng-if="!$ctrl.editMode">
+            <a ng-click="$ctrl.prev()" class="btnPrev" ng-if="!$ctrl.editMode && $ctrl.projects.image.length > 1">
                 <i class="fa fa-chevron-left" aria-hidden="true"></i>
             </a>
-            <a ng-click="$ctrl.nexte()" class="btnNext" ng-if="!$ctrl.editMode">
+            <a ng-click="$ctrl.nexte()" class="btnNext" ng-if="!$ctrl.editMode && $ctrl.projects.image.length > 1">
                 <i class="fa fa-chevron-right" aria-hidden="true"></i>
             </a>
 

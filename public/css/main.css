@@ -272,3 +272,6 @@ select {
     width: 70%;
     margin: 5px 0px;
 }
+nav .form-control {
+    background-color: transparent;
+}
