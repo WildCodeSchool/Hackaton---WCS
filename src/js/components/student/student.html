@@ -100,7 +100,7 @@
                         <button class="btn btn-default" ng-click="$ctrl.cancel($ctrl.student)">Annuler</button>
                     </p>
                     <p ng-if="$ctrl.editMode">
-                        <button class="btn btn-default" ng-click="$ctrl.delete($ctrl.student)">Supprimer</button>
+                        <button class="btn btn-default" ng-click="$ctrl.delete($ctrl.student)" ui-sref="app.projects">Supprimer</button>
                     </p>
                     <hr ng-if="$ctrl.editMode">
                     <!-- Project -->
