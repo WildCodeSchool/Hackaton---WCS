@@ -8,6 +8,7 @@
 
                     //Search if project exist
                     this.show = () => {
+                        this.showcross = true
                         if (this.search.length > 0) {
                             projectsService.getOne(this.search).then((res) => {
                                 this.results = res.data
@@ -16,7 +17,7 @@
                     }
 
                     this.isCollapsed = () => {
-                        if (this.showCollapsed == true){
+                        if (this.showCollapsed == true) {
                             this.showCollapsed = false
                         } else {
                             this.showCollapsed = true

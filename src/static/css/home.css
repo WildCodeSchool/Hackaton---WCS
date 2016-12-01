@@ -171,8 +171,9 @@ h3 {
     height: 100vh;
     float: right;
 }
-@media (max-width: 767px){
-    #resultcontain{
+
+@media (max-width: 767px) {
+    #resultcontain {
         float: left;
     }
 }
@@ -183,4 +184,11 @@ h3 {
 
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
     background-color: #feffff;
+}
+
+.searchcross {
+    position: absolute;
+    top: 15px;
+    right: 4em;
+    color: #7b7b7b;
 }
