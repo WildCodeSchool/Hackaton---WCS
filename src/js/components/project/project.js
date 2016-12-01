@@ -21,12 +21,13 @@
                     })
 
                     // add new comment
-                    this.addComment = (comment,projects) => {
-                      this.comment.projects = projects
+                    this.addComment = (comment,project) => {
+                      debugger
+                      this.comment.projects = project._id
                         commentsService.add(this.comment).then((res) => {
                           this.test = res.data._id
                             this.comment = ""
-                            this.project(this.test);
+                            this.project(this.test, project);
                         })
 
                     }
@@ -98,10 +99,10 @@
                 suivant(){
                   this.start <this.projects.student.length - 3 ? this.start++ : this.start = 0;
                 },
-                project(id){
-                  this.projects.comments = id
+                project(id, projects){
+                  projects.comments.push(id)
                   debugger
-                  projectsService.edit(this.projects).then((res)=>{
+                  projectsService.edit(projects).then((res)=>{
 
                   })
                 }
