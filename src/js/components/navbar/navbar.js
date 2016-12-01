@@ -2,7 +2,7 @@
     'use strict'
     app.component('navbar', {
         templateUrl: "js/components/navbar/navbar.html",
-        controller: ["projectsService", function(projectsService, FacebookService) {
+        controller: ["projectsService", "$timeout", function(projectsService, $timeout) {
             angular.extend(this, {
                 $onInit() {
 
@@ -14,9 +14,16 @@
                             })
                         }
                     }
+
+                    this.isCollapsed = () => {
+                        if (this.showCollapsed == true){
+                            this.showCollapsed = false
+                        } else {
+                            this.showCollapsed = true
+                        }
+                    }
                 }
             })
         }]
     })
-
 })(angular.module('app.navbar'))

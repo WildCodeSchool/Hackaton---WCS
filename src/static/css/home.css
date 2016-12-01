@@ -1,8 +1,6 @@
 #result {
     height: auto;
-    text-align: center;
-    padding: 1em 0 0 0;
-
+    padding: 1em;
 }
 
 #result:hover {
@@ -11,7 +9,7 @@
 }
 
 .resultimage {
-    width: 3em;
+    width: 4em;
     height: auto;
 }
 
@@ -140,7 +138,6 @@ h3 {
     font-size: 25px;
 }
 
-
 .comment div:nth-child(odd):not(.col-xs-12) {
     padding: 10px 10px 0px;
     margin: 5px 0px;
@@ -167,12 +164,17 @@ h3 {
     font-size: 14px;
     line-height: 35px;
     margin-bottom: -20px;
-  }
+}
 
 #resultcontain {
-  width: 500px;
-  height: auto;
-  display: inline-block;
+    width: 500px;
+    height: 100vh;
+    float: right;
+}
+@media (max-width: 767px){
+    #resultcontain{
+        float: left;
+    }
 }
 
 .navbar-toggle {

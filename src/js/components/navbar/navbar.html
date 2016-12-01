@@ -1,38 +1,49 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header" ng-if="!$ctrl.search">
-            <button type="button" class="navbar-toggle collapsed" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed">
+            <a class="navbar-brand" href="#">Project'Me</a>
+            <button type="button" class="navbar-toggle collapsed" ng-click="$ctrl.isCollapsed()" aria-controls="bs-navbar" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-
-            <a class="navbar-brand" href="#">Project'Me</a>
         </div>
 
         <!-- Hide on leave house -->
-        <div class="navbar-collapse" ng-class="{collapse: !isCollapsed}" id="bs-example-navbar-collapse-1" ng-mouseleave="$ctrl.search = null">
-            <form class="navbar-form navbar-right">
-                <div >
+        <div id="bs-navbar" class="navbar-collapse" ng-class="{collapse: !$ctrl.showCollapsed}" aria-expanded="false" ng-mouseleave="$ctrl.search = null">
+            <form class="nav navbar-form navbar-right">
+                <div>
                     <input class="form-control" id="increase" ng-model="$ctrl.search" ng-change="$ctrl.show()" type="text" placeholder="Recherche">
                     <i id="search" class="fa fa-search fa-lg" aria-hidden="true"></i>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                 </div>
+            </form>
 
-              </form>
-              <div id="resultcontain" ng-if="$ctrl.search">
-            <div id="result" class="col-xs-3" ng-repeat="result in $ctrl.results">
-                <a ui-sref="app.project({projectId : result._id})">{{result.title}}<br>
-                <img ng-repeat="image in result.image" ng-src="{{image}}" class="resultimage">
-                <br><em>Dévéloppé avec {{result.techno}} </em>
+            <ul class="nav navbar-nav navbar-right hidden-xs">
+                <li>
+                    <a ui-sref="app.edit">Ajouter</a>
+                </li>
+            </ul>
+        </div>
+        <div id="resultcontain" ng-if="$ctrl.search">
+            <div id="result" class="col-xs-12" ng-repeat="result in $ctrl.results">
+                <a ui-sref="app.project({projectId : result._id})">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <img ng-repeat="image in result.image" ng-src="{{image}}" class="resultimage">
+                        </div>
+                        <div class="col-xs-10">
+                            {{result.title}}
+                            <br>
+                            <em>Dévéloppé avec
+                                {{result.techno}}
+                            </em>
+                        </div>
+                    </div>
                 </a>
             </div>
-          </div>
-            <ul class="nav navbar-nav navbar-right hidden-xs">
-                <li><a ui-sref="app.edit">Ajouter</a></li>
-            </ul>
         </div>
     </div>
 </nav>
