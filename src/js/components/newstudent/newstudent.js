@@ -13,7 +13,7 @@
                     this.add = (newStudent, newProject) => {
                         //encode avatar in base64
                         //newStudent.avatar = newStudent.avatar.base64
-                        if (newProject[0] = undefined) {
+                        if (newProject[0] != undefined) {
                             for (let i in this.projects) {
                                 if (newProject == this.projects[i].title) {
                                     newStudent.projects = [this.projects[i]._id]
@@ -32,25 +32,23 @@
                                                     project['student'] = allStudents[j]._id
                                                         //J'edite le project dans le select
                                                     return projectsService.edit(project).then((res) => {
-                                                        console.log('project');
+                                                        
                                                     })
                                                 }
                                             }
                                         })
                                     })
-                                }
-                                else {
+                                } else {
                                     studentsService.add(this.newStudent).then((res) => {
-                                        console.log('no-project');
+                                        
                                     })
                                 }
                             }
                         } else {
                             studentsService.add(this.newStudent).then((res) => {
-                                console.log('no-project');
+                                
                             })
                         }
-
                         this.newStudent = {}
                     }
 
