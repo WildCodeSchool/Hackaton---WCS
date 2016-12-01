@@ -1,4 +1,4 @@
-#Hackathon November 2016 Wild Code School  
+#Hackathon 48h November 2016 Wild Code School  
 
 ###Problématique  
 
