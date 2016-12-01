@@ -10,8 +10,8 @@
             getOne(title){
               return $http.get('/api/search/'+ title)
             },
-            getPopulate(data){
-              return $http.get('/api/projects/'+ data._id )
+            getPopulate(project){
+              return $http.get('/api/projects/'+ project.projectId)
             },
             add(project) {
                 return $http.post('/api/projects', project)

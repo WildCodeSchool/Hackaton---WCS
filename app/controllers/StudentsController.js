@@ -18,6 +18,6 @@ class StudentsController extends Controller {
       else res.json(document)
     })
   }
-  
+
 }
 module.exports = StudentsController

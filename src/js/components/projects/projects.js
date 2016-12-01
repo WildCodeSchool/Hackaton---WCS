@@ -5,7 +5,7 @@
             blogs: '<'
         },
         templateUrl: 'js/components/projects/projects.html',
-        controller: ['projectsService', 'studentsService', function(projectsService, studentsService) {
+        controller: ['projectsService', 'studentsService','commentsService', function(projectsService,studentsService ,commentsService) {
             angular.extend(this, {
                 $onInit() {
 

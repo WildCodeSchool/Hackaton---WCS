@@ -5,7 +5,7 @@
             project: '<'
         },
         templateUrl: 'js/components/project/project.html',
-        controller: ['projectsService', '$stateParams', '$timeout', '$animate', function(projectsService, $stateParams, $timeout, $animate) {
+        controller: ['projectsService', '$stateParams', '$timeout','commentsService', function(projectsService, $stateParams, $timeout, commentsService) {
             angular.extend(this, {
                 $onInit() {
 
@@ -16,17 +16,26 @@
                     this.begin = 0;
                     this.editMode
 
-                    projectsService.get().then((res) => {
-                        this.projects = res.data
+                    commentsService.get().then((res)=>{
+                      this.comments = res.data
+                    })
 
-                        // Extraction de l'id passé en paramètre
-                        let id = $stateParams.projectId
-                        this.projects.forEach((element) => {
-                            if (element._id === id) {
-                                this.projects = element
-                                    //console.log(this.projects)
-                            }
+                    // add new comment
+                    this.addComment = (comment,projects) => {
+                      this.comment.projects = projects
+                        commentsService.add(this.comment).then((res) => {
+                          this.test = res.data._id
+                            this.comment = ""
+                            this.project(this.test);
                         })
+
+                    }
+
+
+                    projectsService.getPopulate($stateParams).then((res) => {
+                        this.projects = res.data
+                        console.log(this.projects)
+
                     })
 
                     // Auto Slider - Pictures's project
@@ -48,8 +57,7 @@
                     // Update on Window Learn more
                     this.update = (project, images) => {
                         if (this.editMode) {
-                            //images = images.split(';')
-                            //project.image = images
+
                             projectsService.edit(project).then((res) => {
                                 this.projects = res.config.data
                                 this.editMode = false
@@ -71,13 +79,7 @@
                     // Delete a project
                     this.dele = '';
 
-                    // add new comment
-                    this.addComment = (project, comment) => {
-                        project.comments.push(comment)
-                        projectsService.edit(project).then((res) => {
-                            this.comment = ""
-                        })
-                    }
+
 
                 },
                 delete(project) {
@@ -95,6 +97,13 @@
                 },
                 suivant(){
                   this.start <this.projects.student.length - 3 ? this.start++ : this.start = 0;
+                },
+                project(id){
+                  this.projects.comments = id
+                  debugger
+                  projectsService.edit(this.projects).then((res)=>{
+
+                  })
                 }
             })
         }]

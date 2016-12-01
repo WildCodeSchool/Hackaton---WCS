@@ -1,54 +1,31 @@
 'use strict'
 
-let Controller = require('./Controller') // on étend la classe
+let Controller = require('./Controller')
+const COMMENT = require('../models/comments')
 const PROJECT = require('../models/projects')
-const STUDENTS = require('../models/students')
-    // La classe BlogsController étend controller, on peut l'étendre encore et encore et encore...
 
-class ProjectsController extends Controller {
+
+class CommentsController extends Controller {
     constructor() {
-        super(PROJECT)
+        super(COMMENT)
     }
-
+    
     find(req, res, next) {
         this.model.find(req.query).populate({
-            path: 'student',
-            populate: {
-                path: 'projects'
-            }
-        }).populate('comments').exec((err, documents) => {
-            if (err) next(err)
-            else res.json(documents)
-        })
-    }
-
-    findOne(req,res, next){
-      let data =  new RegExp("("+req.params.title+")", "igm")
-      console.log(data)
-      this.model.find( { $or:[ {'title':data}, {'techno':data}]},(err,document)=>{
-        if (err) next(err)
-        else {
-          res.json(document)
-        }
-      })
-    }
-
-
-    findById(req, res, next) {
-        this.model.findById(req.params.id).populate({
-            path: 'student',
-            populate: {
-                path: 'projects'
-            }
-        }).populate('comments').exec((err, document) => {
+            path: 'projects',
+            populate: ({
+                path: 'student'
+            })
+        }).exec((err, document) => {
             if (err) next(err)
             else res.json(document)
         })
     }
 
+
     create(req, res, next) {
-        let student = req.body.student
-        delete req.body.student
+        let comment = req.body.comment
+        delete req.body.comment
         this.model.create(req.body, (err, project) => {
             if (err) next(err)
             else {
@@ -85,6 +62,6 @@ class ProjectsController extends Controller {
     }
 
 
-}
 
-module.exports = ProjectsController
+}
+module.exports = CommentsController
