@@ -12,7 +12,7 @@
                         /// Get student
                         studentsService.getPopulate($stateParams).then((res) => {
                             this.student = res.data
-                            console.log(this.student)
+                            //console.log(this.student)
                             this.studentProjects = this.student.projects
                         })
 
@@ -25,11 +25,27 @@
 
                         this.edit = (student) => {
                                 if (this.editMode == true) {
-                                    //student.avatar = student.avatar.base64
+
                                     studentsService.edit(student).then((res) => {
                                         this.editMode = false
                                     })
                                 } else {
+                                    /// Get all projects
+                                    projectsService.get().then((res) => {
+                                        this.projects = res.data
+                                        //create array of all projects
+                                        let allprojects = []
+                                        for (let i in this.projects) {
+                                            allprojects.push(this.projects[i].title)
+                                        }
+                                        //create array of user projects
+                                        let userprojects = []
+                                        for (let j in this.studentProjects) {
+                                            userprojects.push(this.studentProjects[j].title)
+                                        }
+                                        //bind new project in select
+                                        this.viewNewProject = allprojects.filter(x => userprojects.indexOf(x) < 0 );
+                                    })
                                     previous[student] = angular.copy(student)
                                     this.editMode = true
                                 }
@@ -42,18 +58,14 @@
 
                         // delete
                         this.delete = (student) => {
-                            console.log(student._id);
+                            //console.log(student._id);
                             studentsService.delete(student).then((res) => {
 
                             })
                         }
 
                         //
-                        /// Get all projects for select
-                        //
-                        projectsService.get().then((res) => {
-                            this.projects = res.data
-                        })
+
 
 
                         /// init new project
