@@ -200,3 +200,11 @@ h3 {
         left: 80%;
     }
 }
+
+.imgsearch {
+    height: 3em;
+    background-size: cover;
+    background-position: center;
+    width: 4em;
+    margin: 0 0 0 1em;
+}
