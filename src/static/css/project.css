@@ -41,19 +41,20 @@
     background-repeat: no-repeat;
     background-position: center;
     animation-name: move;
-    animation-duration:  1s;
+    animation-duration: 1s;
     animation-timing-function: infinite;
+    position: absolute;
+    z-index: -1;
 }
 
-@keyframes move {
-
+/*@keyframes move {
     0% {
         opacity: 0.8;
     }
     100% {
         opacity: 1;
     }
-}
+}*/
 
 .techno {
     float: right;
@@ -75,7 +76,7 @@
 .btnPrev {
     font-size: 40px;
     color: #FFFFFF;
-    margin-top: -8em;
+    margin-top: 5em;
     left: 1em;
     position: absolute;
 }
@@ -83,7 +84,7 @@
 .btnNext {
     font-size: 40px;
     color: #FFFFFF;
-    margin-top: -8em;
+    margin-top: 5em;
     right: 1em;
     position: absolute;
 }
@@ -105,6 +106,7 @@
     font-size: 80px;
     font-weight: lighter;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    z-index: 1;
 }
 
 .contributors {
@@ -227,11 +229,33 @@
 }
 
 .commentproject div:nth-child(even) {
-  float: right;
+    float: right;
     background-color: rgba(82, 100, 174, 0.5);
     padding: 10px 10px 0px;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
     border-top-right-radius: 25px;
     width: 70%;
+}
+
+.ng-enter {
+    -webkit-transition:opacity 0.2s linear ;
+    transition:opacity 0.2s linear ;
+    opacity: 0;
+}
+
+.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+.ng-leave {
+    -webkit-transition:opacity 0.2s linear ;
+    transition:opacity 0.2s linear ;
+    opacity: 1;
+}
+
+.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+.projectview{
+    margin-top: 35em;
 }

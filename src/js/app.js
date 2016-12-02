@@ -2,6 +2,7 @@
 
 })(angular.module('app', [
     'ui.router',
+    'ngAnimate',
     'app.config',
     'app.views',
     'app.services',

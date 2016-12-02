@@ -11,7 +11,7 @@
             </div>
 
             <!-- Récupération des images du projet -->
-            <div ng-repeat="image in $ctrl.projects.image | limitTo:$ctrl.limit : $ctrl.begin">
+            <div ng-repeat="image in $ctrl.projects.image | limitTo:$ctrl.limit : $ctrl.begin" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
                 <div style="background-image: url({{image}})" class="projectimage"></div>
                 <div class="group imageprojectedit" ng-if="$ctrl.editMode">
                     <input class="form-control input-m center-block" type="text" ng-model="$ctrl.projects.image">
@@ -21,7 +21,6 @@
                 </div>
             </div>
 
-
             <!-- Pagination -->
             <a ng-click="$ctrl.prev()" class="btnPrev" ng-if="!$ctrl.editMode && $ctrl.projects.image.length > 1">
                 <i class="fa fa-chevron-left" aria-hidden="true"></i>
@@ -30,6 +29,9 @@
                 <i class="fa fa-chevron-right" aria-hidden="true"></i>
             </a>
 
+        </div>
+
+        <div class="container projectview">
             <!-- Récupération des contributeurs -->
             <div class="col-md-10 col-xs-12 col-md-offset-1 usercardproject">
                 <div ng-repeat="student in $ctrl.projects.student | limitTo: $ctrl.view: $ctrl.start">
@@ -49,10 +51,6 @@
 
                 </div>
             </div>
-
-        </div>
-
-        <div class="container">
             <!-- Description du Projet -->
             <div class="row dialog">
                 <div ng-if="!$ctrl.editMode" class="techno" style="background-image:url(/img/{{$ctrl.projects.techno}}.jpg)"></div>
@@ -100,7 +98,8 @@
                     <div class="" ng-repeat="comment in $ctrl.projects.comments track by $index">
                         <div class="col-xs-12">
                             <p>
-                                <i class="fa fa-comments-o" aria-hidden="true"></i> {{comment.content}}
+                                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                                {{comment.content}}
                             </p>
                         </div>
                     </div>
@@ -112,9 +111,11 @@
                         <div class="col-xs-12">
                             <input ng-model="comment.content" type="text">
                             <i class="fa fa-comments-o" aria-hidden="true"></i>
-                            <p> {{$index}}</p>
+                            <p>
+                                {{$index}}</p>
                             <a class="btn" ng-click="$ctrl.update($ctrl.projects, $ctrl.projects.image, $index)">
-                                <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i> {{($ctrl.editMode ? 'Valider' : 'Edit')}}
+                                <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i>
+                                {{($ctrl.editMode ? 'Valider' : 'Edit')}}
                             </a>
                         </div>
                     </div>
@@ -126,17 +127,21 @@
         <div class="row edition">
             <div class="col-xs-2 col-xs-offset-3" ng-if="!$ctrl.editMode">
                 <a class="btn" ng-click="$ctrl.update($ctrl.projects, $ctrl.projects.image, $index )">
-                    <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i> {{($ctrl.editMode ? 'Valider' : 'Edit')}}
+                    <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i>
+                    {{($ctrl.editMode ? 'Valider' : 'Edit')}}
                 </a>
             </div>
             <div class="col-xs-2">
                 <a class="btn" ng-if="$ctrl.editMode" ng-click="$ctrl.cancel($ctrl.project)">
-                    <i class="fa fa-level-down fa-lg" aria-hidden="true"></i> Annuler
+                    <i class="fa fa-level-down fa-lg" aria-hidden="true"></i>
+                    Annuler
                 </a>
             </div>
             <div class="col-xs-2">
                 <a class="btn" ng-click="$ctrl.delete($ctrl.project)" ui-sref="app.projects">
-                    <i class="fa fa-trash fa-lg" aria-hidden="true"></i> Delete {{}}
+                    <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+                    Delete
+                    {{}}
                 </a>
             </div>
         </div>
