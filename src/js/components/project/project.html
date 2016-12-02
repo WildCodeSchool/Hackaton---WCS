@@ -108,18 +108,16 @@
                 </div>
             </div>
             <div class="row" ng-if="$ctrl.editMode">
-                <div class="col-xs-12 comment">
-                    <div class="" ng-repeat="comment in $ctrl.projects.comments">
+                <div class="col-xs-12 commentproject">
+                    <div ng-repeat="comment in $ctrl.projects.comments">
                       <div class="col-xs-12">
                         <input ng-model="comment.content" type="text">
                             <i class="fa fa-comments-o" aria-hidden="true"></i>
-                            <input ng-model="$index">
-                            <div class="col-xs-2 col-xs-offset-3">
+                            <p> {{$index}}</p>
                                 <a class="btn" ng-click="$ctrl.update($ctrl.projects, $ctrl.projects.image, $index )">
                                     <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i>
                                     {{($ctrl.editMode ? 'Valider' : 'Edit')}}
                                 </a>
-                            </div>
                       </div>
                     </div>
                 </div>
@@ -128,7 +126,7 @@
 
         <!-- Edition -->
         <div class="row edition">
-            <div class="col-xs-2 col-xs-offset-3" nf-if="!$ctrl.editMode">
+            <div class="col-xs-2 col-xs-offset-3" ng-if="!$ctrl.editMode">
                 <a class="btn" ng-click="$ctrl.update($ctrl.projects, $ctrl.projects.image, $index )">
                     <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i>
                     {{($ctrl.editMode ? 'Valider' : 'Edit')}}

@@ -214,3 +214,24 @@
     color: #DB4437;
     margin: 0.5em;
 }
+
+.commentproject div:nth-child(odd):not(.col-xs-12) {
+    padding: 10px 10px 0px;
+    margin: 5px 0px;
+    background-color: #eaeaea;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    width: 70%;
+    float: left;
+}
+
+.commentproject div:nth-child(even) {
+  float: right;
+    background-color: rgba(82, 100, 174, 0.5);
+    padding: 10px 10px 0px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+    width: 70%;
+}

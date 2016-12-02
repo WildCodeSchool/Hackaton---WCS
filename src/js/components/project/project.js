@@ -56,7 +56,6 @@
 
                     // Update on Window Learn more
                     this.update = (project, images, index) => {
-                        debugger
                         if (this.editMode) {
                             this.comment = project.comments[index]
                             commentsService.edit(this.comment).then((res) => {
