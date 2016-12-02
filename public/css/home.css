@@ -188,14 +188,15 @@ h3 {
 
 .searchcross {
     position: absolute;
-    top: 15px;
-    right: 4em;
+    top: 11px;
+    right: 3em;
     color: #7b7b7b;
+    font-size: 20px;
 }
 
 @media (max-width:768px) {
     .searchcross {
-        top: 25px;
-        right: 7em;
+        top: 22px;
+        left: 80%;
     }
 }
