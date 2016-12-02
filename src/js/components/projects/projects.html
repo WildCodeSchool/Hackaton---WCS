@@ -67,7 +67,7 @@
                     <a class="btn loadmore col-xs-12" name="button" ng-click="$ctrl.loadmore()" ng-if="$ctrl.limit < $ctrl.projects.length">Charger plus de projets</a>
                 </div>
                 <div class="col-sm-4 hidden-xs">
-                    <div class="" ng-repeat="student in $ctrl.students">
+                    <div class="" ng-repeat="student in $ctrl.students | orderBy : '-projects.length'">
                         <a href="#/student/{{student._id}}">
                             <div class="card carte interne card-block">
                                 <div class="row">
