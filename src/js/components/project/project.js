@@ -21,7 +21,7 @@
                     this.addComment = (comment, project) => {
                         this.comment.projects = project._id
                         commentsService.add(this.comment).then((res) => {
-                            this.test = res.data._id
+                            this.test = res.data
                             this.comment = ""
                             // call project() and pass parameters
                             this.project(this.test, project);
@@ -99,14 +99,10 @@
                 suivant() {
                     this.start < this.projects.student.length - 3 ? this.start++ : this.start = 0;
                 },
-                project(id, projects) {
-                    projects.comments.push(id)
+                project(comment, projects) {
+                    projects.comments.push(comment)
                     projectsService.edit(projects).then((res) => {
-                      projectsService.getPopulate($stateParams).then((res) => {
-                          this.projects = res.data
-                          console.log(this.projects)
-
-                      })
+                  
                     })
                 }
             })
