@@ -44,7 +44,7 @@
                                 <div class="col-xs-12 comment">
                                     <div class="" ng-repeat="newone in $ctrl.newones.comments | orderBy : '-' | limitTo : $ctrl.limitComment">
                                         <div class="col-xs-12">
-                                            <p><i class="fa fa-comments-o" aria-hidden="true"></i> {{newone}}</p>
+                                            <p><i class="fa fa-comments-o" aria-hidden="true"></i> {{newone.content}}</p>
                                         </div>
                                     </div>
                                 </div>

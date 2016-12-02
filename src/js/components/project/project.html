@@ -86,7 +86,7 @@
 
         <!-- Comment -->
         <div class="container carte interne">
-            <div class="row"  ng-if="!$ctrl.editMode">
+            <div class="row" ng-if="!$ctrl.editMode">
                 <div class="col-md-8 col-xs-7">
                     <input type="text" placeholder="Écrivez votre commentaire" value="" ng-model="$ctrl.comment.content">
                 </div>
@@ -98,27 +98,25 @@
             <div class="row" ng-if="!$ctrl.editMode">
                 <div class="col-xs-12 comment">
                     <div class="" ng-repeat="comment in $ctrl.projects.comments track by $index">
-                      <div class="col-xs-12">
-                        <p>
-                            <i class="fa fa-comments-o" aria-hidden="true"></i>
-                            {{comment.content}}
-                        </p>
-                      </div>
+                        <div class="col-xs-12">
+                            <p>
+                                <i class="fa fa-comments-o" aria-hidden="true"></i> {{comment.content}}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row" ng-if="$ctrl.editMode">
                 <div class="col-xs-12 commentproject">
                     <div ng-repeat="comment in $ctrl.projects.comments">
-                      <div class="col-xs-12">
-                        <input ng-model="comment.content" type="text">
+                        <div class="col-xs-12">
+                            <input ng-model="comment.content" type="text">
                             <i class="fa fa-comments-o" aria-hidden="true"></i>
                             <p> {{$index}}</p>
-                                <a class="btn" ng-click="$ctrl.update($ctrl.projects, $ctrl.projects.image, $index )">
-                                    <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i>
-                                    {{($ctrl.editMode ? 'Valider' : 'Edit')}}
-                                </a>
-                      </div>
+                            <a class="btn" ng-click="$ctrl.update($ctrl.projects, $ctrl.projects.image, $index)">
+                                <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i> {{($ctrl.editMode ? 'Valider' : 'Edit')}}
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -128,21 +126,17 @@
         <div class="row edition">
             <div class="col-xs-2 col-xs-offset-3" ng-if="!$ctrl.editMode">
                 <a class="btn" ng-click="$ctrl.update($ctrl.projects, $ctrl.projects.image, $index )">
-                    <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i>
-                    {{($ctrl.editMode ? 'Valider' : 'Edit')}}
+                    <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i> {{($ctrl.editMode ? 'Valider' : 'Edit')}}
                 </a>
             </div>
             <div class="col-xs-2">
                 <a class="btn" ng-if="$ctrl.editMode" ng-click="$ctrl.cancel($ctrl.project)">
-                    <i class="fa fa-level-down fa-lg" aria-hidden="true"></i>
-                    Annuler
+                    <i class="fa fa-level-down fa-lg" aria-hidden="true"></i> Annuler
                 </a>
             </div>
             <div class="col-xs-2">
                 <a class="btn" ng-click="$ctrl.delete($ctrl.project)" ui-sref="app.projects">
-                    <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
-                    Delete
-                    {{}}
+                    <i class="fa fa-trash fa-lg" aria-hidden="true"></i> Delete {{}}
                 </a>
             </div>
         </div>
