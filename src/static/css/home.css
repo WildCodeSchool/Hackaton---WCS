@@ -192,3 +192,10 @@ h3 {
     right: 4em;
     color: #7b7b7b;
 }
+
+@media (max-width:768px) {
+    .searchcross {
+        top: 25px;
+        right: 7em;
+    }
+}
