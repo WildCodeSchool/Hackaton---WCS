@@ -79,6 +79,7 @@
     margin-top: 5em;
     left: 1em;
     position: absolute;
+    z-index: 1;
 }
 
 .btnNext {
@@ -87,6 +88,7 @@
     margin-top: 5em;
     right: 1em;
     position: absolute;
+    z-index: 1;
 }
 
 @media (max-width:768px) {
@@ -238,22 +240,22 @@
     width: 70%;
 }
 
-.ng-enter {
-    -webkit-transition:opacity 0.2s linear ;
-    transition:opacity 0.2s linear ;
+#slider .ng-enter {
+    -webkit-transition: all 0.2s linear ;
+    transition: all 0.2s linear ;
     opacity: 0;
 }
 
-.ng-enter.ng-enter-active {
+#slider .ng-enter.ng-enter-active {
     opacity: 1;
 }
-.ng-leave {
-    -webkit-transition:opacity 0.2s linear ;
-    transition:opacity 0.2s linear ;
+#slider .ng-leave {
+    -webkit-transition: all 0.2s linear ;
+    transition: all 0.2s linear ;
     opacity: 1;
 }
 
-.ng-leave.ng-leave-active {
+#slider .ng-leave.ng-leave-active {
     opacity: 0;
 }
 .projectview{
