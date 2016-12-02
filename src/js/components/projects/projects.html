@@ -56,10 +56,10 @@
                             </div>
                             <div class="row" ng-if="$ctrl.showComment && (project._id == $ctrl.newones._id)">
                                 <div class="col-md-8 col-xs-7">
-                                    <input type="text" placeholder="Écrivez votre commentaire" value="" ng-model="$ctrl.comment">
+                                    <input type="text" placeholder="Écrivez votre commentaire" value="" ng-model="$ctrl.comment.content">
                                 </div>
                                 <div class="col-md-4 col-xs-5">
-                                    <button class="btn" type="button" ng-click="$ctrl.addComment(project, $ctrl.comment)">Envoyer</button>
+                                    <button class="btn" type="button" ng-click="$ctrl.addComment($ctrl.comment, project)">Envoyer</button>
                                 </div>
                             </div>
                         </div>

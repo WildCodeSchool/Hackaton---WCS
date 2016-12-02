@@ -26,6 +26,7 @@
                         commentsService.add(this.comment).then((res) => {
                             this.test = res.data._id
                             this.comment = ""
+                            // call project() and pass parameters
                             this.project(this.test, project);
                         })
 
