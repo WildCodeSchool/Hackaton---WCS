@@ -37,7 +37,7 @@
                 <a ui-sref="app.project({projectId : result._id})" ng-click="$ctrl.search = null; $ctrl.showcross = false">
                     <div class="row">
                         <div class="col-xs-2">
-                            <img ng-repeat="image in result.image" ng-src="{{image}}" class="resultimage">
+                            <div ng-repeat="image in result.image" class="imgsearch" style="background-image:url({{image}})" class="resultimage"></div>
                         </div>
                         <div class="col-xs-10">
                             {{result.title}}
