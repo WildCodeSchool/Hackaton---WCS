@@ -5,6 +5,8 @@ let app = exports.app = express()
 let bodyParser = require('body-parser')
 let methodOverride = require('method-override')
 let morgan = require('morgan')
+let mongoose = require('mongoose')
+const ENV = require('./config/env')
 
 let routes = require('./app/routes')
 const port = process.env.PORT || 3000 // (process.env.PORT ? process.env.PORT : 8000) => process.env.PORT || 8000
@@ -38,9 +40,7 @@ process.on('SIGINT', function() {
     process.exit()
 });
 
-// Connexion à mongodb via mongoose
-let mongoose = require('mongoose')
-mongoose.connect('mongodb://uxpaul:mlab74865210m@ds113958.mlab.com:13958/hackaton');
+mongoose.connect(ENV.db)
 
 // Création d'un middleware pour logger les erreurs
 app.use((error, request, response, next) => {
