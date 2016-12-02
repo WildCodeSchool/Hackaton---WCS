@@ -5,7 +5,7 @@
             project: '<'
         },
         templateUrl: 'js/components/project/project.html',
-        controller: ['projectsService', '$stateParams', '$timeout', '$animate', function(projectsService, $stateParams, $timeout, $animate) {
+        controller: ['projectsService', '$stateParams', '$timeout', 'commentsService', function(projectsService, $stateParams, $timeout, commentsService) {
             angular.extend(this, {
                 $onInit() {
 
@@ -16,17 +16,24 @@
                     this.begin = 0;
                     this.editMode
 
-                    projectsService.get().then((res) => {
-                        this.projects = res.data
-
-                        // Extraction de l'id passé en paramètre
-                        let id = $stateParams.projectId
-                        this.projects.forEach((element) => {
-                            if (element._id === id) {
-                                this.projects = element
-                                    //console.log(this.projects)
-                            }
+                    
+                    // add new comment
+                    this.addComment = (comment, project) => {
+                        this.comment.projects = project._id
+                        commentsService.add(this.comment).then((res) => {
+                            this.test = res.data._id
+                            this.comment = ""
+                                // call project() and pass parameters
+                            this.project(this.test, project);
                         })
+
+                    }
+
+
+                    projectsService.getPopulate($stateParams).then((res) => {
+                        this.projects = res.data
+                        console.log(this.projects)
+
                     })
 
                     // Auto Slider - Pictures's project
@@ -35,8 +42,8 @@
                         timer = $timeout(() => {
                             this.nexte();
                             this.suivant();
-                            timer = $timeout(sliderFunc, 3000);
-                        }, 3000);
+                            timer = $timeout(sliderFunc, 5000);
+                        }, 5000);
                     };
 
                     sliderFunc();
@@ -46,10 +53,12 @@
                     this.start = 0
 
                     // Update on Window Learn more
-                    this.update = (project, images) => {
+                    this.update = (project, images, index) => {
                         if (this.editMode) {
-                            //images = images.split(';')
-                            //project.image = images
+                            this.comment = project.comments[index]
+                            commentsService.edit(this.comment).then((res) => {
+                                console.log(res.data)
+                            })
                             projectsService.edit(project).then((res) => {
                                 this.projects = res.config.data
                                 this.editMode = false
@@ -71,13 +80,7 @@
                     // Delete a project
                     this.dele = '';
 
-                    // add new comment
-                    this.addComment = (project, comment) => {
-                        project.comments.push(comment)
-                        projectsService.edit(project).then((res) => {
-                            this.comment = ""
-                        })
-                    }
+
 
                 },
                 delete(project) {
@@ -93,8 +96,14 @@
                 prev() {
                     this.begin > 0 ? this.begin-- : this.begin = this.projects.image.length - 1;
                 },
-                suivant(){
-                  this.start <this.projects.student.length - 3 ? this.start++ : this.start = 0;
+                suivant() {
+                    this.start < this.projects.student.length - 3 ? this.start++ : this.start = 0;
+                },
+                project(id, projects) {
+                    projects.comments.push(id)
+                    projectsService.edit(projects).then((res) => {
+
+                    })
                 }
             })
         }]

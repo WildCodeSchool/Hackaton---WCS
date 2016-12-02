@@ -5,7 +5,7 @@
             blogs: '<'
         },
         templateUrl: 'js/components/projects/projects.html',
-        controller: ['projectsService', 'studentsService', function(projectsService, studentsService) {
+        controller: ['projectsService', 'studentsService','commentsService', function(projectsService,studentsService ,commentsService) {
             angular.extend(this, {
                 $onInit() {
 
@@ -47,11 +47,15 @@
                     }
 
                     // add new comment
-                    this.addComment = (project, comment) => {
-                        project.comments.push(comment)
-                        projectsService.edit(project).then((res) => {
+                    this.addComment = (comment, project) => {
+                        this.comment.projects = project._id
+                        commentsService.add(this.comment).then((res) => {
+                            this.test = res.data._id
                             this.comment = ""
+                            // call project() and pass parameters
+                            this.project(this.test, project);
                         })
+
                     }
 
                     // limit comment
@@ -61,6 +65,12 @@
                         this.limitComment += 2
                     }
 
+                },
+                project(id, projects) {
+                  projects.comments.push(id)
+                  projectsService.edit(projects).then((res)=>{
+
+                  })
                 }
             })
         }]

@@ -2,7 +2,7 @@
 
 let Controller = require('./Controller') // on étend la classe
 const PROJECT = require('../models/projects')
-const STUDENTS = require('../models/students.js')
+const STUDENTS = require('../models/students')
     // La classe BlogsController étend controller, on peut l'étendre encore et encore et encore...
 
 class ProjectsController extends Controller {
@@ -16,7 +16,7 @@ class ProjectsController extends Controller {
             populate: {
                 path: 'projects'
             }
-        }).exec((err, documents) => {
+        }).populate('comments').exec((err, documents) => {
             if (err) next(err)
             else res.json(documents)
         })
@@ -40,7 +40,7 @@ class ProjectsController extends Controller {
             populate: {
                 path: 'projects'
             }
-        }).exec((err, document) => {
+        }).populate('comments').exec((err, document) => {
             if (err) next(err)
             else res.json(document)
         })

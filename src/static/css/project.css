@@ -40,6 +40,19 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    animation-name: move;
+    animation-duration:  1s;
+    animation-timing-function: infinite;
+}
+
+@keyframes move {
+
+    0% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .techno {
@@ -122,7 +135,8 @@
 
 /*Counter ngAnimate */
 
-.slide.ng-hide-add, .slide.ng-hide-remove {
+
+/*.slide.ng-hide-add, .slide.ng-hide-remove {
     -webkit-transition: all linear 0.5s;
     -moz-transition: all linear 0.5s;
     -o-transition: all linear 0.5s;
@@ -136,7 +150,7 @@
 
 .slide.ng-hide-add, .slide.ng-hide-remove.ng-hide-remove-active {
     opacity: 1;
-}
+}*/
 
 .ctbravatar {
     width: 2em;
@@ -193,12 +207,31 @@
     content: "\f081";
     color: #1DA1F2;
     margin: 0.5em;
-
 }
 
 .fa-google-plus-square:before {
     content: "\f0d4";
     color: #DB4437;
     margin: 0.5em;
+}
 
+.commentproject div:nth-child(odd):not(.col-xs-12) {
+    padding: 10px 10px 0px;
+    margin: 5px 0px;
+    background-color: #eaeaea;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    width: 70%;
+    float: left;
+}
+
+.commentproject div:nth-child(even) {
+  float: right;
+    background-color: rgba(82, 100, 174, 0.5);
+    padding: 10px 10px 0px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+    width: 70%;
 }

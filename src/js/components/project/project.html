@@ -5,13 +5,13 @@
             <h1 ng-if="!$ctrl.editMode" class="projecttitle">
                 {{$ctrl.projects.title}}</h1>
             <div class="col-xs-5 col-xs-offset-2 group" ng-if="$ctrl.editMode">
-                <input ng-if="$ctrl.editMode" class="titleedit" type="text" ng-model="$ctrl.projects.title" required>
+                <input class="titleedit" type="text" ng-model="$ctrl.projects.title" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
             </div>
 
             <!-- Récupération des images du projet -->
-            <div class="" ng-repeat="image in $ctrl.projects.image | limitTo:$ctrl.limit : $ctrl.begin">
+            <div ng-repeat="image in $ctrl.projects.image | limitTo:$ctrl.limit : $ctrl.begin">
                 <div style="background-image: url({{image}})" class="projectimage"></div>
                 <div class="group imageprojectedit" ng-if="$ctrl.editMode">
                     <input class="form-control input-m center-block" type="text" ng-model="$ctrl.projects.image">
@@ -86,24 +86,37 @@
 
         <!-- Comment -->
         <div class="container carte interne">
-            <div class="row">
+            <div class="row" ng-if="!$ctrl.editMode">
                 <div class="col-md-8 col-xs-7">
-                    <input type="text" placeholder="Écrivez votre commentaire" value="" ng-model="$ctrl.comment">
+                    <input type="text" placeholder="Écrivez votre commentaire" value="" ng-model="$ctrl.comment.content">
                 </div>
                 <div class="col-md-4 col-xs-5">
-                    <button class="btn" type="button" ng-click="$ctrl.addComment($ctrl.projects, $ctrl.comment)">Envoyer</button>
+                    <button class="btn" type="button" ng-click="$ctrl.addComment($ctrl.comment, $ctrl.projects)">Envoyer</button>
                 </div>
             </div>
             <hr>
-            <div class="row">
+            <div class="row" ng-if="!$ctrl.editMode">
                 <div class="col-xs-12 comment">
-                    <div class="" ng-repeat="comment in $ctrl.projects.comments">
-                      <div class="col-xs-12">
-                        <p>
+                    <div class="" ng-repeat="comment in $ctrl.projects.comments track by $index">
+                        <div class="col-xs-12">
+                            <p>
+                                <i class="fa fa-comments-o" aria-hidden="true"></i> {{comment.content}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" ng-if="$ctrl.editMode">
+                <div class="col-xs-12 commentproject">
+                    <div ng-repeat="comment in $ctrl.projects.comments">
+                        <div class="col-xs-12">
+                            <input ng-model="comment.content" type="text">
                             <i class="fa fa-comments-o" aria-hidden="true"></i>
-                            {{comment}}
-                        </p>
-                      </div>
+                            <p> {{$index}}</p>
+                            <a class="btn" ng-click="$ctrl.update($ctrl.projects, $ctrl.projects.image, $index)">
+                                <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i> {{($ctrl.editMode ? 'Valider' : 'Edit')}}
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -111,23 +124,19 @@
 
         <!-- Edition -->
         <div class="row edition">
-            <div class="col-xs-2 col-xs-offset-3">
-                <a class="btn" ng-click="$ctrl.update($ctrl.projects, $ctrl.projects.image)">
-                    <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i>
-                    {{($ctrl.editMode ? 'Valider' : 'Edit')}}
+            <div class="col-xs-2 col-xs-offset-3" ng-if="!$ctrl.editMode">
+                <a class="btn" ng-click="$ctrl.update($ctrl.projects, $ctrl.projects.image, $index )">
+                    <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i> {{($ctrl.editMode ? 'Valider' : 'Edit')}}
                 </a>
             </div>
             <div class="col-xs-2">
                 <a class="btn" ng-if="$ctrl.editMode" ng-click="$ctrl.cancel($ctrl.project)">
-                    <i class="fa fa-level-down fa-lg" aria-hidden="true"></i>
-                    Annuler
+                    <i class="fa fa-level-down fa-lg" aria-hidden="true"></i> Annuler
                 </a>
             </div>
             <div class="col-xs-2">
                 <a class="btn" ng-click="$ctrl.delete($ctrl.project)" ui-sref="app.projects">
-                    <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
-                    Delete
-                    {{}}
+                    <i class="fa fa-trash fa-lg" aria-hidden="true"></i> Delete {{}}
                 </a>
             </div>
         </div>
