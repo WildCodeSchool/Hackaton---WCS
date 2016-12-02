@@ -11,7 +11,7 @@
                 return $http.post('/api/comments', comment)
             },
             edit(comments) {
-                return http.put('api/comments/' + comments._id, comments)
+                return $http.put('api/comments/' + comments._id, comments)
             },
             delete(comments) {
                 return $http.delete('api/comments/' + comments._id)

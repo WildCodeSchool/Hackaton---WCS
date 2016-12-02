@@ -5,7 +5,7 @@
             project: '<'
         },
         templateUrl: 'js/components/project/project.html',
-        controller: ['projectsService', '$stateParams', '$timeout','commentsService', function(projectsService, $stateParams, $timeout, commentsService) {
+        controller: ['projectsService', '$stateParams', '$timeout', 'commentsService', function(projectsService, $stateParams, $timeout, commentsService) {
             angular.extend(this, {
                 $onInit() {
 
@@ -16,16 +16,15 @@
                     this.begin = 0;
                     this.editMode
 
-                    commentsService.get().then((res)=>{
-                      this.comments = res.data
+                    commentsService.get().then((res) => {
+                        this.comments = res.data
                     })
 
                     // add new comment
-                    this.addComment = (comment,project) => {
-                      debugger
-                      this.comment.projects = project._id
+                    this.addComment = (comment, project) => {
+                        this.comment.projects = project._id
                         commentsService.add(this.comment).then((res) => {
-                          this.test = res.data._id
+                            this.test = res.data._id
                             this.comment = ""
                             this.project(this.test, project);
                         })
@@ -56,9 +55,13 @@
                     this.start = 0
 
                     // Update on Window Learn more
-                    this.update = (project, images) => {
+                    this.update = (project, images, index) => {
+                        debugger
                         if (this.editMode) {
-
+                            this.comment = project.comments[index]
+                            commentsService.edit(this.comment).then((res) => {
+                              console.log(res.data)
+                            })
                             projectsService.edit(project).then((res) => {
                                 this.projects = res.config.data
                                 this.editMode = false
@@ -96,15 +99,14 @@
                 prev() {
                     this.begin > 0 ? this.begin-- : this.begin = this.projects.image.length - 1;
                 },
-                suivant(){
-                  this.start <this.projects.student.length - 3 ? this.start++ : this.start = 0;
+                suivant() {
+                    this.start < this.projects.student.length - 3 ? this.start++ : this.start = 0;
                 },
-                project(id, projects){
-                  projects.comments.push(id)
-                  debugger
-                  projectsService.edit(projects).then((res)=>{
+                project(id, projects) {
+                    projects.comments.push(id)
+                    projectsService.edit(projects).then((res) => {
 
-                  })
+                    })
                 }
             })
         }]
