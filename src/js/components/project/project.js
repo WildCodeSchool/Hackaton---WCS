@@ -16,14 +16,14 @@
                     this.begin = 0;
                     this.editMode
 
-                    
+
                     // add new comment
                     this.addComment = (comment, project) => {
                         this.comment.projects = project._id
                         commentsService.add(this.comment).then((res) => {
                             this.test = res.data._id
                             this.comment = ""
-                                // call project() and pass parameters
+                            // call project() and pass parameters
                             this.project(this.test, project);
                         })
 
@@ -57,7 +57,7 @@
                         if (this.editMode) {
                             this.comment = project.comments[index]
                             commentsService.edit(this.comment).then((res) => {
-                                console.log(res.data)
+                              console.log(res.data)
                             })
                             projectsService.edit(project).then((res) => {
                                 this.projects = res.config.data
@@ -102,7 +102,11 @@
                 project(id, projects) {
                     projects.comments.push(id)
                     projectsService.edit(projects).then((res) => {
+                      projectsService.getPopulate($stateParams).then((res) => {
+                          this.projects = res.data
+                          console.log(this.projects)
 
+                      })
                     })
                 }
             })
