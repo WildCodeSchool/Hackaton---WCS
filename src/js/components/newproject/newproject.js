@@ -21,8 +21,6 @@
                     for (let i in this.students){
                         //check if this.project.student match with one of student name
                         if (this.project.student == this.students[i].name){
-                            //catch id of this student
-                            //this.project.student = this.students[i]._id
                             //push new project with student id
                             return projectsService.add(this.project).then((res) => {
                                 this.projects.push(res.data)
@@ -48,6 +46,7 @@
                         }
                     }
                 } else {
+                    //if this.project.student is undefined, just create a new project
                     this.project.student = ""
                     projectsService.add(this.project).then((res) => {
                         this.projects.push(res.data)
