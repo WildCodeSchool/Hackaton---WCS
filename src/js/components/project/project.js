@@ -11,11 +11,9 @@
 
                     let _previous = {}
 
-
                     this.limit = 1;
                     this.begin = 0;
                     this.editMode
-
 
                     // add new comment
                     this.addComment = (comment, project) => {
@@ -23,10 +21,9 @@
                         commentsService.add(this.comment).then((res) => {
                             this.test = res.data
                             this.comment = ""
-                            // call project() and pass parameters
+                                // call project() and pass parameters
                             this.project(this.test, project);
                         })
-
                     }
 
 
@@ -57,7 +54,7 @@
                         if (this.editMode) {
                             this.comment = project.comments[index]
                             commentsService.edit(this.comment).then((res) => {
-                              console.log(res.data)
+                                console.log(res.data)
                             })
                             projectsService.edit(project).then((res) => {
                                 this.projects = res.config.data
@@ -80,8 +77,6 @@
                     // Delete a project
                     this.dele = '';
 
-
-
                 },
                 delete(project) {
                     alert("Sur?")
@@ -102,7 +97,7 @@
                 project(comment, projects) {
                     projects.comments.push(comment)
                     projectsService.edit(projects).then((res) => {
-                  
+
                     })
                 }
             })
