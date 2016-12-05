@@ -1,2 +1,20 @@
-<newstudent></newstudent>
-<newproject></newproject>
+<div class="row">
+    <div class="col-xs-12 text-center">
+        <h1 ng-if="!$ctrl.addstudent">
+            <button class="btn" ng-click="$ctrl.addstudent = !$ctrl.addstudent">
+                <i class="fa fa-user-plus" aria-hidden="true"></i>
+                Ajouter nouvel étudiant
+            </button>
+        </h1>
+        <newstudent ng-if="$ctrl.addstudent"></newstudent>
+    </div>
+    <div class="col-xs-12 text-center">
+        <h1 ng-if="!$ctrl.addproject">
+            <button class="btn" ng-click="$ctrl.addproject = !$ctrl.addproject">
+                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                Ajouter nouveau projet
+            </button>
+        </h1>
+        <newproject ng-if="$ctrl.addproject"></newproject>
+    </div>
+</div>

@@ -1,7 +1,7 @@
 <section>
     <div class="container">
         <h1>
-            New Project
+            Nouveau Projet
         </h1>
         <form name="newproject">
             <div class="row">
@@ -47,7 +47,7 @@
                     <div class="group">
                         <label class="labelInput">Langage</label>
                         <p>
-                            <select ng-model="$ctrl.project.techno">
+                            <select ng-model="$ctrl.project.techno" required>
                                 <option></option>
                                 <option>Javascript</option>
                                 <option>Php</option>
@@ -64,7 +64,7 @@
                     <div class="select-editable">
                         <div class="group">
                             <label class="labelInput">Contributor(s)</label>
-                            <select ng-model="$ctrl.project.student">
+                            <select ng-model="$ctrl.project.student" required>
                                 <option value=""></option>
                                 <option ng-repeat="student in $ctrl.students">{{student.name}}</option>
                             </select>
@@ -76,11 +76,11 @@
 
                 <div class="col-xs-12 edition text-center">
                         <button class="btn" ng-click="$ctrl.add()" ng-disabled="newproject.$invalid">
-                            <i class="fa fa-lg fa-cloud-download" aria-hidden="true">
-                                Ajouter</i>
+                            <i class="fa fa-lg fa-cloud-download" aria-hidden="true"></i>
+                                Ajouter
                         </button>
                         <button class="btn" ng-click="$ctrl.annuler(article)" ui-sref="app.projects">
-                            <i class="fa fa-lg fa-undo" aria-hidden="true">Annuler</i>
+                            <i class="fa fa-lg fa-undo" aria-hidden="true"></i> Annuler
                         </button>
                 </div>
             </div>
