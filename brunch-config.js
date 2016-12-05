@@ -49,6 +49,12 @@ exports.config = {
                 /^(node_modules)/
             ]
         },
+        autoReload: {
+            match: {
+                stylesheets: ['*.css', '*.jpg', '*.png'],
+                javascripts: ['*.js']
+            }
+        },
         /*jshint -W106 */
         angular_templates: {
             module: 'app.views',
@@ -66,9 +72,9 @@ exports.config = {
             }
         }
     },
-    server:{
-      command: 'node server.js',
-      port: 3000,
-      run: true
+    server: {
+        command: 'node server.js',
+        port: 3000,
+        run: true
     }
 }

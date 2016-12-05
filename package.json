@@ -38,5 +38,8 @@
     "passport-local": "^1.0.0",
     "uglify-js-brunch": "^2.0.1",
     "ui-select": "^0.19.6"
+  },
+  "devDependencies": {
+    "auto-reload-brunch": "^2.7.1"
   }
 }
