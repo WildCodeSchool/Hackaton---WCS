@@ -11,28 +11,29 @@
                     })
 
                     this.add = (newStudent, newProject) => {
-                        //encode avatar in base64
-                        //newStudent.avatar = newStudent.avatar.base64
+                      // check if project selected
                         if (newProject[0] != undefined) {
+                            //loop in all projects
                             for (let i in this.projects) {
+                                //match newProject with a project title in all projects
                                 if (newProject == this.projects[i].title) {
                                     newStudent.projects = [this.projects[i]._id]
                                         //create new student
                                     return studentsService.add(this.newStudent).then((res) => {
-                                        //create allStudents + the new one
+                                        //create var allStudents + the new one
                                         studentsService.get().then((res) => {
                                             let allStudents = res.data
-                                                //je boucle dans tout les student
+                                                //loop in all students
                                             for (let j in allStudents) {
-                                                //je match le nom
+                                                //match names
                                                 if (newStudent.name == allStudents[j].name) {
-                                                    //creer une variable project pour editer le this.projects
+                                                    //create var project to edit this.projects
                                                     let project = {}
                                                     project['_id'] = this.projects[i]._id
                                                     project['student'] = allStudents[j]._id
-                                                        //J'edite le project dans le select
+                                                        //edit selected project
                                                     return projectsService.edit(project).then((res) => {
-                                                        
+
                                                     })
                                                 }
                                             }
@@ -40,13 +41,13 @@
                                     })
                                 } else {
                                     studentsService.add(this.newStudent).then((res) => {
-                                        
+
                                     })
                                 }
                             }
                         } else {
                             studentsService.add(this.newStudent).then((res) => {
-                                
+
                             })
                         }
                         this.newStudent = {}
