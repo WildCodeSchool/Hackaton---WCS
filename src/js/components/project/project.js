@@ -39,8 +39,8 @@
                         timer = $timeout(() => {
                             this.nexte();
                             this.suivant();
-                            timer = $timeout(sliderFunc, 5000);
-                        }, 5000);
+                            timer = $timeout(sliderFunc, 3000);
+                        }, 3000);
                     };
 
                     sliderFunc();
