@@ -208,3 +208,40 @@ h3 {
     width: 4em;
     margin: 0 0 0 1em;
 }
+
+.header-img {
+    background-image: url(/img/background.jpg);
+    height: 35vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media(max-width:767px){
+    .header-img {
+        height: 50vh;
+    }
+}
+
+.hometitle {
+    position: absolute;
+    margin-top: 0.3em;
+    width: 100%;
+    color: #FFFFFF;
+    font-size: 80px;
+    font-weight: lighter;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    z-index: 1;
+}
+
+.homesubtitle{
+  position: absolute;
+  margin-top: 3.3em;
+  width: 100%;
+  color: #FFFFFF;
+  font-size: 40px;
+  font-weight: lighter;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  z-index: 1;
+}
