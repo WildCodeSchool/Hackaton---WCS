@@ -13,5 +13,6 @@
     'app.newstudent',
     'app.navbar',
     'app.edit',
+    'app.login',
     'ngAnimate'
 ]))
