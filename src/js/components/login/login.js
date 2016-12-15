@@ -2,13 +2,12 @@
     'use strict'
     app.component('login', {
         templateUrl: 'js/components/login/login.html',
-        controller: ['AdminsService',function(AdminsService) {
+        controller: ['AdminsService', '$state', function(AdminsService, $state) {
             angular.extend(this, {
                 $onInit() {
 
                 },
                 connect() {
-                  debugger
                    AdminsService.connect(this.user).then((res) => {
                        $state.go('app.projects')
                    })
