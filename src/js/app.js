@@ -2,6 +2,7 @@
 
 })(angular.module('app', [
     'ui.router',
+    'ngCookies',
     'ngAnimate',
     'app.config',
     'app.views',

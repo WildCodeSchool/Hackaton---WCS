@@ -5,9 +5,19 @@
         controller: ['$state', function($state) {
             angular.extend(this, {
                 $onInit() {
-                  
 
-                }
+
+                },
+                connect() {
+                   usersService.connect(this.user).then((res) => {
+                       $state.go('app.projects')
+                   })
+               },
+               disconnect(){
+                   usersService.disconnect().then((res) => {
+                       $state.go('app.login')
+                   })
+               }
 
             })
         }]
