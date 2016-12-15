@@ -49,7 +49,7 @@ h1, .inputForm::-webkit-input-placeholder, button {
   visibility: visible !important;
 }
 
-button {
+.loginButton button {
   border: none;
   background: #5264AE;
   cursor: pointer;
@@ -57,10 +57,9 @@ button {
   padding: 6px;
   width: 200px;
   color: white;
-  margin-left: 25px !important;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
-button:hover {
+.loginButton button:hover {
   -webkit-transform: translateY(-3px);
       -ms-transform: translateY(-3px);
           transform: translateY(-3px);

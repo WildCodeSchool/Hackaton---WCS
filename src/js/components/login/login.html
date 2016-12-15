@@ -3,14 +3,14 @@
 		<form>
 			<h1> Connection </h1>
 			<div class="row loginInput">
-				<div class="col-xs-8 col-xs-offset-4 col-lg-3 col-lg-offset-3">
-					<input type="text" placeholder="Your pseudo" ng-model="$ctrl.pseudo" required="" class="inputForm">
+				<div class="col-md-3 col-md-offset-3 col-xs-12">
+					<input type="text" placeholder="Your pseudo" ng-model="$ctrl.user.pseudo" required="" class="inputForm">
 				</div>
-				<div class="col-xs-8 col-xs-offset-4 col-lg-3 col-lg-offset-0">
-					<input type="password" placeholder="Password" ng-model="$ctrl.password" required="" class="inputForm">
+				<div class="col-md-3 col-xs-12">
+					<input type="password" placeholder="Password" ng-model="$ctrl.user.password" required="" class="inputForm">
 				</div>
-				<div class="col-xs-8 col-xs-offset-4 col-lg-2 loginButton">
-					<button ng-click="$ctrl.join()">Connect</button>
+				<div class="col-xs-12 loginButton text-center">
+					<button ng-click="$ctrl.login($ctrl.user)">Connect</button>
 				</div>
 			</div>
 			<!-- <div class="row">
