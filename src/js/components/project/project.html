@@ -84,7 +84,7 @@
 
         <!-- Comment -->
         <div class="container carte interne">
-            <div class="row" ng-if="!$ctrl.editMode">
+            <div class="row" ng-if="!$ctrl.editMode && $ctrl.currentUser">
                 <div class="col-md-8 col-xs-7">
                     <input type="text" placeholder="Écrivez votre commentaire" value="" ng-model="$ctrl.comment.content">
                 </div>
@@ -124,7 +124,7 @@
         </div>
 
         <!-- Edition -->
-        <div class="row edition">
+        <div class="row edition" ng-if="$ctrl.currentUser">
             <div class="col-xs-2 col-xs-offset-3" ng-if="!$ctrl.editMode">
                 <a class="btn" ng-click="$ctrl.update($ctrl.projects, $ctrl.projects.image, $index )">
                     <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i>

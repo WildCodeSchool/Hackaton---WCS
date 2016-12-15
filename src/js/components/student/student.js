@@ -5,14 +5,20 @@
         controller: ['studentsService',
             '$stateParams',
             'projectsService',
-            function(studentsService, $stateParams, projectsService) {
+            'AdminsService',
+            function(studentsService, $stateParams, projectsService, AdminsService) {
                 angular.extend(this, {
                     $onInit() {
+
+                        AdminsService.getCurrent().then((user) => {
+                            this.currentUser = user
+
+                        })
 
                         /// Get student
                         studentsService.getPopulate($stateParams).then((res) => {
                             this.student = res.data
-                            //console.log(this.student)
+                                //console.log(this.student)
                             this.studentProjects = this.student.projects
                         })
 
@@ -33,7 +39,7 @@
                                     /// Get all projects
                                     projectsService.get().then((res) => {
                                         this.projects = res.data
-                                        //create array of all projects
+                                            //create array of all projects
                                         let allprojects = []
                                         for (let i in this.projects) {
                                             allprojects.push(this.projects[i].title)
@@ -44,7 +50,7 @@
                                             userprojects.push(this.studentProjects[j].title)
                                         }
                                         //bind new project in select
-                                        this.viewNewProject = allprojects.filter(x => userprojects.indexOf(x) < 0 );
+                                        this.viewNewProject = allprojects.filter(x => userprojects.indexOf(x) < 0);
                                     })
                                     previous[student] = angular.copy(student)
                                     this.editMode = true
@@ -79,10 +85,10 @@
                                 if (newProject == this.projects[i].title) {
                                     this.student.projects.push(this.projects[i])
                                     return studentsService.edit(this.student).then((res) => {
-                                      //debugger
+                                        //debugger
                                         this.projects[i].student.push(this.student._id)
                                         projectsService.edit(this.projects[i]).then((res) => {
-                                        //  debugger
+                                            //  debugger
                                         })
                                     })
                                 }

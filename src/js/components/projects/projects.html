@@ -61,7 +61,7 @@
                                 <hr ng-if="$ctrl.showComment">
 
                             </div>
-                            <div class="row" ng-if="$ctrl.showComment && (project._id == $ctrl.newones._id)">
+                            <div class="row" ng-if="$ctrl.showComment && (project._id == $ctrl.newones._id) && $ctrl.currentUser">
                                 <div class="col-md-8 col-xs-7">
                                     <input type="text" placeholder="Écrivez votre commentaire" value="" ng-model="$ctrl.comment.content">
                                 </div>
@@ -93,7 +93,7 @@
             </div>
         </div>
     </div>
-    <div class="row text-center addArticle">
+    <div class="row text-center addArticle" ng-if="$ctrl.currentUser">
         <div class="col-sm-6 col-xs-12">
             <button class="btn btn-primary" ui-sref="app.newstudent">
                 <i class="fa fa-plus" aria-hidden="true"></i>

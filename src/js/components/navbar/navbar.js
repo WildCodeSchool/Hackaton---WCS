@@ -2,7 +2,7 @@
     'use strict'
     app.component('navbar', {
         templateUrl: "js/components/navbar/navbar.html",
-        controller: ["projectsService", "$timeout", function(projectsService, $timeout) {
+        controller: ["projectsService", "$timeout", 'AdminsService', '$state', function(projectsService, $timeout, AdminsService, $state) {
             angular.extend(this, {
                 $onInit() {
 
@@ -23,6 +23,17 @@
                             this.showCollapsed = true
                         }
                     }
+
+                    AdminsService.getCurrent().then((user) => {
+                        this.currentUser = user
+
+                    })
+                },
+                disconnect(){
+                    AdminsService.disconnect().then((res) => {
+                        $state.go('app.projects')
+                        $state.reload()
+                    })
                 }
             })
         }]

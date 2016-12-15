@@ -91,7 +91,7 @@
                     </div>
                     <hr>
                     <!-- Edit mode button -->
-                    <p class="hidden-xs">
+                    <p class="hidden-xs" ng-if="$ctrl.currentUser">
                         <button class="btnEdit" ng-click="$ctrl.edit($ctrl.student)">
                             <i class="fa fa-pencil-square-o fa-lg " aria-hidden="true"></i>
                             {{!$ctrl.editMode ? 'Editer' : 'Valider'}}</button>

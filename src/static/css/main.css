@@ -2,9 +2,10 @@
     box-sizing: border-box;
 }
 
-a{
-  cursor: pointer;
+a {
+    cursor: pointer;
 }
+
 .group {
     position: relative;
     margin-bottom: 45px;
@@ -176,19 +177,16 @@ body {
     min-height: 100vh;
     background-color: #eceff1;
     font-weight: lighter;
-
 }
 
 h1 {
     text-align: center;
     padding: 0.5em 0 1em 0;
     font-weight: 200;
-
 }
+
 h2 {
-
     font-weight: 300;
-
 }
 
 .interne {
@@ -272,6 +270,13 @@ select {
     width: 70%;
     margin: 5px 0px;
 }
+
 nav .form-control {
     background-color: transparent;
+}
+
+nav .currentUserName {
+    top: 15px;
+    position: relative;
+    font-weight: 500;
 }

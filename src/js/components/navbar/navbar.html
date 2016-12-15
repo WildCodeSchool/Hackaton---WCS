@@ -27,11 +27,17 @@
             </form>
 
             <ul class="nav navbar-nav navbar-right hidden-xs">
-                <li>
+                <li ng-if="$ctrl.currentUser">
                     <a ui-sref="app.edit">Ajouter</a>
                 </li>
-                <li>
-                    <a ui-sref="app.login">Login</a>
+                <li ng-if="!$ctrl.currentUser">
+                    <a ui-sref="login.connect">Login</a>
+                </li>
+                <li ng-if="$ctrl.currentUser">
+                    <span class="currentUserName">Bonjour {{$ctrl.currentUser.name}}</span>
+                </li>
+                <li ng-if="$ctrl.currentUser">
+                    <a ng-click="$ctrl.disconnect()"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
                 </li>
             </ul>
         </div>
@@ -40,7 +46,7 @@
                 <a ui-sref="app.project({projectId : result._id})" ng-click="$ctrl.search = null; $ctrl.showcross = false">
                     <div class="row">
                         <div class="col-xs-2">
-                            <div ng-repeat="image in result.image" class="imgsearch" style="background-image:url({{image}})" class="resultimage"></div>
+                            <div ng-repeat="image in result.image | limitTo : 1" class="imgsearch" style="background-image:url({{image}})" class="resultimage"></div>
                         </div>
                         <div class="col-xs-10">
                             {{result.title}}

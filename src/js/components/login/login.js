@@ -11,11 +11,6 @@
                    AdminsService.connect(this.user).then((res) => {
                        $state.go('app.projects')
                    })
-               },
-               disconnect(){
-                   AdminsService.disconnect().then((res) => {
-                       $state.go('app.login')
-                   })
                }
             })
         }]

@@ -1,13 +1,17 @@
 ((app) => {
-
     app.component('project', {
         bindings: {
             project: '<'
         },
         templateUrl: 'js/components/project/project.html',
-        controller: ['projectsService', '$stateParams', '$timeout', 'commentsService', function(projectsService, $stateParams, $timeout, commentsService) {
+        controller: ['projectsService', '$stateParams', '$timeout', 'commentsService', 'AdminsService', function(projectsService, $stateParams, $timeout, commentsService, AdminsService) {
             angular.extend(this, {
                 $onInit() {
+
+                    AdminsService.getCurrent().then((user) => {
+                        this.currentUser = user
+
+                    })
 
                     let _previous = {}
 
@@ -29,7 +33,6 @@
 
                     projectsService.getPopulate($stateParams).then((res) => {
                         this.projects = res.data
-                        console.log(this.projects)
 
                     })
 
@@ -54,7 +57,6 @@
                         if (this.editMode) {
                             this.comment = project.comments[index]
                             commentsService.edit(this.comment).then((res) => {
-                                console.log(res.data)
                             })
                             projectsService.edit(project).then((res) => {
                                 this.projects = res.config.data

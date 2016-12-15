@@ -5,9 +5,12 @@
             blogs: '<'
         },
         templateUrl: 'js/components/projects/projects.html',
-        controller: ['projectsService', 'studentsService','commentsService', function(projectsService,studentsService ,commentsService) {
+        controller: ['projectsService', 'studentsService', 'commentsService', 'AdminsService', function(projectsService, studentsService, commentsService, AdminsService) {
             angular.extend(this, {
                 $onInit() {
+                    AdminsService.getCurrent().then((user) => {
+                        this.currentUser = user
+                    })
 
                     projectsService.get().then((res) => {
                         this.projects = res.data
@@ -22,10 +25,12 @@
 
                     //Add likes
                     this.likes = (project) => {
-                        project.likes++
-                            projectsService.edit(project).then((res) => {
+                        if (this.currentUser) {
+                            project.likes++
+                                projectsService.edit(project).then((res) => {
 
-                            })
+                                })
+                        }
                     }
 
 
@@ -52,7 +57,7 @@
                         commentsService.add(this.comment).then((res) => {
                             this.test = res.data
                             this.comment = ""
-                            // call project() and pass parameters
+                                // call project() and pass parameters
                             this.project(this.test, project);
                         })
 
@@ -67,10 +72,10 @@
 
                 },
                 project(comment, projects) {
-                  projects.comments.push(comment)
-                  projectsService.edit(projects).then((res)=>{
+                    projects.comments.push(comment)
+                    projectsService.edit(projects).then((res) => {
 
-                  })
+                    })
                 }
             })
         }]
