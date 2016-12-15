@@ -10,9 +10,9 @@
         .state('callback', {
             url: '/admin/callback/:token',
             template: '',
-            controller: ['usersService', '$stateParams', '$state', function(usersService, $stateParams, $state) {
+            controller: ['AdminsService', '$stateParams', '$state', function(AdminsService, $stateParams, $state) {
                 if ($stateParams.token) {
-                    usersService.setToken($stateParams.token).then((user) => {
+                    AdminsService.setToken($stateParams.token).then((user) => {
                         $state.go('app.projects')
                     })
                 } else {
