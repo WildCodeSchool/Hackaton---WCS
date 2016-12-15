@@ -28,7 +28,7 @@
     "express-jwt": "^5.1.0",
     "font-awesome": "^4.7.0",
     "javascript-brunch": "^2.0.0",
-    "jsonwebtoken": "^7.1.9",
+    "jsonwebtoken": "^7.2.1",
     "method-override": "^2.3.6",
     "mongodb": "^2.2.11",
     "mongoose": "^4.6.5",
