@@ -1,6 +1,6 @@
 /* ----------- USERS ROUTER -------------- */
 'use strict'
-let AdminController = require('../controllers/adminController')
+let AdminController = require('../controllers/AdminController')
 let auth = require('../middlewares/authorization.js')
 
 module.exports = (app) => {
