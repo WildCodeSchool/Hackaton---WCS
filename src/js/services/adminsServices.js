@@ -4,7 +4,7 @@
         return {
 
             connect(data) {
-                return $http.post('/api/login', data).then((res) => {
+                return $http.post('/api/admin', data).then((res) => {
                     this.currentUser = res.data.user
                     $cookies.put('token', res.data.token)
                 })

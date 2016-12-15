@@ -8,7 +8,7 @@
             template: '<ui-view></ui-view>'
         })
         .state('callback', {
-            url: '/auth/callback/:token',
+            url: '/amin/callback/:token',
             template: '',
             controller: ['usersService', '$stateParams', '$state', function(usersService, $stateParams, $state) {
                 if ($stateParams.token) {
