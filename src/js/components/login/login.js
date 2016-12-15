@@ -2,11 +2,13 @@
     'use strict'
     app.component('login', {
         templateUrl: 'js/components/login/login.html',
-        controller: ['$state', function($state) {
+        controller: [function() {
             angular.extend(this, {
                 $onInit() {
-                  
 
+                },
+                login(user){
+                  console.log(user);
                 }
 
             })
