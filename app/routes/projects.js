@@ -7,7 +7,7 @@ module.exports = (app) => {
 
     let ctrl = new ProjectsController()
 
-    app.get('/projects', auth.user.isAuthenticate , (req, res, next) => {
+    app.get('/projects', auth.user.isAuthenticate, (req, res, next) => {
         return ctrl.find(req, res, next)
     })
 
