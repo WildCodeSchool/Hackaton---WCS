@@ -7,15 +7,15 @@ module.exports = (app) => {
 
     let ctrl = new ProjectsController()
 
-    app.get('/projects', (req, res, next) => {
+    app.get('/projects', auth.user.isAuthenticate , (req, res, next) => {
         return ctrl.find(req, res, next)
     })
 
-    app.get('/search/:title', (req,res, next)=>{
+    app.get('/search/:title', auth.user.isAuthenticate, (req,res, next)=>{
       return ctrl.findOne(req,res, next)
     })
 
-    app.get('/projects/:id',(req, res, next) => {
+    app.get('/projects/:id', auth.user.isAuthenticate,(req, res, next) => {
         return ctrl.findById(req, res, next)
     })
 

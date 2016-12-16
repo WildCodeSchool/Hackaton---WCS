@@ -69,7 +69,7 @@ class ProjectsController extends Controller {
                             document.save()
 
                         }
-                        project.student.push(document.id)
+                        project.student.push(document._id)
                         if (i == student.split(',').length - 1) {
                             console.log(project.student)
                             project.save()
