@@ -37,3 +37,4 @@ class adminsController extends Controller {
 
 
 }
+ module.exports = adminsController
