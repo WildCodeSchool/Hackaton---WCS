@@ -1,12 +1,12 @@
 /* ----------- USERS ROUTER -------------- */
 'use strict'
-let adminsController = require('../controllers/adminsController')
+let AdminsController = require('../controllers/AdminsController')
 let auth = require('../middlewares/authorization')
 
 module.exports = (app) => {
 
-  let ctrl = new adminsController
+  let AdminsCtrl = new AdminsController
 
-    app.post('/admin', ctrl.connect)
+    app.post('/admin', AdminsCtrl.connect)
 
 }

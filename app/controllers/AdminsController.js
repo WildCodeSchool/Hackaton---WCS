@@ -4,7 +4,7 @@ let Controller = require('./Controller')
 const ENV = require('../../config/env')
 const ADMIN = require('../models/admin')
 
-class adminsController extends Controller {
+class AdminsController extends Controller {
     constructor() {
         super(ADMIN)
     }
@@ -37,4 +37,4 @@ class adminsController extends Controller {
 
 
 }
- module.exports = adminsController
+ module.exports = AdminsController
