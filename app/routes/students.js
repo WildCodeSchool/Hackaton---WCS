@@ -7,11 +7,11 @@ module.exports = (app) => {
 
     let ctrl = new StudentsController()
 
-    app.get('/students',auth.user.isAuthenticate, (req, res, next) => {
+    app.get('/students', (req, res, next) => {
         return ctrl.find(req, res, next)
     })
 
-    app.get('/students/:id', auth.user.isAuthenticate,(req, res, next) => {
+    app.get('/students/:id',(req, res, next) => {
         return ctrl.findById(req, res, next)
     })
 
