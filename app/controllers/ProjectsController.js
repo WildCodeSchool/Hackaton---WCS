@@ -1,6 +1,9 @@
 'use strict'
 
-let Controller = require('./Controller') // on étend la classe
+let Controller = require('./Controller'),
+    formidable = require('formidable'),
+    fs = require('fs'),
+    path = require('path');
 const PROJECT = require('../models/projects')
 const STUDENTS = require('../models/students')
     // La classe BlogsController étend controller, on peut l'étendre encore et encore et encore...
@@ -8,6 +11,25 @@ const STUDENTS = require('../models/students')
 class ProjectsController extends Controller {
     constructor() {
         super(PROJECT)
+    }
+
+    upload(req, res, next) {
+        // parse a file upload
+        let form = new formidable.IncomingForm();
+
+        form.uploadDir = './src/static/img/'
+
+        if (!fs.existsSync(form.uploadDir)) fs.mkdirSync(form.uploadDir)
+
+        form.on('file', (field, file) => {
+                fs.rename(file.path, form.uploadDir + file.name)
+            })
+            .on('end', () => {
+                console.log("uploaded")
+                res.sendStatus(200)
+            })
+
+        form.parse(req)
     }
 
     find(req, res, next) {
@@ -22,15 +44,21 @@ class ProjectsController extends Controller {
         })
     }
 
-    findOne(req,res, next){
-      let data =  new RegExp("("+req.params.title+")", "igm")
-      console.log(data)
-      this.model.find( { $or:[ {'title':data}, {'techno':data}]},(err,document)=>{
-        if (err) next(err)
-        else {
-          res.json(document)
-        }
-      })
+    findOne(req, res, next) {
+        let data = new RegExp("(" + req.params.title + ")", "igm")
+        console.log(data)
+        this.model.find({
+            $or: [{
+                'title': data
+            }, {
+                'techno': data
+            }]
+        }, (err, document) => {
+            if (err) next(err)
+            else {
+                res.json(document)
+            }
+        })
     }
 
 

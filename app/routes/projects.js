@@ -19,11 +19,15 @@ module.exports = (app) => {
         return ctrl.findById(req, res, next)
     })
 
+    app.post('/upload', (req, res, next) => {
+        return ctrl.upload(req, res, next)
+    })
+
     app.post('/projects', auth.user.isAuthenticate, (req, res, next) => {
         return ctrl.create(req, res, next)
     })
 
-    app.put('/projects/:id', auth.user.isAuthenticate, (req, res, next) => {
+    app.put('/projects/:id', (req, res, next) => {
         return ctrl.update(req, res, next)
     })
 

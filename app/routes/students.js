@@ -11,7 +11,7 @@ module.exports = (app) => {
         return ctrl.find(req, res, next)
     })
 
-    app.get('/students/:id',(req, res, next) => {
+    app.get('/students/:id', (req, res, next) => {
         return ctrl.findById(req, res, next)
     })
 
@@ -19,7 +19,7 @@ module.exports = (app) => {
         return ctrl.create(req, res, next)
     })
 
-    app.put('/students/:id', auth.user.isAuthenticate, (req, res, next) => {
+    app.put('/students/:id', (req, res, next) => {
         return ctrl.update(req, res, next)
     })
 

@@ -5,13 +5,13 @@
         },
         templateUrl: 'js/components/project/project.html',
         controller: ['projectsService', '$stateParams', '$timeout', 'commentsService', 'AdminsService', function(projectsService, $stateParams, $timeout, commentsService, AdminsService) {
+
+            AdminsService.getCurrent().then((user) => {
+                this.currentUser = user
+            })
+
             angular.extend(this, {
                 $onInit() {
-
-                    AdminsService.getCurrent().then((user) => {
-                        this.currentUser = user
-
-                    })
 
                     let _previous = {}
 
@@ -53,15 +53,19 @@
                     this.start = 0
 
                     // Update on Window Learn more
-                    this.update = (project, images, index) => {
+                    this.update = (project, index) => {
                         if (this.editMode) {
                             this.comment = project.comments[index]
                             commentsService.edit(this.comment).then((res) => {
+
                             })
+                            projectsService.upload(project.image)
+
+                            project.image = `static/img/${project.image.name}`
                             projectsService.edit(project).then((res) => {
                                 this.projects = res.config.data
-                                this.editMode = false
                             })
+                            this.editMode = false
 
                         } else {
                             _previous[this.projects._id] = angular.copy(this.projects)
