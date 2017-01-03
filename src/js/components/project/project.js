@@ -18,6 +18,7 @@
                     this.limit = 1;
                     this.begin = 0;
                     this.editMode
+                    this.image;
 
                     // add new comment
                     this.addComment = (comment, project) => {
@@ -33,7 +34,7 @@
 
                     projectsService.getPopulate($stateParams).then((res) => {
                         this.projects = res.data
-
+                        this.image = this.projects.image
                     })
 
                     // Auto Slider - Pictures's project
@@ -59,9 +60,11 @@
                             commentsService.edit(this.comment).then((res) => {
 
                             })
-                            projectsService.upload(project.image)
-
-                            project.image = `static/img/${project.image.name}`
+                            if (project.image.name != undefined) {
+                                projectsService.upload(project.image)
+                                this.image.push(`img/${project.image.name}`)
+                            }
+                            project.image = this.image
                             projectsService.edit(project).then((res) => {
                                 this.projects = res.config.data
                             })

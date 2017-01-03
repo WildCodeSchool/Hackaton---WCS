@@ -37,7 +37,6 @@
                 })
             },
             edit(project) {
-              debugger
                 return $http.put('/api/projects/' + project._id, project)
             },
             delete(project) {
