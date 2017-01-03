@@ -12,7 +12,7 @@ class ProjectsController extends Controller {
     constructor() {
         super(PROJECT)
     }
-
+    
     upload(req, res, next) {
         // parse a file upload
         let form = new formidable.IncomingForm();
