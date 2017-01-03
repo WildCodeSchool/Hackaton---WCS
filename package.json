@@ -28,6 +28,8 @@
     "express": "^4.13.4",
     "express-jwt": "^5.1.0",
     "font-awesome": "^4.7.0",
+    "formidable": "^1.0.17",
+    "fs": "0.0.1-security",
     "javascript-brunch": "^2.0.0",
     "jsonwebtoken": "^7.2.1",
     "method-override": "^2.3.6",
@@ -37,6 +39,7 @@
     "nodemon": "^1.11.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "uglify-js-brunch": "^2.0.1",
     "ui-select": "^0.19.6"
   },
