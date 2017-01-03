@@ -34,5 +34,6 @@
     'app.navbar',
     'app.edit',
     'app.login',
+    'app.footer',
     'ngAnimate'
 ]))

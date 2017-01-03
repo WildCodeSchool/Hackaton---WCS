@@ -21,6 +21,7 @@
     border-radius: 0px;
 }
 
+
 /*.carte:hover {
     box-shadow: 0.5px 0.5px 0.5px 0.5px #39CCCC;
 }*/
@@ -218,7 +219,7 @@ h3 {
     background-size: cover;
 }
 
-@media(max-width:767px){
+@media(max-width:767px) {
     .header-img {
         height: 50vh;
     }
@@ -235,13 +236,30 @@ h3 {
     z-index: 1;
 }
 
-.homesubtitle{
-  position: absolute;
-  margin-top: 3.3em;
-  width: 100%;
-  color: #FFFFFF;
-  font-size: 40px;
-  font-weight: lighter;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  z-index: 1;
+.homesubtitle {
+    position: absolute;
+    margin-top: 3.3em;
+    width: 100%;
+    color: #FFFFFF;
+    font-size: 40px;
+    font-weight: lighter;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    z-index: 1;
+}
+
+.footer {
+    background-color: #F8F9F9;
+    margin-top: 20px;
+}
+
+.footer p {
+  color: grey;
+  font-size: 14px;
+  margin: 20px;
+}
+.footer a{
+    color: grey;
+}
+ul {
+    list-style-type: none;
 }
