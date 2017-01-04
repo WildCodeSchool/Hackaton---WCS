@@ -4,7 +4,7 @@
             project: '<'
         },
         templateUrl: 'js/components/project/project.html',
-        controller: ['projectsService', '$stateParams', '$timeout', 'commentsService', 'AdminsService', function(projectsService, $stateParams, $timeout, commentsService, AdminsService) {
+        controller: ['projectsService', '$stateParams', '$timeout', 'commentsService', 'AdminsService','$state' ,function(projectsService, $stateParams, $timeout, commentsService, AdminsService, $state) {
 
             AdminsService.getCurrent().then((user) => {
                 this.currentUser = user
@@ -88,10 +88,13 @@
 
                 },
                 delete(project) {
-                    alert("Sur?")
+                  let answer = confirm("Confirmer la suppréssion")
+                  if(answer){
                     projectsService.delete(project).then((res) => {
                         this.project = {}
                     })
+                    $state.go('app.projects')
+                  }
                 },
                 nexte() {
                     this.begin < this.projects.image.length - 1 ? this.begin++ : this.begin = 0;
