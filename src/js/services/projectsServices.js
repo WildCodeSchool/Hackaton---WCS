@@ -40,6 +40,7 @@
                 return $http.put('/api/projects/' + project._id, project)
             },
             delete(project) {
+              debugger
                 return $http.delete('/api/projects/' + project._id)
             }
         }
