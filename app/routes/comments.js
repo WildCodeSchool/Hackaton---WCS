@@ -19,7 +19,7 @@ module.exports = (app) => {
         return ctrl.create(req, res, next)
     })
 
-    app.put('/comments/:id', (req, res, next) => {
+    app.put('/comments/:id',auth.user.isAuthenticate ,(req, res, next) => {
         return ctrl.update(req, res, next)
     })
 

@@ -10,7 +10,7 @@ module.exports = (app) => {
     app.get('/projects', (req, res, next) => {
         return ctrl.find(req, res, next)
     })
-
+    
     app.get('/search/:title', (req, res, next) => {
         return ctrl.findOne(req, res, next)
     })
@@ -19,7 +19,7 @@ module.exports = (app) => {
         return ctrl.findById(req, res, next)
     })
 
-    app.post('/upload', (req, res, next) => {
+    app.post('/upload', auth.user.isAuthenticate,(req, res, next) => {
         return ctrl.upload(req, res, next)
     })
 
@@ -27,7 +27,7 @@ module.exports = (app) => {
         return ctrl.create(req, res, next)
     })
 
-    app.put('/projects/:id', (req, res, next) => {
+    app.put('/projects/:id', auth.user.isAuthenticate,(req, res, next) => {
         return ctrl.update(req, res, next)
     })
 
