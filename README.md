@@ -40,7 +40,7 @@ Répartition du travail
 Autonomie  
 
 ##Développement
-Requierement : NodeJs, MongoDB 
+Nécessite : NodeJs, MongoDB 
 
 ```
 $ npm i
