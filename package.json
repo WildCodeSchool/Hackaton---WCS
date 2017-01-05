@@ -1,8 +1,8 @@
 {
-  "name": "Hackathon---WCS--paul-sebastien",
+  "name": "Hackathon---WCS",
   "version": "1.0.0",
   "description": "Hackathon---WCS",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "prestart": "brunch build",
     "start": "node server.js",
